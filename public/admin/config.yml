@@ -41,5 +41,5 @@ collections:
       - { name: "date", label: "Date", widget: "datetime" }
       - { name: "description", label: "Description", widget: "text" }
       - { name: "location", label: "Lieu", widget: "string" }
-      - { name: "image", label: "Photo1", widget: "image" }
-      - { name: "image", label: "Photo2", widget: "image" }
+      - { name: "image1", label: "Photo1", widget: "image" }
+      - { name: "image2", label: "Photo2", widget: "image" }
