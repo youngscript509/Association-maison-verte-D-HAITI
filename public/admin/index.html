@@ -8,8 +8,15 @@
 </head>
 
 <body>
-
-  
+  <div id="nc-root"></div>
+  <script>
+    // Initialize Netlify CMS
+    if (window.NetlifyCmsApp) {
+      window.NetlifyCmsApp.init();
+    } else {
+      console.error('Netlify CMS is not loaded.');
+    }
+  </script>
 </body>
 
 </html>
