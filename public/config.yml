@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "films"
+    label: "Films"
+    folder: "data/films"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - {label: "Titre", name: "titre", widget: "string"}
+      - {label: "Réalisateur", name: "realisateur", widget: "string"}
+      - {label: "Année", name: "annee", widget: "number"}
+      - {label: "Synopsis", name: "synopsis", widget: "text"}
+      - {label: "Affiche", name: "image", widget: "image"}
+
+  - name: "evenements"
+    label: "Événements"
+    folder: "data/evenements"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - {label: "Titre", name: "titre", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Lieu", name: "lieu", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+
+  - name: "actualites"
+    label: "Actualités"
+    folder: "data/actualites"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - {label: "Titre", name: "titre", widget: "string"}
+      - {label: "Contenu", name: "contenu", widget: "markdown"}
+      - {label: "Date", name: "date", widget: "datetime"}
+
+  - name: "leseditions"
+    label: "Les Éditions"
+    folder: "data/leseditions"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - {label: "Année", name: "annee", widget: "number"}
+      - {label: "Thème", name: "theme", widget: "string"}
+      - {label: "Résumé", name: "resume", widget: "text"}
