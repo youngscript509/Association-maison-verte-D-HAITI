@@ -14,7 +14,7 @@ local_backend: true
 collections:
   - label: "Blog"
     name: "blog"
-    folder: "public/posts"
+    folder: "public/posts/blog"
     create: true
     editor:
       preview: false
@@ -33,8 +33,8 @@ collections:
         create: true
         options: ["Tags", "created", "from", "config.yml"]
   - label: "Announcements"
-    name: "blog"
-    folder: "public/posts"
+    name: "announcements"
+    folder: "public/posts/announcements"
     create: true
     editor:
       preview: false
@@ -53,8 +53,8 @@ collections:
         create: true
         options: ["Tags", "created", "from", "config.yml"]
   - label: "Films"
-    name: "blog"
-    folder: "public/posts"
+    name: "films"
+    folder: "public/posts/films"
     create: true
     editor:
       preview: false
