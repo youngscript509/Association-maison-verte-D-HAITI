@@ -16,8 +16,8 @@ collections:
     name: "actualites"
     folder: "public/posts/actus"
     create: true
-    editor:
-      preview: false
+    editor: "object"
+    preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -37,8 +37,8 @@ collections:
     name: "announcements"
     folder: "public/posts/announcements"
     create: true
-    editor:
-      preview: false
+    editor: "object"
+    preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -57,8 +57,8 @@ collections:
     name: "invites"
     folder: "public/posts/invites"
     create: true
-    editor:
-      preview: false
+    editor: "object"
+    preview: false
     fields:
       - { label: "Nom", name: "nom", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -77,8 +77,8 @@ collections:
     name: "editions"
     folder: "public/posts/editions"
     create: true
-    editor:
-      preview: false
+    editor: "object"
+    preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -98,8 +98,8 @@ collections:
     name: "festival"
     folder: "public/posts/apropos"
     create: true
-    editor:
-      preview: false
+    editor: "object"
+    preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -118,8 +118,8 @@ collections:
     name: "boutique"
     folder: "public/posts/boutique"
     create: true
-    editor:
-      preview: false
+    editor: "object"
+    preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -139,7 +139,7 @@ collections:
     name: "films"
     folder: "public/posts/films"
     create: true
-    editor:
+    editor: "object"
     preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
