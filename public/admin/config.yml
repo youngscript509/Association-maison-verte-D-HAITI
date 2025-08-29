@@ -140,7 +140,7 @@ collections:
     folder: "public/posts/films"
     create: true
     editor:
-      preview: false
+    preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -158,8 +158,8 @@ collections:
 
   - label: "Settings"
     name: "settings"
-    editor:
-      preview: false
+    editor: "object"
+    preview: false
     files:
       - label: "Navigation"
         name: "items"
