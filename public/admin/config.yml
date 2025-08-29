@@ -12,9 +12,9 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  - label: "Blog"
-    name: "blog"
-    folder: "public/posts/blog"
+  - label: "Actualites"
+    name: "actualites"
+    folder: "public/posts/actus"
     create: true
     editor:
       preview: false
@@ -32,6 +32,7 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "created", "from", "config.yml"]
+
   - label: "Announcements"
     name: "announcements"
     folder: "public/posts/announcements"
@@ -52,6 +53,88 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "created", "from", "config.yml"]
+  - label: "Les Invites"
+    name: "invites"
+    folder: "public/posts/invites"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Nom", name: "nom", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Date Participation", name: "dateParticipation", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - widget: select
+        label: "tags"
+        name: "tags"
+        multiple: true
+        create: true
+        options: ["Tags", "created", "from", "config.yml"]      
+  - label: "Editions"
+    name: "editions"
+    folder: "public/posts/editions"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - widget: select
+        label: "tags"
+        name: "tags"
+        multiple: true
+        create: true
+        options: ["Tags", "created", "from", "config.yml"]
+
+  - label: "Le Festival"
+    name: "festival"
+    folder: "public/posts/apropos"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - widget: select
+        label: "tags"
+        name: "tags"
+        multiple: true
+        create: true
+        options: ["Tags", "created", "from", "config.yml"]    
+  - label: "La Boutique"
+    name: "boutique"
+    folder: "public/posts/boutique"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - widget: select
+        label: "tags"
+        name: "tags"
+        multiple: true
+        create: true
+        options: ["Tags", "created", "from", "config.yml"]
+
   - label: "Films"
     name: "films"
     folder: "public/posts/films"
@@ -72,6 +155,7 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "created", "from", "config.yml"]
+
   - label: "Settings"
     name: "settings"
     editor:
@@ -89,24 +173,8 @@ collections:
             fields:
               - { label: Title, name: text, widget: string }
               - { label: URL, name: url, widget: string }
-  - label: "Header"
-    name: "header"
-    editor:
-    preview: false
-    files:
-      - label: "Header"
-        name: "items"
-        file: "public/_data/header.yaml"
-        fields:
-          - label: Nav Items
-            name: items
-            widget: list
-            allow_add: false
-            collapsed: false
-            fields:
-              - { label: Title, name: text, widget: string }
-              - { label: URL, name: url, widget: string } 
-  - label: "Hero"
+
+  - label: "Hero Slides"
     name: "Hero"
     editor:
     preview: false
@@ -122,6 +190,8 @@ collections:
             collapsed: false
             fields:
               - { label: Title, name: text, widget: string }
+              - { label: BTN, name: bouttonNavigation, widget: string }
+              - { label: "Featured Image", name: "featuredImage", widget: "image" }
               - { label: URL, name: url, widget: string }
                          
       - label: "Quick Links"

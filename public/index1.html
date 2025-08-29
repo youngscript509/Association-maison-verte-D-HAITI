@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINECOLO-HAITI | Festival International du Film Écologique</title>
+    <style>
+        /* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f9fc;
+  color: #222;
+}
+
+/* HEADER */
+/* === Navbar === */
+header {
+  background: var(--primary); /* couleur principale de ta palette */
+  color: #fff;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header{
+    --primary: #0b132b; /* bleu foncé */
+    --accent: orangered; /* orange vif */
+    --light: #f7f9fc; /* gris très clair */
+    --dark: #222; /* gris foncé */
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--light);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--accent);
+}
+
+/* === Bouton mobile === */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--light);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 15px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.slides img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: none;
+}
+
+.slides img.active { display: block; }
+
+.hero-controls {
+  position: absolute;
+  bottom: 20px; right: 20px;
+}
+
+.hero-controls button {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  margin: 0 5px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: orangered;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform .3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card img {
+  width: 100%; height: 180px;
+  object-fit: cover;
+}
+
+.card h3 { margin: 15px; font-size: 1.2rem; }
+.card p { margin: 0 15px 15px; color: #555; font-size: 0.9rem; }
+
+.btn-more {
+  background: green;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background .3s;
+}
+
+.btn-more:hover { background: orangered; }
+
+/* FOOTER */
+footer {
+  background: #0b132b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+<header>
+    <nav class="navbar">
+        <div class="logo">🎬 CINECOLO-HAITI</div>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="#festival">Le Festival</a></li>
+            <li><a href="#editions">Les Éditions</a></li>
+            <li><a href="#invites">Les Invités</a></li>
+            <li><a href="#actualites">Actualités</a></li>
+            <li><a href="#boutique">La Boutique</a></li>
+            <li><a href="#competitions">Compétitions</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+</header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="slides" id="hero-slides"></div>
+        <div class="hero-controls">
+            <button onclick="prevSlide()">⟨</button>
+            <button onclick="nextSlide()">⟩</button>
+        </div>
+    </section>
+
+    <!-- SECTIONS -->
+    <section class="section" id="festival">
+        <h2>🎉 Le Festival</h2>
+        <p>Présentation du festival, ses objectifs et son esprit écologique...</p>
+    </section>
+
+    <section class="section" id="editions">
+        <h2>📖 Les Éditions</h2>
+        <div class="cards" id="editions-container"></div>
+        <button class="btn-more" onclick="loadMore('editions')">Voir plus</button>
+    </section>
+
+    <section class="section" id="invites">
+        <h2>🌍 Les Invités</h2>
+        <div class="cards" id="invites-container"></div>
+        <button class="btn-more" onclick="loadMore('invites')">Voir plus</button>
+    </section>
+
+    <section class="section" id="actualites">
+        <h2>📰 Actualités</h2>
+        <div class="cards" id="actus-container"></div>
+        <button class="btn-more" onclick="loadMore('actus')">Voir plus</button>
+    </section>
+
+    <section class="section" id="boutique">
+        <h2>🛍️ La Boutique</h2>
+        <p>Bientôt disponible : merchandising, goodies et souvenirs du festival.</p>
+    </section>
+
+    <section class="section" id="competitions">
+        <h2>🏆 Compétitions</h2>
+        <p>Découvrez les films en compétition et votez pour vos coups de cœur.</p>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>📩 Contact</h2>
+        <p>Email : contact@cinecolo-haiti.org</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Festival CINECOLO-HAITI | Tous droits réservés</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+            const heroSlides = document.getElementById("hero-slides");
+
+            // Exemple data CMS (remplace par fetch de tes fichiers YAML/MD)
+            const heroData = [
+                { text: "Bienvenue au Festival", bouttonNavigation: "Découvrir", featuredImage: "/static/img/hero1.jpg", url: "#actualites" },
+                { text: "Films Écologiques", bouttonNavigation: "Explorer", featuredImage: "/static/img/hero2.jpg", url: "#films" },
+                { text: "Rencontrez les Invités", bouttonNavigation: "Voir", featuredImage: "/static/img/hero3.jpg", url: "#invites" }
+            ];
+
+            // Inject slides
+            heroData.forEach((item, index) => {
+                const img = document.createElement("img");
+                img.src = item.featuredImage;
+                img.alt = item.text;
+                if (index === 0) img.classList.add("active");
+                heroSlides.appendChild(img);
+            });
+
+            function showSlide(n) {
+                const slides = heroSlides.querySelectorAll("img");
+                slides.forEach(s => s.classList.remove("active"));
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }
+            function nextSlide() { showSlide(currentSlide + 1); }
+            function prevSlide() { showSlide(currentSlide - 1); }
+            setInterval(nextSlide, 5000);
+
+            // Exemple pagination CMS
+            let pageIndex = { actus: 0, films: 0, invites: 0 };
+            const pageSize = 3;
+
+            // Exemple mock CMS data
+            const cmsData = {
+                actus: [
+                    { title: "Lancement du Festival", description: "Cérémonie d’ouverture...", featuredImage: "/static/img/a1.jpg" },
+                    { title: "Projection spéciale", description: "Film documentaire...", featuredImage: "/static/img/a2.jpg" },
+                    { title: "Atelier cinéma vert", description: "Sensibilisation...", featuredImage: "/static/img/a3.jpg" },
+                    { title: "Conférence", description: "Panel d’experts...", featuredImage: "/static/img/a4.jpg" }
+                ],
+                films: [
+                    { title: "Film A", description: "Un regard sur la nature...", featuredImage: "/static/img/f1.jpg" },
+                    { title: "Film B", description: "Écologie et avenir...", featuredImage: "/static/img/f2.jpg" },
+                    { title: "Film C", description: "Réalité haïtienne...", featuredImage: "/static/img/f3.jpg" }
+                ],
+                invites: [
+                    { title: "Jean Pierre", description: "Réalisateur engagé", featuredImage: "/static/img/i1.jpg" },
+                    { title: "Maria Lopez", description: "Actrice internationale", featuredImage: "/static/img/i2.jpg" },
+                    { title: "Kwame Nkrumah", description: "Producteur africain", featuredImage: "/static/img/i3.jpg" }
+                ]
+            };
+
+            // Charger plus
+            function loadMore(type) {
+                const container = document.getElementById(`${type}-container`);
+                const items = cmsData[type].slice(pageIndex[type], pageIndex[type] + pageSize);
+                items.forEach(item => {
+                    const card = document.createElement("div");
+                    card.className = "card";
+                    card.innerHTML = `
+      <img src="${item.featuredImage}" alt="">
+      <h3>${item.title}</h3>
+      <p>${item.description}</p>
+    `;
+                    container.appendChild(card);
+                });
+                pageIndex[type] += pageSize;
+                if (pageIndex[type] >= cmsData[type].length) {
+                    document.querySelector(`#${type} .btn-more`).style.display = "none";
+                }
+            }
+
+            // Charger au démarrage
+            ["actus", "films", "invites"].forEach(loadMore);
+
+            // Menu toggle (mobile)
+            function toggleMenu() {
+                document.getElementById("nav-menu").classList.toggle("active");
+            }
+    function toggleMenu() {
+        document.getElementById("nav-menu").classList.toggle("active");
+    }
+
+    </script>
+</body>
+
+</html>
