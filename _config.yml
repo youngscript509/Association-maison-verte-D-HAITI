@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Festival Cinécolo Haïti
-email: your-email@example.com
+email: contact@festivalcinecolo.org
 description: >- # this means to ignore newlines until "baseurl:"
   Bienvenue au Festival Cinécolo Haïti. Un festival de cinéma itinérant et communautaire en Haïti.
   Découvrez notre programmation, nos événements et comment participer.
