@@ -1,0 +1,133 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html"
+        label: "Accueil"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "posts"
+    label: "Actualités"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "lesfilms"
+    label: "Les Films"
+    folder: "_lesfilms"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Réalisateur", name: "realisateur", widget: "string" }
+      - { label: "Année", name: "annee", widget: "number" }
+      - { label: "Affiche", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  - name: "lesinvites"
+    label: "Les Invités"
+    folder: "_lesinvites"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom", name: "name", widget: "string" }
+      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
+      - { label: "Annee", name: "annee", widget: "string" }
+
+  - name: "lesannonces"
+    label: "Les Annonces"
+    folder: "_lesannonces"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  - name: "contact"
+    label: "Contact"
+    folder: "_contact"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom", name: "name", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Message", name: "message", widget: "markdown" }
+
+  - name: "faireundon"
+    label: "Faire un Don"
+    folder: "_faireundon"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Lien de Don", name: "lien", widget: "string" }
+
+  - name: "leseditions"
+    label: "Les Éditions"
+    folder: "_leseditions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Année", name: "annee", widget: "number" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Résumé", name: "body", widget: "markdown" }
+
+  - name: "lefestival"
+    label: "Le Festival"
+    folder: "_lefestival"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Texte", name: "body", widget: "markdown" }
+
+  - name: "motdupresident"
+    label: "Mot du Président"
+    folder: "_motdupresident"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Texte", name: "body", widget: "markdown" }
+      - { label: "Photo", name: "image", widget: "image" }
+
+  - name: "heroslides"
+    label: "Hero Slides"
+    folder: "_heroslides"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Sous-titre", name: "subtitle", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Lien", name: "link", widget: "string" }
+
+  - name: "partenaires"
+    label: "Partenaires"
+    folder: "_partenaires"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
