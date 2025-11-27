@@ -3,177 +3,60 @@ layout: default
 ---
 <!-- Hero Slider -->
 <section class="hero">
-  <div class="hero-slide active" style="background-image: url('/assets/img/hero3.jpg');">
-    <div class="hero-content">
-      <h1 class="banner-title">CINECOLO-HAITI</h1>
-      <p class="banner-desc display-7">Le festival international du film de l'environnement</p>
-      <button><a style="text-decoration: none;" href="">Lire Plus</a></button>
-    </div>
-  </div>
-{% for slide in site.heroslides %}
-  <div class="hero-slide" style="background-image: url('{{ slide.image }}');">
-    <div class="hero-content">
-      <h1 class="banner-title">{{ slide.title }}</h1>
-      <p class="banner-desc display-7">{{ slide.subtitle }}</p>
-      <button><a style="text-decoration: none;" href="{{ slide.link }}">Lire Plus</a></button>
-    </div>
-  </div>
-  {% endfor %}
-</section>
-<section class="annonces" id="annonces">
-  <h2>Annonces</h2>
-  <p>Restez informés de nos annonces importantes.</p>
-      <!-- Annonces -->
-      <div class="recommendations">
-       
-        <div class="rec-list">
-          {% for annonce in site.lesannonces %}
-          <div class="rec-card">
-            <img src="{{ annonce.image }}" alt="{{ annonce.title }}">
-            <p>{{ annonce.title }}</p>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-   
+  <h2>Protégeons la Nature, Construisons Demain</h2>
+  <p>Maison Verte Haïti accompagne des projets écologiques pour transformer notre environnement.</p>
 </section>
 
-<section class="about" id="festival">
-  <h2>Le Festival</h2>
-  <p>Bienvenue au Festival CINECOLO-HAITI, une célébration du cinéma environnemental et durable.</p>
-
-  <div class="flexOnBigScreen">
-    <img class="imgAbout" src="assets/img/cnecolo.jpg" alt="">
-    <div>
-        <h3>CINECOLO-HAITI</h3>
-  <p>Initié à Port-au-Prince en 2015, CINECOLO est le premier festival international du film de l’environnement d’Haïti. Cet
-  évènement est une initiative citoyenne dynamique et engageante qui célèbre le 7ème art, plus précisément les
-  documentaires mettant en lumière les enjeux sociétaux, écologiques et climatiques auxquels nous sommes confrontés et les
-  solutions innovantes pour un avenir durable.
-  Le festival CINECOLO-HAITI cherche à inspirer, éduquer et sensibiliser un large public à travers des œuvres
-  cinématographiques captivantes qui suscitent la réflexion, encouragent le dialogue et incitent à l'action en faveur de
-  la protection de notre planète et pour le respect du vivant.</p></div>
-</div>
-  <button class="readMoreBtn"><a href="pages/le-festival.html">Lire Plus</a></button>
+<section id="qui">
+  <h3 class="section-title">Qui sommes-nous ?</h3>
+  <p style="text-align:center;max-width:800px;margin:auto;font-size:18px;">Maison Verte Haïti est une association dédiée à la protection de l'environnement, au développement durable et à l’éducation écologique.</p>
 </section>
 
-<section class="president" id="mot-president">
-  <h2>Mot du Président</h2>
-  
-  <div class="flexOnBigScreen">
-   
-    <div>
-        <h3>Messerne SAGESSE</h3>
-        <p>Ecologiste, Président-Fondateur de CINECOLO</p><br>
-  <p>En tant que président du festival CINECOLO-HAITI, je suis honoré de vous accueillir à cette célébration unique du cinéma
-  environnemental. Depuis sa création en 2015, CINECOLO-HAITI s'est imposé comme un rendez-vous incontournable pour les
-  passionnés de cinéma et les défenseurs de l'environnement en Haïti et au-delà.
-  Notre mission est de sensibiliser le public aux enjeux environnementaux cruciaux auxquels nous sommes confrontés, tout en mettant en avant des solutions innovantes et inspirantes à travers le pouvoir du cinéma.
-  Nous croyons fermement que le cinéma a le pouvoir de changer les mentalités, d'éveiller les consciences et d'inciter à l'action. C'est pourquoi nous avons sélectionné avec soin une programmation diversifiée de films documentaires, de courts-métrages et de longs-métrages qui abordent des thèmes variés tels que le changement climatique, la biodiversité, la justice environnementale et bien plus encore.
-  Nous espérons que chaque projection, chaque discussion et chaque rencontre lors de ce festival vous inspirera à devenir des acteurs du changement dans vos communautés et au-delà.
-  Merci de faire partie de cette aventure cinématographique et environnementale. Ensemble, nous pouvons contribuer à un avenir plus durable pour notre planète.</p></div>
-  <img class="imgAbout" src="assets/img/president.png" alt="">
-</div>
-  <button class="readMoreBtn"><a href="/pages/mot-du-president.html">Lire Plus</a></button>
-</section>
-
-<section class="editions" id="editions">
-  <h2>Les Éditions</h2>
-  <p>Découvrez nos éditions passées et à venir.</p>
-  <div class="recommendations">
-  
-  <div class="rec-list">
-    {% for edition in site.leseditions %}
-    <div class="rec-card">
-      <img src="{{ edition.image }}" alt="{{ edition.title }}">
-      <p><a style="color: black;" href="{{ edition.link }}">{{ edition.title }}</a></p>
-      <p style="color: orangered;">{{ edition.annee }}</p>
-    </div>
-    {% endfor %}
-  </div>
+<section id="projets">
+  <h3 class="section-title">Nos Projets</h3>
+  <div class="grid">
+    <div class="card">Festival Cinécolo</div>
+    <div class="card">Karibiodiv</div>
+    <div class="card">Jaden Fanm</div>
+    <div class="card">Ateliers Environnementaux</div>
   </div>
 </section>
 
-<section class="invites" id="invites">
-  <h2>Les Invités</h2>
-  <p>Nous accueillons des cinéastes, activistes et passionnés venus du monde entier.</p>
-  <div class="card-invites">
-    {% for invite in site.lesinvites %}
-    <div class="invites-card">
-      <img src="{{ invite.image }}" alt="{{ invite.name }}">
-      <h3>{{ invite.name }}</h3>
-      <p>{{ invite.role }}</p>
-      <p>{{ invite.profession }}</p>
-      <p style="color: orangered;">{{ invite.annee }}</p>
-
+<section id="actu">
+  <h3 class="section-title">Actualités</h3>
+  <div class="slider">
+    <div class="slides">
+      <div class="slide">Actualité 1 : Reboisement</div>
+      <div class="slide">Actualité 2 : Formation Écologique</div>
+      <div class="slide">Actualité 3 : Nettoyage Communautaire</div>
     </div>
-    {% endfor %}
-    
   </div>
-  <button style="color: orangered;" class="readMoreBtnOrange"> <a href="pages/invites.html">Tous Les Invit&eacute;s</a></button>
 </section>
 
-<section class="actualites" id="actualites">
-  <h2>Actualités</h2>
-  <div class="carousel">
-    {% for post in site.posts %}
-      
-        <div class="car-card"><img src="{{ post.image}}">
-          <h><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        </div>
-    
-    {% endfor %}
-</div>
-</section>
-
-
-<section class="films" id="films">
-  <h2>Films</h2>
-  <p>Sélection officielle des films environnementaux.</p>
-  <div class="films-list-like-netflix">
-    {% for film in site.lesfilms %}
-    <div class="film-card">
-      <img src="{{ film.image }}" alt="{{ film.title }}">
-      <h3>{{ film.title }}</h3>
-      <p style="color: orangered;">{{ film.annee }}</p>
-      <p>{{ film.description }}</p>
-      <a href="{{ film.link }}">Voir Plus</a>
-    </div>
-    {% endfor %}
-</section>
-
-<section class="contact" id="contact">
-  <h2>Contact</h2>
-  <p>Écrivez-nous à contact@cinecolo-haiti.org</p>
-  <form action="https://formspree.io/f/mgebjvwp" method="POST">
-    <label for="name">Nom:</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="_replyto" required>
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
-
-<section class="don" id="don">
-  <h2>Faire un don</h2>
-  <p>Soutenez le festival par vos contributions.</p>
-  <button class="readMoreBtn"><a href="pages/don.html">Faire un don</a></button>
-
-</section>
-
-<section class="partenaires">
-  <h2>Partenaires</h2>
-  <p>Nos précieux partenaires qui soutiennent notre mission.</p>
-  <div class="partenaires-logos">
-    {% for partenaire in site.partenaires %}
-    <div class="partenaire-logo">
-      <img src="{{ partenaire.logo }}" alt="{{ partenaire.name }}">
-    </div>
-    {% endfor %}
+<section id="presse">
+  <h3 class="section-title">La Presse</h3>
+  <div class="grid">
+    <div class="card">Communiqué 1</div>
+    <div class="card">Communiqué 2</div>
+    <div class="card">Communiqué 3</div>
   </div>
+</section>
+
+<section id="don">
+  <h3 class="section-title">Faire un Don</h3>
+  <p style="text-align:center;max-width:700px;margin:auto;font-size:18px;">Aidez-nous à réaliser des projets écologiques à impact durable en Haïti.</p>
+</section>
+
+<section id="partenaires">
+  <h3 class="section-title">Partenaires</h3>
+  <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Logo_UN.png" width="150" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_OIF_2010.svg/200px-Logo_OIF_2010.svg.png" width="150" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/World_Bank_logo.svg" width="150" />
+  </div>
+</section>
+
+<section id="contact">
+  <h3 class="section-title">Contact</h3>
+  <p style="text-align:center;font-size:18px;">contact@maisonverte.ht</p>
 </section>
