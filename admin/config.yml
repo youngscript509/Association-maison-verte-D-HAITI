@@ -56,20 +56,21 @@ collections:
       - { label: "Ordre d'Affichage", name: "order", widget: "number" }
       - { label: "Actif", name: "active", widget: "boolean", default: true }
       - { label: "Contenu Complet", name: "body", widget: "markdown" }
-  - name: "events"
-    label: "Événements"
-    folder: "_events"
+  - name: "heros"
+    label: "Heros"
+    folder: "_heros"
     create: true
     slug: "{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre de l'Événement", name: "title", widget: "string" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Avatar", name: "avatar", widget: "string" }
       - { label: "Date de l'Événement", name: "event_date", widget: "datetime" }
       - { label: "Lieu", name: "location", widget: "string" }
       - { label: "Description", name: "body", widget: "markdown" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" } 
       - { label: "Actif", name: "active", widget: "boolean", default: true }  
+
   - name: "aboutus"
     label: "À Propos de Nous"
     folder: "_aboutus"
@@ -79,12 +80,11 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Mission", name: "mission", widget: "markdown" }
+      - { label: "Valeurs", name: "mission", widget: "markdown" }
       - { label: "Histoire", name: "history", widget: "markdown" }
-      - { label: "Équipe", name: "team", widget: "markdown" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Vidéo", name: "video", widget: "string" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
       - { label: "Actif", name: "active", widget: "boolean", default: true }
+
   - name: "projets"
     label: "Projets"
     folder: "_projects"
@@ -104,7 +104,7 @@ collections:
           field: { label: "Video URL", name: "video_url", widget: "string" }
         }
 
-  - name: "Mot du Coordonnateur"
+  - name: "coordonnateur"
     label: "Mot du Coordonnateur"
     folder: "_motducoordonateur"
     create: true
@@ -117,7 +117,7 @@ collections:
       - { label: "Ordre d'Affichage", name: "order", widget: "number" }
       - { label: "Actif", name: "active", widget: "boolean", default: true }
 
-  - name: "Rapports Annuels"
+  - name: "rapports"
     label: "Rapports Annuels"
     folder: "_rapportsannuels"
     create: true
@@ -130,7 +130,7 @@ collections:
       - { label: "Ordre d'Affichage", name: "order", widget: "number" }
       - { label: "Actif", name: "active", widget: "boolean", default: true }
 
-  - name: "Courses et Ateliers"
+  - name: "cours"
     label: "Cours et Ateliers"
     folder: "_coursesetateliers"
     create: true
