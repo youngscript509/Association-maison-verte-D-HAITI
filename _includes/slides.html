@@ -3,5 +3,26 @@ layout: slides
 permalink: /
 ---
 <!-- HERO START -->
+<section id="hero" class="relative w-full h-screen overflow-hidden">
+  <div class="hero-slider" style="background-image:url('https://maisonvertehaiti.org/assets/img/slide2.jpg')">
+    
 
+    <!--Afficher les heroslides depuis la collection "slides" -->
+    {% for slide in site.slides %}
+    
+    <div class="hero-slide" style="background-image:url('{{ slide.image }}')">
+      <div class="hero-content">
+        <h1>{{ slide.title }}</h1>
+        <p>{{ slide.description }}</p>
+      </div>
+    </div>
+   
+    {% endfor %}
+
+  <div class="hero-nav">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
 <!-- HERO END -->
