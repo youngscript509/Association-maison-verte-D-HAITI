@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} - Maison Verte Haiti</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="icon" type="image/png" href="/assets/img/logomaisonverte.jpg">
-  <!--Allow origin for RSS feed -->
-  
-   
-</head>
-<body>
-      <!-- PRELOADER -->
-  <div id="preloader" aria-hidden="false">
-    <div class="logo-sm" aria-hidden="true">
-      <!-- simple leaf logo SVG -->
-       <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 60px;height:60px;border-radius:50%;" alt="">
-     
-    </div>
-    <h1>Association Maison Verte d'Haïti</h1>
-    <div class="bars">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </div>
 
-  <div class="leaf" id="leaf1" style="left:6%;top:20%;transform:rotate(-22deg);"><img src="/assets/img/oi2.png" alt=""></div>
-  <div class="leaf" id="leaf2" style="right:8%;top:38%;transform:rotate(12deg);"><img src="/assets/img/oi1.png" alt=""></div>
-<!--heroslides-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - Maison Verte Haiti</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" type="image/png" href="/assets/img/logomaisonverte.jpg">
+    <!--Allow origin for RSS feed -->
+
+
+</head>
+
+<body>
+    <!-- PRELOADER -->
+    <div id="preloader" aria-hidden="false">
+        <div class="logo-sm" aria-hidden="true">
+            <!-- simple leaf logo SVG -->
+            <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 60px;height:60px;border-radius:50%;" alt="">
+
+        </div>
+        <h1>Association Maison Verte d'Haïti</h1>
+        <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <div class="leaf" id="leaf1" style="left:6%;top:20%;transform:rotate(-22deg);"><img src="/assets/img/oi2.png" alt=""></div>
+    <div class="leaf" id="leaf2" style="right:8%;top:38%;transform:rotate(12deg);"><img src="/assets/img/oi1.png" alt=""></div>
+    <!--heroslides-->
     {% include slides.html %}
-<!--header-->
-   {% include header.html %}
-<!--content-->
+    <!--header-->
+    {% include header.html %}
+    <!--content-->
     <main>
-<!--Display content here -->
-{{ content }}
-<!-- NATURAL ANIMATIONS -->
-<div id="leaf-container"></div>
-<div id="mist-layer"></div>
-<div id="light-rays"></div>
+        <!--Display content here -->
+        {{ content }}
+        <!-- NATURAL ANIMATIONS -->
+        <div id="leaf-container"></div>
+        <div id="mist-layer"></div>
+        <div id="light-rays"></div>
     </main>
-<!--footer-->
-   {% include footer.html %}
- <div class="floating-menu">
+    <!--footer-->
+    {% include footer.html %}
+    <div class="floating-menu">
         <a href="https://wa.me/50912345678" aria-label="Contactez-nous sur WhatsApp" target="_blank" class="floating-btn whatsapp-btn">
             <img src="/assets/img/whatsapplogo2.png" alt="WhatsApp" />
         </a>
         <a href="mailto:contact@maisonvertehaiti.org" aria-label="Envoyez-nous un email" class="floating-btn email-btn">
-            <img src="/assets/img/emailus.png" alt="Email" /> 
+            <img src="/assets/img/emailus.png" alt="Email" />
         </a>
         <a href="#don" aria-label="Faire un don" class="floating-btn donate-btn" onclick="scrollToSection('#don')">
             <img src="/assets/img/donate.png" alt="Don" />
         </a>
-        
+
     </div>
     <style>
         /* modern transparent and smooth bottom menu floating bar */
+        
         .floating-menu {
             position: fixed;
             bottom: 20px;
@@ -70,7 +73,7 @@
             display: flex;
             flex-direction: row;
             gap: 12px;
-            z-index: 1000;   
+            z-index: 1000;
             justify-content: center;
             align-items: center;
             margin: 0 auto;
@@ -82,102 +85,121 @@
             border-radius: 30px;
             padding: 10px;
             margin: 0 auto;
-           
-
         }
+        
         .floating-btn {
-           width: 30px;    
-            height: 30px;    
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            display: flex;    
-            align-items: center;    
-            justify-content: center;    
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);    
-            transition: background-color 0.3s, transform 0.3s;    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
         }
+        
         .floating-btn img {
-            
-            width: 30px;    
-            height: 30px;    
-            border-radius: 50%; 
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
         }
+        
         .floating-btn:hover {
-          background-color: #f8f9fa;    
+            background-color: #f8f9fa;
         }
-
     </style>
-   <!--scripts-->
-   <script>
-const RSS_URL = "https://www.actu-environnement.com/flux/rss/biodiversite/";
-const API = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(RSS_URL);
+    <!--scripts-->
+    <script>
+        const RSS_URL = "https://www.actu-environnement.com/flux/rss/biodiversite/";
 
-fetch(API)
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("feed-list");
-    container.innerHTML = "";
+        const API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&api_key=1lzg8e9cuvvkengm3dqopbskivswqrbo0phf0gdg`;
 
-    data.items.slice(0, 6).forEach((item, i) => {
-      container.innerHTML += `
+        fetch(API)
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById("feed-list");
+                container.innerHTML = "";
+
+                data.items.slice(0, 6).forEach((item, i) => {
+                    container.innerHTML += `
         <div class="rss-slide card ${i === 0 ? "active" : ""}">
           <h3>${item.title}</h3>
           <p>${item.pubDate.split(" ")[0]}</p>
           <a href="${item.link}" target="_blank">Lire l’article</a>
         </div>
       `;
-    });
+                });
 
-    // ✅ Lancer le slider UNIQUEMENT après injection
-   
-  })
-  .catch(err => console.error("Erreur RSS :", err));
+                // ✅ Lancer le slider UNIQUEMENT après injection
 
-   </script>
-   <style>
-    /* RSS Feed Styles */
-    .grid{grid-template-columns:repeat(3,1fr);gap:20px}
+            })
+            .catch(err => console.error("Erreur RSS :", err));
+    </script>
+    <style>
+        /* RSS Feed Styles */
+        
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+        
+        .rss-slide {
+            background: #f9fff5;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(6, 30, 15, 0.08);
+            text-align: center
+        }
+        
+        @media (max-width:768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 16px
+            }
+        }
+        
+        #rss-feed {
+            margin: 40px auto;
+            width: 100%;
+            padding: 0 10px;
+        }
+        
+        #rss-feed h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #2c3e50;
+        }
+        
+        .rss-slide:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(247, 145, 2, 0.5);
+        }
+        
+        .rss-slide h3 {
+            margin-top: 0;
+            color: #27ae60;
+        }
+        
+        .rss-slide p {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .rss-slide a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .rss-slide a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="/assets/js/main.js" defer></script>
 
-     .rss-slide{background:#f9fff5;padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(6,30,15,0.08);text-align:center}
-    @media (max-width:768px){
-    .grid{grid-template-columns:1fr;gap:16px}
-}
-
-    #rss-feed {
-      margin: 40px auto;
-      width: 100%;
-      padding: 0 10px;
-    }
-    #rss-feed h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #2c3e50;
-    }
-   
-    .rss-slide:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(247, 145, 2, 0.5);
-    }
-    .rss-slide h3 {
-      margin-top: 0;
-      color: #27ae60;
-    }
-    .rss-slide p {
-      color: #7f8c8d;
-      font-size: 0.9em;
-    }
-    .rss-slide a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .rss-slide a:hover {
-      text-decoration: underline;
-    }
-   </style>
- <script src="/assets/js/main.js" defer></script>
- 
 </body>
+
 </html>
