@@ -45,10 +45,7 @@
         </div>
     </div>
 
-    <div class="leaf" id="leaf1" style="left:6%;top:20%;transform:rotate(-22deg);"><img src="/assets/img/oi2.png" alt=""></div>
-    <div class="leaf" id="leaf2" style="right:8%;top:38%;transform:rotate(12deg);"><img src="/assets/img/oi1.png" alt=""></div>
-    <!--heroslides-->
-    {% include slides.html %}
+ 
     <!--header-->
     {% include header.html %}
     <!--content-->
@@ -56,75 +53,12 @@
         <!--Display content here -->
         {{ content }}
         <!-- NATURAL ANIMATIONS -->
-        <div id="leaf-container"></div>
-        <div id="mist-layer"></div>
-        <div id="light-rays"></div>
+ 
     </main>
     <!--footer-->
     {% include footer.html %}
-    <div class="floating-menu">
-        <a href="https://wa.me/50912345678" aria-label="Contactez-nous sur WhatsApp" target="_blank" class="floating-btn whatsapp-btn">
-            <img src="/assets/img/whatsapplogo2.png" alt="WhatsApp" />
-        </a>
-        <a href="mailto:contact@maisonvertehaiti.org" aria-label="Envoyez-nous un email" class="floating-btn email-btn">
-            <img src="/assets/img/emailus.png" alt="Email" />
-        </a>
-        <a href="#don" aria-label="Faire un don" class="floating-btn donate-btn" onclick="scrollToSection('#don')">
-            <img src="/assets/img/donate.png" alt="Don" />
-        </a>
+    
 
-    </div>
-    <style>
-        /* modern transparent and smooth bottom menu floating bar */
-        
-        .floating-menu {
-            position: fixed;
-            bottom: 20px;
-            background: rgba(5, 5, 5, 0.1);
-            padding: 10px;
-            border-radius: 30px;
-            width: auto;
-            height: 45px;
-            position: sticky;
-            z-index: 10000;
-            display: flex;
-            flex-direction: row;
-            gap: 12px;
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            width: fit-content;
-            left: 0;
-            right: 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(7px);
-            border-radius: 30px;
-            padding: 10px;
-            margin: 0 auto;
-        }
-        
-        .floating-btn {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        
-        .floating-btn img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-        
-        .floating-btn:hover {
-            background-color: #f8f9fa;
-        }
-    </style>
     <!--scripts-->
     <script>
         const RSS_URL = "https://www.actu-environnement.com/flux/rss/biodiversite/";
