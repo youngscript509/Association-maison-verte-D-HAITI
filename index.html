@@ -15,13 +15,17 @@ title: Accueil Maison Verte
             <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
+
             <div class="carousel-item active">
-                <img src="img/carousel-1.jpg" class="img-fluid" alt="Image">
+                <img src="/assets/img/slide1_blurred_bg.jpg" class="img-fluid" alt="Image">
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Association Maison Verte d'Haïti</h4>
-                        <h1 class="display-1 text-capitalize text-white mb-4">Protect Environment</h1>
-                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        
+                        <h1 class="display-1 text-capitalize text-white mb-4">Femmes, jeunesse et environnement</h1>
+                        <p class="mb-5 fs-5">
+                           Bâtir l’espoir,
+Placer les femmes et les jeunes au cœur de la transition écologique.
                         </p>
                         <div class="d-flex align-items-center justify-content-center">
                             <a class="btn-hover-bg btn btn-primary text-white py-3 px-5" href="#">Contactez Nous</a>
@@ -29,13 +33,18 @@ title: Accueil Maison Verte
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/carousel-2.jpg" class="img-fluid" alt="Image">
+    {% for slide in site.slides %}
+    
+  
+    <div class="carousel-item">
+                <img src="{{ slide.image }}" class="img-fluid" alt="Image">
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Association Maison Verte d'Haïti</h4>
-                        <h1 class="display-1 text-capitalize text-white mb-4">Protect Environment</h1>
-                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                       <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Association Maison Verte d'Haïti</h4>
+                        
+                        <h1 class="display-4 text-capitalize text-white mb-4">{{ slide.title }}</h1>
+                        <p class="mb-5 fs-5">
+                            {{ slide.description }}
                         </p>
                         <div class="d-flex align-items-center justify-content-center">
                             <a class="btn-hover-bg btn btn-primary text-white py-3 px-5" href="#">Contactez Nous</a>
@@ -43,20 +52,9 @@ title: Accueil Maison Verte
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/carousel-3.jpg" class="img-fluid" alt="Image">
-                <div class="carousel-caption">
-                    <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Association Maison Verte d'Haïti</h4>
-                        <h1 class="display-1 text-capitalize text-white mb-4">Protect Environment</h1>
-                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        </p>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a class="btn-hover-bg btn btn-primary text-white py-3 px-5" href="#">Contactez Nous</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    {% endfor %}
+           
+          
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -84,16 +82,16 @@ title: Accueil Maison Verte
                 </div>
             </div>
             <div class="col-xl-7">
-                <h5 class="text-uppercase text-primary">Qui sommes nous?</h5>
-                <h1 class="mb-4">Our main goal is to protect environment</h1>
-                <p class="fs-5 mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                    book. It has
+                <h5 class="text-uppercase text-primary">🌿 À propos de Maison Verte</h5>
+                <h1 class="mb-4">Semer le Vert , Proteger La Terre , Faire Respirer Haiti</h1>
+                <p class="fs-5 mb-4">
+                   Maison Verte est un espace dédié à l’écologie, à l’innovation durable et aux gestes responsables du quotidien. Notre mission est d’informer, sensibiliser et inspirer une communauté engagée pour un mode de vie plus sain, respectueux de la nature et tourné vers l’avenir durable.
                 </p>
                 <div class="tab-class bg-secondary p-4">
                     <ul class="nav d-flex mb-2">
                         <li class="nav-item mb-3">
                             <a class="d-flex py-2 text-center bg-white active" data-bs-toggle="pill" href="#tab-1">
-                                <span class="text-dark" style="width: 150px;">A Propos</span>
+                                <span class="text-dark" style="width: 150px;">À Propos</span>
                             </a>
                         </li>
                         <li class="nav-item mb-3">
@@ -113,9 +111,10 @@ title: Accueil Maison Verte
                                 <div class="col-12">
                                     <div class="d-flex">
                                         <div class="text-start my-auto">
-                                            <h5 class="text-uppercase mb-3">Lorem Ipsum 1</h5>
-                                            <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                                                it to make a type specimen book. It has
+                                            <h5 class="text-uppercase mb-3">🌱 Qui sommes-nous</h5>
+                                            <p class="mb-4">L’Association Maison Verte d’Haïti (ASMAV-HAITI), fondée en 2017, œuvre pour la protection de l’environnement, la résilience climatique et l’autonomisation des communautés vulnérables, en particulier des femmes rurales. Elle place au cœur de son action des valeurs fortes : éducation à l’écocitoyenneté, développement durable, économie solidaire, non- violence, gouvernance locale, équité sociale, égalité des droits et respect du vivant sous toutes ses formes.
+
+Active principalement dans le Nord-Ouest d’Haïti, une région fortement affectée par la dégradation écologique et le changement climatique, ASMAV-HAITI promeut une culture environnementale fondée sur la justice, la dignité humaine et le respect de la terre.
                                             </p>
                                             <div class="d-flex align-items-center justify-content-start">
                                                 <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#">Lire plus</a>
@@ -130,7 +129,7 @@ title: Accueil Maison Verte
                                 <div class="col-12">
                                     <div class="d-flex">
                                         <div class="text-start my-auto">
-                                            <h5 class="text-uppercase mb-3">Lorem Ipsum 2</h5>
+                                            <h5 class="text-uppercase mb-3">✅ Notre Mission</h5>
                                             <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
                                                 it to make a type specimen book. It has
                                             </p>
@@ -147,7 +146,7 @@ title: Accueil Maison Verte
                                 <div class="col-12">
                                     <div class="d-flex">
                                         <div class="text-start my-auto">
-                                            <h5 class="text-uppercase mb-3">Lorem Ipsum 3</h5>
+                                            <h5 class="text-uppercase mb-3">🤯 Notre Vision</h5>
                                             <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
                                                 it to make a type specimen book. It has
                                             </p>

@@ -40,11 +40,11 @@
     // Event carousel
     $(".event-carousel").owlCarousel({
         autoplay: true,
-        smartSpeed: 1000,
+        smartSpeed: 200,
         center: false,
         dots: false,
         loop: true,
-        margin: 25,
+        margin: 10,
         nav : true,
         navText : [
             '<i class="bi bi-arrow-left"></i>',

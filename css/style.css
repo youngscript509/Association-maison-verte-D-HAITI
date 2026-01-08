@@ -250,7 +250,7 @@
     height: 12px;
     border-radius: 12px !important;
     border: 5px solid transparent;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .carousel-header #carouselId.carousel .carousel-indicators li.active {
