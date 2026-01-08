@@ -377,7 +377,7 @@ autour de la protection de la nature.
         </div>
         <div class="event-carousel owl-carousel">
             <div class="event-item">
-                <img src="img/events-1.jpg" class="img-fluid w-100" alt="Image">
+                <img src="/assets/img/annonce1.jpg" class="img-fluid w-100" alt="Image">
                 <div class="event-content p-4">
                     <div class="d-flex justify-content-between mb-4">
                         <span class="text-body"><i class="fas fa-map-marker-alt me-2"></i>Grand Mahal, Dubai 2100.</span>
@@ -389,7 +389,7 @@ autour de la protection de la nature.
                 </div>
             </div>
             <div class="event-item">
-                <img src="img/events-2.jpg" class="img-fluid w-100" alt="Image">
+                <img src="/assets/img/annonce2.jpg" class="img-fluid w-100" alt="Image">
                 <div class="event-content p-4">
                     <div class="d-flex justify-content-between mb-4">
                         <span class="text-body"><i class="fas fa-map-marker-alt me-2"></i>Grand Mahal, Dubai 2100.</span>
@@ -401,7 +401,7 @@ autour de la protection de la nature.
                 </div>
             </div>
             <div class="event-item">
-                <img src="img/events-3.jpg" class="img-fluid w-100" alt="Image">
+                <img src="/assets/img/annonce1.jpg" class="img-fluid w-100" alt="Image">
                 <div class="event-content p-4">
                     <div class="d-flex justify-content-between mb-4">
                         <span class="text-body"><i class="fas fa-map-marker-alt me-2"></i>Grand Mahal, Dubai 2100.</span>
@@ -413,7 +413,7 @@ autour de la protection de la nature.
                 </div>
             </div>
             <div class="event-item">
-                <img src="img/events-4.jpg" class="img-fluid w-100" alt="Image">
+                <img src="/assets/img/annonce2.jpg" class="img-fluid w-100" alt="Image">
                 <div class="event-content p-4">
                     <div class="d-flex justify-content-between mb-4">
                         <span class="text-body"><i class="fas fa-map-marker-alt me-2"></i>Grand Mahal, Dubai 2100.</span>
@@ -679,3 +679,38 @@ Messerne SAGESSE
     </div>
 </div>
 <!-- Volunteers End -->
+
+  <!--scripts-->
+    <script>
+        const RSS_URL = "https://www.actu-environnement.com/flux/rss/biodiversite/";
+
+        const API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&api_key=occvkqqyvr6kzin0a9k98fzrlyyvwj3im5fhpjfw`;
+
+        fetch(API)
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById("flux-rss");
+                container.innerHTML = "";
+
+                data.items.slice(0, 4).forEach((item, i) => {
+                    container.innerHTML += `
+        <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="service-item">
+                        <img src="/img/service-4.jpg" class="img-fluid w-100" alt="Image">
+                        <div class="service-link">
+                            <a href="${item.link}" class="h4 mb-0">${item.title}</a>
+                        </div>
+                    </div>
+                    <p class="my-4">
+                        ${item.pubDate.split(" ")[0]}
+                    </p>
+                     <a href="${item.link}" target="_blank">Lire l’article</a>
+                </div>
+      `;
+                });
+
+                // ✅ Lancer le slider UNIQUEMENT après l'injection
+
+            })
+            .catch(err => console.error("Erreur RSS :", err));
+    </script>
