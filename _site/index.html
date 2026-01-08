@@ -1000,11 +1000,18 @@ autour de la protection de la nature.
 
                 data.items.slice(0, 4).forEach((item, i) => {
                     container.innerHTML += `
-        <div class="rss-slide card ${i === 0 ? "active" : ""}">
-          <h3>${item.title}</h3>
-          <p>${item.pubDate.split(" ")[0]}</p>
-          <a href="${item.link}" target="_blank">Lire l’article</a>
-        </div>
+        <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="service-item">
+                        <img src="/img/service-4.jpg" class="img-fluid w-100" alt="Image">
+                        <div class="service-link">
+                            <a href="${item.link}" class="h4 mb-0">${item.title}</a>
+                        </div>
+                    </div>
+                    <p class="my-4">
+                        ${item.pubDate.split(" ")[0]}
+                    </p>
+                     <a href="${item.link}" target="_blank">Lire l’article</a>
+                </div>
       `;
                 });
 
