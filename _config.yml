@@ -22,9 +22,9 @@ title: maison verte haiti
 email: info@maisonvertehaiti.org
 description: "L’Association Maison Verte d’Haïti (ASMAV-HAITI), fondée en 2017, œuvre pour la protection de l’environnement, la résilience climatique et l’autonomisation des communautés vulnérables, en particulier des femmes rurales. Elle place au cœur de son action des valeurs fortes : éducation à l’écocitoyenneté, développement durable, économie solidaire, non- violence, gouvernance locale, équité sociale, égalité des droits et respect du vivant sous toutes ses formes."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://maisonvertehaiti.org" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: Asociation Maison Verte Haiti
+github_username:  YoungScript509
 
 # Build settings
 theme: minima
