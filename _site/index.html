@@ -143,6 +143,44 @@ Placer les femmes et les jeunes au cœur de la transition écologique.
                 </div>
             </div>
     
+    
+  
+    <div class="carousel-item">
+                <img src="/assets/uploads/gpt2.jpg" class="img-fluid" alt="Image">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                       <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Association Maison Verte d'Haïti</h4>
+                        
+                        <h1 class="display-4 text-capitalize text-white mb-4">Cultiver l’écocitoyenneté, aujourd’hui pour demain</h1>
+                        <p class="mb-5 fs-5">
+                            Sensibiliser et former dès aujourd’hui pour construire des citoyens responsables et engagés.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary text-white py-3 px-5" href="#">Contactez Nous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+  
+    <div class="carousel-item">
+                <img src="/assets/uploads/yellow-fruits-8609272_1280.jpg" class="img-fluid" alt="Image">
+                <div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                       <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Association Maison Verte d'Haïti</h4>
+                        
+                        <h1 class="display-4 text-capitalize text-white mb-4">L’écologie en mouvement, la citoyenneté en héritage !</h1>
+                        <p class="mb-5 fs-5">
+                            Faire de l’engagement écologique une valeur transmise de génération en génération.
+                        </p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary text-white py-3 px-5" href="#">Contactez Nous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
            
           
         </div>
@@ -957,10 +995,10 @@ autour de la protection de la nature.
         fetch(API)
             .then(res => res.json())
             .then(data => {
-                const container = document.getElementById("feed-list");
+                const container = document.getElementById("flux-rss");
                 container.innerHTML = "";
 
-                data.items.slice(0, 6).forEach((item, i) => {
+                data.items.slice(0, 4).forEach((item, i) => {
                     container.innerHTML += `
         <div class="rss-slide card ${i === 0 ? "active" : ""}">
           <h3>${item.title}</h3>
@@ -970,7 +1008,7 @@ autour de la protection de la nature.
       `;
                 });
 
-                // ✅ Lancer le slider UNIQUEMENT après injection
+                // ✅ Lancer le slider UNIQUEMENT après l'injection
 
             })
             .catch(err => console.error("Erreur RSS :", err));
