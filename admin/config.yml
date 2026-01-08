@@ -56,20 +56,6 @@ collections:
       - { label: "Ordre d'Affichage", name: "order", widget: "number" }
       - { label: "Actif", name: "active", widget: "boolean", default: true }
       - { label: "Contenu Complet", name: "body", widget: "markdown" }
-  - name: "heros"
-    label: "Heros"
-    folder: "_heros"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Avatar", name: "avatar", widget: "string" }
-      - { label: "Date de l'Événement", name: "event_date", widget: "datetime" }
-      - { label: "Lieu", name: "location", widget: "string" }
-      - { label: "Description", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }  
 
   - name: "aboutus"
     label: "À Propos de Nous"
