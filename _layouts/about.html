@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - Maison Verte Haiti</title>
+  <link rel="stylesheet" href="https://maisonvertehaiti.org/assets/css/styles.css">
+  <link rel="icon" type="image/png" href="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg">
+  <!--Allow origin for RSS feed -->
+  
+   
+</head>
+<body>
+      <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="false">
+    <div class="logo-sm" aria-hidden="true">
+      <!-- simple leaf logo SVG -->
+       <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 60px;height:60px;border-radius:50%;" alt="">
+     
+    </div>
+    <h1>Association Maison Verte d'Haïti</h1>
+    <div class="bars">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+
+  <div class="leaf" id="leaf1" style="left:6%;top:20%;transform:rotate(-22deg);"><img src="https://maisonvertehaiti.org/assets/img/oi2.png" alt=""></div>
+  <div class="leaf" id="leaf2" style="right:8%;top:38%;transform:rotate(12deg);"><img src="https://maisonvertehaiti.org/assets/img/oi1.png" alt=""></div>
+<!--heroslides-->
+    {% include slides.html %}
+<!--header-->
+   {% include header.html %}
+<!--content-->
+<style>
+    main {
+        margin-top: 500px; 
+    
+    }
+  /*media screen for mobile devices*/
+    @media screen and (max-width: 768px) {
+        main {
+            margin-top: 700px; 
+        }
+    }
+</style>
+    <main>
+<!--Display content here -->
+{{ content }}
+<!-- NATURAL ANIMATIONS -->
+<div id="leaf-container"></div>
+<div id="mist-layer"></div>
+<div id="light-rays"></div>
+    </main>
+<!--footer-->
+   {% include footer.html %}
+  
+ <script src="https://maisonvertehaiti.org/assets/js/main.js" defer></script>
+</body>
+</html>
