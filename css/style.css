@@ -278,8 +278,8 @@
 
 /*** A Propos Start ***/
 
-.A Propos .tab-class .nav .nav-item a.active,
-.A Propos .tab-class .nav .nav-item a.active span {
+.about .tab-class .nav .nav-item a.active,
+.about .tab-class .nav .nav-item a.active span {
     background: var(--bs-primary) !important;
     color: var(--bs-white) !important;
 }

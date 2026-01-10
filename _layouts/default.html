@@ -74,19 +74,9 @@
 <div id="light-rays"></div>
     </main>
 <!--footer-->
-   {% include footer.html %}
- <div class="floating-menu">
-        <a href="https://wa.me/50912345678" aria-label="Contactez-nous sur WhatsApp" target="_blank" class="floating-btn whatsapp-btn">
-            <img src="/assets/img/whatsapplogo2.png" alt="WhatsApp" />
-        </a>
-        <a href="mailto:contact@maisonvertehaiti.org" aria-label="Envoyez-nous un email" class="floating-btn email-btn">
-            <img src="/assets/img/emailus.png" alt="Email" /> 
-        </a>
-        <a href="#don" aria-label="Faire un don" class="floating-btn donate-btn" onclick="scrollToSection('#don')">
-            <img src="/assets/img/donate.png" alt="Don" />
-        </a>
-        
-    </div>
+  
+
+     {% include footer.html %}
     <style>
         /* modern transparent and smooth bottom menu floating bar */
         .floating-menu {
@@ -173,51 +163,15 @@
             .catch(err => console.error("Erreur RSS :", err));
     </script>
 
-   <style>
-    /* RSS Feed Styles */
-    .grid{grid-template-columns:repeat(3,1fr);gap:20px}
-
-     .rss-slide{background:#f9fff5;padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(6,30,15,0.08);text-align:center}
-    @media (max-width:768px){
-    .grid{grid-template-columns:1fr;gap:16px}
-}
-
-    #rss-feed {
-      margin: 40px auto;
-      width: 100%;
-      padding: 0 10px;
-    }
-    #rss-feed h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #2c3e50;
-    }
-   
-    .rss-slide:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(247, 145, 2, 0.5);
-    }
-    .rss-slide h3 {
-      margin-top: 0;
-      color: #27ae60;
-    }
-    .rss-slide p {
-      color: #7f8c8d;
-      font-size: 0.9em;
-    }
-    .rss-slide a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .rss-slide a:hover {
-      text-decoration: underline;
-    }
-   </style>
  <script src="/assets/js/main.js" defer></script>
+     <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/counterup/counterup.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/lightbox/js/lightbox.min.js"></script>
  
 </body>
 </html>
