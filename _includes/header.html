@@ -1,67 +1,51 @@
-<!-- Spinner Start -->
-<div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-    <div class="spinner-grow text-primary" role="status"></div>
-</div>
-<!-- Spinner End -->
-
-
-<!-- Navbar start -->
-<div class="container-fluid fixed-top px-0">
-    <div class="container px-0">
-        <div class="topbar">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-md-8">
-                    <div class="topbar-info d-flex flex-wrap">
-                        <a href="#" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>info@maisonvertehaiti.org</a>
-                        <a href="#" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>+509 300-000</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="topbar-icon d-flex align-items-center justify-content-end">
-                        <a href="#" class="btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
-                        <a href="#" class="btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar navbar-light bg-light navbar-expand-xl">
-            <a href="/" class="navbar-brand ms-3">
-                <h1 class="text-primary display-6">
-                    <img class="" src="/assets/img/logomaisonverte.jpg" alt="maison verte haiti">
-                    Association Maison Verte d'Haïti
-                </h1>
-            </a>
-            <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars text-primary"></span>
-                    </button>
-            <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
-                <div class="navbar-nav ms-auto">
-                    <a href="/" class="nav-item nav-link active">Accueil</a>
-
-
-
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Menu</a>
-                        <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                            <a href="/about/" class="dropdown-item">🌱Qui sommes-nous</a>
-                            <a href="/blog/" class="dropdown-item">📰 Actualités</a>
-                            <a href="/presses/" class="dropdown-item">🗞️La Presse</a>
-                            <a href="/projects/" class="dropdown-item">🌿Nos Projets</a>
-                            <a href="/gallery/" class="dropdown-item">🖼️Notre Galerie</a>
-
-
-                        </div>
-                    </div>
-                    <a href="/contact/" class="nav-item nav-link">✉️Contact</a>
-                </div>
-                <div class="d-flex align-items-center flex-nowrap pt-xl-0" style="margin-left: 15px;">
-                    <a href="/don/" class="btn-hover-bg btn btn-primary text-white py-2 px-4 me-3">💚Don</a>
-                </div>
-            </div>
-        </nav>
+<header class="wrap" role="banner">
+  <div class="logo">
+     <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 70px;height:70px;border-radius:20%;" alt="">
+     
+    <div>
+      <div class="brand">Association Maison Verte d'Haïti</div>
+      <div class="muted" style="font-size:12px">Semer le Vert , Proteger La Terre , Faire Respirer Haiti</div>
     </div>
-</div>
-<!-- Navbar End -->
+  </div>
+
+  <!-- Menu desktop -->
+  <nav aria-label="Navigation principale" class="desktop-nav">
+      <a href="#who">🌱 Qui sommes-nous</a>
+      <a href="#news">📰 Actualités</a>
+     
+      <a href="#projects">🌿 Nos projets</a>
+      <a href="#don" class="cta">💚 Don</a>
+      <a href="#contact">✉️ Contact</a>
+
+  </nav>
+ <button id="menu-toggle" aria-label="Ouvrir le menu" class="hamburger hamburger-btn">
+        <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+    </button>
+  <!-- Menu mobile hamburger -->
+  <div class="mobile-nav-wrapper">
+   
+
+    <nav aria-label="Navigation principale" id="main-nav" class="nav-collapsed">
+      <!-- header mobile -->
+      <div class="mobile-nav-header" style="margin-bottom:24px;text-align:center;">
+         <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 60px;height:60px;border-radius:50%;" alt="">
+     
+        <div style="color:white;font-weight:700;font-size:16px">Association Maison Verte d'Haïti</div>
+      </div>
+      <ul>
+        <li> <a href="#who">🌱 Qui sommes-nous</a></li> 
+        <li><a href="#news">📰 Actualités</a></li> 
+        <li><a href="#press">🎙️ La presse</a></li>
+         <li><a href="#projects">🌿 Nos projets</a></li>
+        <li><a href="#don" class="cta">💚 Don</a></li>
+         <li><a href="#contact">✉️ Contact</a></li>
+      </ul>
+     
+    </nav>
+  </div>
+
+  <!-- overlay mobile -->
+  <div id="nav-overlay"></div>
+</header>
