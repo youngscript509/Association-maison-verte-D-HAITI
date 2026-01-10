@@ -123,34 +123,40 @@
 
     </style>
    <!--scripts-->
-   <script>
-const RSS_URL = "https://www.actu-environnement.com/flux/rss/biodiversite/"; 
+    <script>
+        const RSS_URL = "https://www.actu-environnement.com/flux/rss/biodiversite/";
 
-const API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&api_key=occvkqqyvr6kzin0a9k98fzrlyyvwj3im5fhpjfw`;
+        const API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&api_key=occvkqqyvr6kzin0a9k98fzrlyyvwj3im5fhpjfw`;
 
+        fetch(API)
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById("flux-rss");
+                container.innerHTML = "";
 
-fetch(API)
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("feed-list");
-    container.innerHTML = "";
-
-    data.items.slice(0, 6).forEach((item, i) => {
-      container.innerHTML += `
-        <div class="rss-slide card ${i === 0 ? "active" : ""}">
-          <h3>${item.title}</h3>
-          <p>${item.pubDate.split(" ")[0]}</p>
-          <a href="${item.link}" target="_blank">Lire l’article</a>
-        </div>
+                data.items.slice(0, 4).forEach((item, i) => {
+                    container.innerHTML += `
+        <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="service-item">
+                        <img src="/img/service-4.jpg" class="img-fluid w-100" alt="Image">
+                        <div class="service-link">
+                            <a href="${item.link}" class="h4 mb-0">${item.title}</a>
+                        </div>
+                    </div>
+                    <p class="my-4">
+                        ${item.pubDate.split(" ")[0]}
+                    </p>
+                     <a href="${item.link}" target="_blank">Lire l’article</a>
+                </div>
       `;
-    });
+                });
 
-    // ✅ Lancer le slider UNIQUEMENT après injection
-   
-  })
-  .catch(err => console.error("Erreur RSS :", err));
+                // ✅ Lancer le slider UNIQUEMENT après l'injection
 
-   </script>
+            })
+            .catch(err => console.error("Erreur RSS :", err));
+    </script>
+
    <style>
     /* RSS Feed Styles */
     .grid{grid-template-columns:repeat(3,1fr);gap:20px}
