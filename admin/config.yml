@@ -69,7 +69,8 @@ collections:
       - { label: "Description", name: "body", widget: "markdown" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Ordre d'Affichage", name: "order", widget: "number" } 
-      - { label: "Actif", name: "active", widget: "boolean", default: true }  
+      - { label: "Actif", name: "active", widget: "boolean", default: true } 
+       
   - name: "aboutus"
     label: "À Propos de Nous"
     folder: "_aboutus"

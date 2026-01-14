@@ -49,20 +49,20 @@ title: Accueil
       </aside>
     </section>
 <!-- About Start -->
- {% for about in site.aboutus %}
+ {% for aboutus in site.aboutus %}
 <div class="container-fluid about  py-5" id="about">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-xl-5">
                 <div class="h-100">
-                    <img src="{{ about.image }}" class="img-fluid w-100 h-100" style="border-radius: 20px;margin-top:20px;" alt="Image">
+                    <img src="{{ aboutus.image }}" class="img-fluid w-100 h-100" style="border-radius: 20px;margin-top:20px;" alt="Image">
                 </div>
             </div>
             <div class="col-xl-7"><br>
                 <h5 class="text-uppercase text-primary">🌿 À propos de Maison Verte</h5>
               
                 <p class="fs-5 mb-4">
-                  {{ about.slogan }}
+                  {{ aboutus.slogan }}
                 </p>
                 <div class="tab-class bg-secondary p-4">
                     <ul class="nav d-flex mb-2">
@@ -90,7 +90,7 @@ title: Accueil
                                         <div class="text-start my-auto">
                                             <h5 class="text-uppercase mb-3">🌱 Qui sommes-nous</h5>
                                             <p class="mb-4">
-                                                {{ about.description }}
+                                                {{ aboutus.description }}
                                             </p>
                                             <div class="d-flex align-items-center justify-content-start">
                                                 <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#">Lire plus</a>
@@ -107,7 +107,7 @@ title: Accueil
                                         <div class="text-start my-auto">
                                             <h5 class="text-uppercase mb-3">✅ Notre Mission</h5>
                                             <p class="mb-4">
-                                                {{ about.mission }}
+                                                {{ aboutus.mission }}
                                             </p>
                                             <div class="d-flex align-items-center justify-content-start">
                                                 <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/about/">Lire plus</a>
@@ -124,7 +124,7 @@ title: Accueil
                                         <div class="text-start my-auto">
                                             <h5 class="text-uppercase mb-3">🤯 Notre Vision</h5>
                                             <p class="mb-4">
-                                              {{ about.vision }}
+                                              {{ aboutus.vision }}
                                             </p>
                                             <div class="d-flex align-items-center justify-content-start">
                                                 <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#">Lire plus</a>
