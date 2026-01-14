@@ -70,15 +70,7 @@ function confirmDonate(){
   setTimeout(()=>badge.remove(),3000);
 }
 
-// contact mock
-function sendContact(){
-  const status=document.getElementById('contact-status');
-  status.textContent='Envoi...';
-  setTimeout(()=>{
-    status.textContent='Message envoyé — merci de nous avoir contactés.';
-    document.getElementById('contact-form').reset();
-  },900);
-}
+
 
 // Gamified focus for hero cards
 document.querySelectorAll('.hero-card').forEach(card=>{
@@ -86,36 +78,6 @@ document.querySelectorAll('.hero-card').forEach(card=>{
   card.addEventListener('blur',()=> card.style.transform='');
 });
 
-
-// =======================
-// HERO SLIDER ENHANCED
-// =======================
-let slideIndex = 0;
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.dot');
-let sliderPaused = false;
-
-function showSlide(i){
-  slides.forEach(s=>s.classList.remove('active'));
-  dots.forEach(d=>d.classList.remove('active'));
-  slides[i].classList.add('active');
-  dots[i].classList.add('active');
-}
-
-function autoSlide(){
-  if(!sliderPaused){ slideIndex = (slideIndex+1)%slides.length; showSlide(slideIndex);} }
-setInterval(autoSlide, 4800);
-
-dots.forEach((d,i)=> d.addEventListener('click',()=>{ sliderPaused=true; slideIndex=i; showSlide(i); setTimeout(()=>sliderPaused=false,6000);}));
-
-// Swipe mobile
-let startX=0;
-document.getElementById('hero').addEventListener('touchstart', e=> startX = e.touches[0].clientX);
-document.getElementById('hero').addEventListener('touchend', e=>{
-  let endX=e.changedTouches[0].clientX;
-  if(endX < startX - 50){ slideIndex=(slideIndex+1)%slides.length; showSlide(slideIndex);} 
-  if(endX > startX + 50){ slideIndex=(slideIndex-1+slides.length)%slides.length; showSlide(slideIndex); }
-});
 
 // =======================
 // NATURAL EFFECTS
@@ -207,20 +169,7 @@ window.addEventListener('resize', initMobileMenu);
     });
 
 
-    // Donation
-    $('.progress').waypoint(function () {
-        $('.progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
-        });
-    }, {offset: '80%'});
-
-
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 5,
-        time: 2000
-    });
-
+ 
 
     // Event carousel
     $(".event-carousel").owlCarousel({
