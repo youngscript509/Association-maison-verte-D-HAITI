@@ -56,6 +56,7 @@ collections:
       - { label: "Ordre d'Affichage", name: "order", widget: "number" }
       - { label: "Actif", name: "active", widget: "boolean", default: true }
       - { label: "Contenu Complet", name: "body", widget: "markdown" }
+      
   - name: "events"
     label: "Événements"
     folder: "_events"
@@ -70,7 +71,7 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Ordre d'Affichage", name: "order", widget: "number" } 
       - { label: "Actif", name: "active", widget: "boolean", default: true } 
-       
+
   - name: "aboutus"
     label: "À Propos de Nous"
     folder: "_aboutus"
