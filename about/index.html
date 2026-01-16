@@ -9,19 +9,20 @@ description: Semer le Vert , Proteger La Terre , Faire Respirer Haiti
 
 
 <!-- About Start -->
-<div class="container-fluid about  py-5">
+ {% for about in site.aboutus %}
+<div class="container-fluid about  py-5" id="about">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-xl-5">
                 <div class="h-100">
-                    <img src="/img/about-1.jpg" class="img-fluid w-100 h-100" alt="Image">
+                    <img src="{{ about.image }}" class="img-fluid w-100 h-100" style="border-radius: 20px;margin-top:20px;" alt="Image">
                 </div>
             </div>
-            <div class="col-xl-7">
+            <div class="col-xl-7"><br>
                 <h5 class="text-uppercase text-primary">🌿 À propos de Maison Verte</h5>
-                <h1 class="mb-4">Semer le Vert , Proteger La Terre , Faire Respirer Haiti</h1>
+              
                 <p class="fs-5 mb-4">
-                   Maison Verte est un espace dédié à l’écologie, à l’innovation durable et aux gestes responsables du quotidien. 
+                  {{ about.slogan }}
                 </p>
                 <div class="tab-class bg-secondary p-4">
                     <ul class="nav d-flex mb-2">
@@ -48,9 +49,8 @@ description: Semer le Vert , Proteger La Terre , Faire Respirer Haiti
                                     <div class="d-flex">
                                         <div class="text-start my-auto">
                                             <h5 class="text-uppercase mb-3">🌱 Qui sommes-nous</h5>
-                                            <p class="mb-4">L’Association Maison Verte d’Haïti (ASMAV-HAITI), fondée en 2017, œuvre pour la protection de l’environnement, la résilience climatique et l’autonomisation des communautés vulnérables, en particulier des femmes rurales. Elle place au cœur de son action des valeurs fortes : éducation à l’écocitoyenneté, développement durable, économie solidaire, non- violence, gouvernance locale, équité sociale, égalité des droits et respect du vivant sous toutes ses formes.
-
-Active principalement dans le Nord-Ouest d’Haïti, une région fortement affectée par la dégradation écologique et le changement climatique, ASMAV-HAITI promeut une culture environnementale fondée sur la justice, la dignité humaine et le respect de la terre.
+                                            <p class="mb-4">
+                                                {{ about.description }}
                                             </p>
                                             <div class="d-flex align-items-center justify-content-start">
                                                 <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#">Lire plus</a>
@@ -66,17 +66,11 @@ Active principalement dans le Nord-Ouest d’Haïti, une région fortement affec
                                     <div class="d-flex">
                                         <div class="text-start my-auto">
                                             <h5 class="text-uppercase mb-3">✅ Notre Mission</h5>
-                                            <p class="mb-4"> Renforcer les capacités des communautés, surtout des femmes, pour développer des
-moyens de subsistance durables ;
- Promouvoir l’agroécologie, la gestion responsable de l’eau et des sols et des pratiques
-adaptées au climat ;
- Défendre la justice climatique en représentant les populations vulnérables dans les
-espaces de plaidoyer ;
- Valoriser les savoirs locaux, l’éducation environnementale et la transmission culturelle
-autour de la protection de la nature.
+                                            <p class="mb-4">
+                                                {{ about.mission }}
                                             </p>
                                             <div class="d-flex align-items-center justify-content-start">
-                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#">Lire plus</a>
+                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/about/">Lire plus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -89,10 +83,11 @@ autour de la protection de la nature.
                                     <div class="d-flex">
                                         <div class="text-start my-auto">
                                             <h5 class="text-uppercase mb-3">🤯 Notre Vision</h5>
-                                            <p class="mb-4">Nous aspirons à une Haïti où les communautés, en particulier les femmes rurales, sont autonomes, résilientes face aux changements climatiques et actrices de la protection de leur environnement. ASMAV-HAÏTI imagine un avenir fondé sur la justice climatique, l’équité sociale et le respect du vivant, où l’éducation écocitoyenne, l’agroécologie et la gouvernance locale durable permettent de restaurer la terre, préserver la dignité humaine et transmettre aux générations futures une culture de paix, de solidarité et d’harmonie avec la nature.
+                                            <p class="mb-4">
+                                              {{ about.vision }}
                                             </p>
                                             <div class="d-flex align-items-center justify-content-start">
-                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/contact/">Contactez nous</a>
+                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/about/">Lire plus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -105,6 +100,8 @@ autour de la protection de la nature.
         </div>
     </div>
 </div>
+
+{% endfor %}
 <!-- About End -->
 
 
