@@ -30,7 +30,13 @@ vision: >-
 slogan: |-
   <!--StartFragment-->
 
-  # Semer le Vert , Proteger La Terre , Faire Respirer Haiti
+  <!--StartFragment-->
+
+  Semer le vert, protéger la Terre, faire respirer Haïti
+
+
+
+  <!--EndFragment-->
 
   <!--EndFragment-->
 image: /assets/uploads/logomaisonverte.jpg
