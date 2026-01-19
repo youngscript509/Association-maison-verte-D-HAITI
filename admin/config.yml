@@ -97,14 +97,12 @@ collections:
       - { label: "Titre du Projet", name: "title", widget: "string" }
       - { label: "Description", name: "body", widget: "markdown" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Lien du Projet", name: "project_link", widget: "string" }
+      - { label: "Courte Description", name: "courtedescription", widget: "string" }
       - { label: "Ordre d'Affichage", name: "order", widget: "number" }
       - { label: "Images Gallery", name: "images_gallery", widget: "list", allow_add: true,
           field: { label: "Image", name: "image", widget: "image" }
         }
-      - { label: "Videos", name: "videos", widget: "list", allow_add: true,
-          field: { label: "Video URL", name: "video_url", widget: "string" }
-        }
+      - { label: "Actif", name: "active", widget: "boolean", default: true }
 
   - name: "Mot du Coordonnateur"
     label: "Mot du Coordonnateur"
