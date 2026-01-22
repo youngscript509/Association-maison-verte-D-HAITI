@@ -262,7 +262,7 @@
 /*** Single Page Hero Header Start ***/
 
 .bg-breadcrumb {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/img/sl2.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/img/hero1.png);
     background-position: center center;
     background-repeat: no-repeat;
 
