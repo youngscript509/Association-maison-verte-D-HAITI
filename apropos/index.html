@@ -1,3 +1,7 @@
+---
+layout: aboutus
+title: A propos
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,11 +48,13 @@
     <link href="/assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
-
+   {% include header.html %}
+  <!--heroslides-->
+    {% include slides.html %}
    
 <!-- About Start -->
  {% for about in site.aboutus %}
-<div class="container-fluid about  py-5" id="about">
+<div class="container-fluid about  py-5" id="about" style="margin-top: 400px;">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-xl-5">
@@ -143,6 +149,7 @@
 
 {% endfor %}
 
+   {% include footer.html %}
 
  <script src="/assets/js/main.js" defer></script>
      <!-- JavaScript Libraries -->
