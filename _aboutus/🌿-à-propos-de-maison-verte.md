@@ -2,34 +2,25 @@
 layout: post
 title: " À propos de Maison Verte"
 mission: >-
-  * <!--StartFragment-->
+  
 
-    👉🏿Renforcer les capacités des communautés, surtout des femmes, pour développer des moyens de subsistance durables ;
+  ```html
 
-    <!--EndFragment-->
+  <p>
 
-    ```html
-    <br> <br>
-    ```
-  * <!--StartFragment-->
-
-    👉🏿 Promouvoir l’agroécologie, la gestion responsable de l’eau et des sols et des pratiques adaptées au climat ;
-
-    <!--EndFragment-->
+  * 👉🏿Renforcer les capacités des communautés, surtout des femmes, pour développer des moyens de subsistance durables ;<br>
 
 
-  * <!--StartFragment-->
+  * 👉🏿 Promouvoir l’agroécologie, la gestion responsable de l’eau et des sols et des pratiques adaptées au climat ;<br>
 
-    👉🏿 Défendre la justice climatique en représentant les populations vulnérables dans les espaces de plaidoyer ; 
+    * 👉🏿 Défendre la justice climatique en représentant les populations vulnérables dans les espaces de plaidoyer ;<br>
+    
+    * 👉🏿 Valoriser les savoirs locaux, l’éducation environnementale et la transmission culturelle autour de la protection de la nature.
 
-    <!--EndFragment-->
+    
+  </p>
 
-
-  * <!--StartFragment-->
-
-    👉🏿 Valoriser les savoirs locaux, l’éducation environnementale et la transmission culturelle autour de la protection de la nature.
-
-    <!--EndFragment-->
+  ```
 vision: >-
   <!--StartFragment-->
 
