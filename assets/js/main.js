@@ -57,7 +57,7 @@ function confirmDonate(){
 
   // gamified badge
   const badge = document.createElement('div');
-  badge.textContent = 'Badge débloqué : Éco‑Héros Débutant 🌱';
+  badge.textContent = 'Badge débloqué : Éco‑Héros Débutant ';
   Object.assign(badge.style,{
     position:'fixed',left:'50%',top:'50%',transform:'translate(-50%,-50%) scale(0.6)',opacity:'0',
     background:'linear-gradient(90deg,var(--accent),#ffe1ba)',padding:'18px 22px',
