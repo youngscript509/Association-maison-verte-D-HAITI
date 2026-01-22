@@ -4,7 +4,6 @@ title: " À propos de Maison Verte"
 mission: >-
   
 
-  ```html
 
   <p>
 
@@ -20,8 +19,6 @@ mission: >-
 
     
   </p>
-
-  ```
 vision: >-
   <!--StartFragment-->
 
