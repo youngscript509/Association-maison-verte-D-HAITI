@@ -7,16 +7,22 @@ mission: >-
     👉🏿Renforcer les capacités des communautés, surtout des femmes, pour développer des moyens de subsistance durables ;
 
     <!--EndFragment-->
+
+
   * <!--StartFragment-->
 
     👉🏿 Promouvoir l’agroécologie, la gestion responsable de l’eau et des sols et des pratiques adaptées au climat ;
 
     <!--EndFragment-->
+
+
   * <!--StartFragment-->
 
     👉🏿 Défendre la justice climatique en représentant les populations vulnérables dans les espaces de plaidoyer ; 
 
     <!--EndFragment-->
+
+
   * <!--StartFragment-->
 
     👉🏿 Valoriser les savoirs locaux, l’éducation environnementale et la transmission culturelle autour de la protection de la nature.
