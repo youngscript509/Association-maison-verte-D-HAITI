@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 🌿 À propos de Maison Verte
+title: " À propos de Maison Verte"
 mission: >-2
   
    👉🏿Renforcer les capacités des communautés, surtout des femmes, pour développer des
