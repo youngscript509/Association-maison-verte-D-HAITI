@@ -49,6 +49,8 @@ collections:
     output: true
   partners:
     output: true
+  leseditions:
+    output: true
 
     
 
