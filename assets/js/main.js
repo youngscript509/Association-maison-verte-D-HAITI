@@ -26,6 +26,19 @@ function floatLeaves(){
 }
 setInterval(floatLeaves, 2600);
 
+// on scroll, hide leaves for better readability
+window.addEventListener('scroll', ()=>{
+  const scrollY = window.scrollY;
+  leaves.forEach(el=>{
+    if(scrollY > 150){
+      el.style.opacity = '0';
+    } else {
+      el.style.opacity = (0.08 + Math.random()*0.26).toFixed(2);
+    }
+  });
+});
+
+
 // Nice popup (instead of alert)
 function popup(message){
   const box = document.createElement('div');
