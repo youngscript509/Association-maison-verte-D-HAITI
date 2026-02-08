@@ -200,4 +200,19 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Lien d'Inscription", name: "registration_link", widget: "string" }
       - { label: "Ordre d'Affichage", name: "order", widget: "number" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }  
+      - { label: "Actif", name: "active", widget: "boolean", default: true }
+
+  - name: "Les Editions"
+    label: "Les Editions"
+    folder: "_leseditions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Invite d'honneur", name: "invite", widget: "string" }
+      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
+      - { label: "Actif", name: "active", widget: "boolean", default: true } 
