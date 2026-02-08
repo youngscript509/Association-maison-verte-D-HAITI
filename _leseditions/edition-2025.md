@@ -3,7 +3,7 @@ layout: post
 title: Edition 2025
 image: /assets/uploads/edition2025.png
 date: 2025-08-01T20:09:04.058Z
-invite: --
+invite: Non valide
 order: 1
 active: true
 ---
