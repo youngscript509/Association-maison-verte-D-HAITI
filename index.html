@@ -433,18 +433,17 @@ L’Association Maison Verte d’Haïti poursuivra, avec détermination et respo
     </div>
     <div class="cinecolo-content grid">
         <!--Load all editions from collection leseditions using jekyll-->
-        {%for edition in site.leseditions %}
+        {% for edition in site.leseditions %}
          <div class="cinecolo-item card">
             <img src="{{ edition.image }}" alt="{{ edition.title }}" class="cinecolo-img">
             <div class="cinecolo-info">
             <h4>{{ edition.title }}</h4>
-            <p>{{ edition.description }}</p>
             <p>Date: <span class="italic">{{ edition.date }}</span></p>
             <p>Invité d'honneur: <span class="italic">{{ edition.invite }}</span></p>
         </div>
         <button class="btn btn-primary" onclick="location.href='{{ edition.link | relative_url }}'">En savoir plus</button>
         </div>
-        {%endfor%}  
+        {% endfor %}  
 
     </div>
         
