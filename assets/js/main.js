@@ -26,17 +26,33 @@ function floatLeaves(){
 }
 setInterval(floatLeaves, 2600);
 
-// on scroll, hide leaves for better readability
-window.addEventListener('scroll', ()=>{
-  const scrollY = window.scrollY;
-  leaves.forEach(el=>{
-    if(scrollY > 150){
-      el.style.opacity = '0';
-    } else {
-      el.style.opacity = (0.08 + Math.random()*0.26).toFixed(2);
+// on scroll, hide leaves for better readability, show them again when near top
+
+
+const element = document.getElementById('leaf1');
+const element1 = document.getElementById('leaf2');
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+
+    // Vérifie si hauteur écran > 150px
+    if (window.innerHeight > 150) {
+        
+        // Cache si scroll > 150px
+        if (scrollTop > 150) {
+            element.classList.add("hidden");
+            element1.classList.add("hidden");
+             
+            
+        }
+
+        // Réaffiche UNIQUEMENT si retour en haut
+        if (scrollTop === 0) {
+            element.classList.remove("hidden");
+             element1.classList.remove("hidden");
+        }
     }
-  });
 });
+
 
 
 // Nice popup (instead of alert)

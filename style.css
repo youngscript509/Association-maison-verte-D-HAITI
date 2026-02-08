@@ -10,6 +10,16 @@
   padding: 0;
 }
 
+.box {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    display: none;
+}
 
 
 /* JOURNAL */
