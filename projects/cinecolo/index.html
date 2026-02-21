@@ -1,3 +1,8 @@
+---
+layout: projets
+title: Accueil
+---
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -185,30 +190,32 @@ c)Faire du cinéma l’élément déclencheur d’un éveil de la conscience éc
         Ce festival offre tout une gamme de choix très diversifiée à son public. Au-delà des projections-échanges de films documentaires portant sur les problématiques écologiques et climatiques, le public a rendez-vous à toute une pléiade d’activités telles que conférences- débats, formations, ateliers, masters class, visites guidées, expositions-ventes de produits non préjudiciables à l’environnement, rencontres entre acteurs de la société civile et des politiques, des jeunes et des sommités dans le domaine de l’environnement.
     </p>
   <!-- PROJET -->
-  <article class="entry">
-    <h2>🏡 2) Editions précédentes</h2>
-    <p class="meta">Les editions</p>
+  <!--Les differentes editions du festival cinecolo ,un projet maison verte ,image,titre,date,invite d'honneur-->
+  <section id="cinecolo" class="section">
+    <div class="section-head">
+      <h3>Les éditions du festival</h3>
+      <div class="muted">Plus de 10 ans de cinéma écologique en Haïti</div>
+    </div>
+    <div class="cinecolo-content grid">
+        <!--Load all editions from collection leseditions using jekyll-->
+        {% for edition in site.leseditions %}
+        <div class="cinecolo-card card" role="article" aria-label="Édition {{ edition.title }}" tabindex="0">
+            <img style="width: 100%; height: 250px; object-fit: cover;" src="{{ edition.image }}" alt="Image de l'édition {{ edition.title }}">
+            <div class="cinecolo-info">
+                <h4>{{ edition.title }}</h4>
+                <p>{{ edition.date }}</p>
+                <p>Invité d'honneur : {{ edition.invite }}</p>
+            </div>
+            <button class="btn btn-primary" onclick="location.href='{{ edition.link | relative_url }}'">En savoir plus</button>
+        
+        </div> 
+        {% endfor %}
 
-    <figure class="image-full">
-      <img src="/img/cine2.png" alt="Maison écologique">
-    </figure>
-
-    <p>
-    Depuis sa création, le festival CINECOLO a eu le grand privilège d’accueillir des personnalités/invité.es au plus haut point dans la sphère écologique d’ici et d’ailleurs en vue d’offrir une occasion singulière à son aimable public. Parmi lesquelles, nous pouvons citer : Le cinéaste Arnold ANTONIN (Écologiste, Dr. en économie, Président d’honneur 2017, Haïti), l’agronome Jean  André VICTOR ( Dr. En droit de l’environnement, ex-ministre de la planification, Président d’honneur 2018, Haïti), Dr. Jean Vilmond HILAIRE (Écologiste, Dr. en botanique, ex-ministre de l’environnement, Président d’honneur 2019, Haïti), Dr. Maismy- Mary FLEURANT (Dr. en droit, spécialiste en droits humains et droit de l’environnement, Président d’honneur 2022, Haïti). D’autres personnalités du domaine de l’environnement et du cinéma étaient aussi à l’honneur durant nos six éditions précédentes telles que : Gérard BERRY (Spécialiste en biodiversité, Guadeloupe), Nicole ERDAN (Ambassadrice des ODD-Caraïbes, Guadeloupe) Laure Martin HERNANDEZ (Réalisatrice Martinique), Martine SORNAY (Présidente du Terra Festival en Guadeloupe), Jane WYNNE (Manager de Wynn Farm, Haïti), René DUROCHER (Ecologiste, photographe nature, Haïti), Seth PIERRE (Agronome, spécialiste de l’eau, Haïti), Alexandra Vanessa Destin PIERRE (Doctorante, Militante du climat, Haïti), Christiane THIRION (Vice-présidente du Terra Festival, spécialiste de l’audiovisuel, Paris) ; Joëlle TAÏLAME, Urbaniste et directrice de l’ADDUAM (Agence de Développement Durable, d'Urbanisme et d'Aménagement de è Martinique), Hindou Oumarou HIBRAHIM (Militante du climat, Tchad, Afrique).
-    </p>
-    <h3>
-        Edition 2016
-    </h3>
-     <figure class="image-left">
-      <img src="/img/cine2026.png" alt="Reboisement">
-      <figcaption>Eddition 2016</figcaption>
-    </figure><br><br>
-    <p>
-        L’année 2016 marque le début du festival CINECOLO avec la toute première édition qui s’est tenue en mars 2016 dans trois villes du pays dont Port-au-Prince, la capitale. Cette 1ère édition de CINECOLO a été, pour nous, l’élément déclencheur d’une motivation incommensurable pour entamer cette vaste campagne d’éducation à l’écocitoyenneté à travers le pays en vue de jeter les bases d’une transition écologique haïtienne.
-    </p>
-
-    
-  </article>
+    </div>
+        
+         
+       
+  </section>
 
 </main>
 
