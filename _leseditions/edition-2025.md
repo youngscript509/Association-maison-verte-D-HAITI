@@ -36,7 +36,7 @@ Les principaux objectifs du projet étaient :
 2.Favoriser la participation citoyenne, notamment des jeunes et des communautés locales.
 3.Célébrer les 10 ans du festival et renforcer sa visibilité nationale et internationale.
 Résultats obtenus :
-Projections et débats : Plus de 10 films documentaires (courts et longs métrages) ont été projetés, suivis de discussions enrichissantes entre réalisateurs, experts et public.
-Visibilité et mémoire : une exposition « 10 ans de CINECOLO » ont retracé l’histoire du festival et ses impacts, valorisant les acteurs et partenaires impliqués.
-Mobilisation culturelle : La Journée Portes ouvertes et l’ambiance de clôture ont rassemblé plusieurs centaines de participants, illustrant l’enthousiasme du public.
+Projections et débats : Plus de 10 films documentaires (courts et longs métrages) ont été projetés, suivis de discussions enrichissantes entre réalisateurs, experts et public.
+Visibilité et mémoire : une exposition « 10 ans de CINECOLO » ont retracé l’histoire du festival et ses impacts, valorisant les acteurs et partenaires impliqués.
+Mobilisation culturelle : La Journée Portes ouvertes et l’ambiance de clôture ont rassemblé plusieurs centaines de participants, illustrant l’enthousiasme du public.
 Ces activités ont permis d’atteindre les objectifs fixés tout en favorisant un dialogue constructif entre culture, environnement et droits humains.
