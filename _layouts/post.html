@@ -71,18 +71,77 @@
 <!--Lire single post-->
 <div id="single-post" class="single-post">
     <div class="single-post-content">
-        <span id="close-single-post" class="close-single-post">&times;</span>
+     
         <div id="single-post-inner-content">
                 <h2>{{ page.title }}</h2>
                 <img src="{{ page.image }}" alt="{{ page.title }}" class="single-post-image">
                 <p>{{ page.content }}</p>
+                <p>{% if page.date %}{{ page.date }}{% endif %}</p>
+                    <p>{% if page.invite %}Invité d'honneur : {{ page.invite }}{% endif %}</p>
+
 
         </div>
     </div>
 </div>
     </main>
+
+      <section id="cinecolo" class="section" style="padding: 20px;">
+    <div class="section-head">
+      <h3>Les éditions du festival</h3>
+      <div class="muted">Plus de 10 ans de cinéma écologique en Haïti</div>
+    </div>
+    <div class="cinecolo-content grid">
+        <!--Load all editions from collection leseditions using jekyll-->
+        {% for edition in site.leseditions %}
+        <div class="cinecolo-card card" role="article" aria-label="Édition {{ edition.title }}" tabindex="0">
+            <img style="width: 100%; height: 250px; object-fit: cover;" src="{{ edition.image }}" alt="Image de l'édition {{ edition.title }}">
+            <div class="cinecolo-info">
+                <h4>{{ edition.title }}</h4>
+                <p>{{ edition.date }}</p>
+                <p>Invité d'honneur : {{ edition.invite }}</p>
+            </div>
+            <a  class="btn btn-primary" href="/leseditions/{{ edition.slug }}">En savoir plus</a>
+        
+        </div> 
+        {% endfor %}
+
+    </div>
+        
+         
+       
+  </section>
 <!--footer-->
-  
+  <style>
+    /* Styles pour le single post */
+    .single-post {
+   
+        width: 100%;
+        height: 100%;
+       margin-top: 70vh;
+       padding: 30px;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    .single-post-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+       
+        width: 100%;
+        position: relative;
+    }
+
+    
+
+    .single-post-image {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+  </style>
 
      {% include footer.html %}
 
