@@ -4,7 +4,7 @@ title: Edition 2025
 image: /assets/uploads/edition2025.png
 date: 2025-08-01T20:09:04.058Z
 invite: Non valide
-order: 1
+order: 2
 active: true
 ---
 Tenue du 1er au 3 août 2025, cette édition spéciale a revêtu une double signification :
