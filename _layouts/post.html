@@ -7,18 +7,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Maison verte,Haiti,Cinecolo,Jaden fanm,KAribiodiv,Je dis vert,Biodiverste,Environnement,Protection Environnement" name="keywords">
     <meta content="Maison Verte Haiti -Semer le Vert , Proteger La Terre , Faire Respirer Haiti" name="description">
-     <meta name="description"
- content="Maison verte,Haiti,Cinecolo,Jaden fanm,KAribiodiv,Je dis vert,Biodiverste,Environnement,Protection Environnement" />
-  <meta name="keywords"
-    content="Maison verte,association maison,association maison verte,ecologie,environnement,biodiversite" />
-  <meta property="og:title" content="Association Maison Verte D'Haiti" />
-  <meta property="og:description"
-    content="Maison Verte Haiti - Semer le Vert , Proteger La Terre , Faire Respirer Haiti" />
-  <meta property="og:image" content="https://maisonvertehaiti.org/img/about-1.jpg" />
-  <meta property="og:url" content="https://maisonvertehaiti.org" />
+     <meta property="og:title" content="{{ page.title }} - Maison Verte d'Haïti" />
+  <meta property="og:description" content="{{ page.title }}" />
+  <meta property="og:image" content="{{ page.image }}" />
+  <meta property="og:url" content="{{ page.url}}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="author" content="CHARLDÉ WEDSER">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="post, follow">
   <meta name="language" content="French">
   
     <!-- Google Web Fonts -->
@@ -73,6 +68,18 @@
 <div id="leaf-container"></div>
 <div id="mist-layer"></div>
 <div id="light-rays"></div>
+<!--Lire single post-->
+<div id="single-post" class="single-post">
+    <div class="single-post-content">
+        <span id="close-single-post" class="close-single-post">&times;</span>
+        <div id="single-post-inner-content">
+                <h2>{{ page.title }}</h2>
+                <img src="{{ page.image }}" alt="{{ page.title }}" class="single-post-image">
+                <p>{{ page.content }}</p>
+
+        </div>
+    </div>
+</div>
     </main>
 <!--footer-->
   
