@@ -1,3 +1,9 @@
+---
+layout: projets
+title: Karibiodiv
+description: Le projet Karibiodiv vise à promouvoir la biodiversité en Haïti à travers des initiatives de conservation, d'éducation et de sensibilisation. Nous travaillons avec les communautés locales pour protéger les écosystèmes uniques du pays et encourager des pratiques durables qui préservent la richesse naturelle d'Haïti pour les générations futures.
+---
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -28,6 +34,7 @@
     <!-- Template Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
     <link href="/assets/css/styles.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -46,9 +53,59 @@
         </div>
     </div>
 
- 
-    <!--header-->
-    {% include header.html %}
+ <header class="wrap" role="banner">
+  <div class="logo">
+     <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 70px;height:70px;border-radius:20%;" alt="">
+     
+    <div>
+      <div class="brand">Association Maison Verte d'Haïti</div>
+      <div class="muted" style="font-size:12px">Semer le vert, protéger la Terre, faire respirer Haïti</div>
+    </div>
+  </div>
+
+  <!-- Menu desktop -->
+  <nav aria-label="Navigation principale" class="desktop-nav">
+     <a href="/">🛖 Accueil</a>
+      <a href="/about/"> Qui sommes-nous</a>
+      <a href="/blog/">📰 Actualités</a>
+     
+      <a href="/projects/">🌿 Nos projets</a>
+      <a href="/don/" class="cta">💚 Don</a>
+      <a href="/#contact">✉️ Contact</a>
+
+  </nav>
+ <button id="menu-toggle" aria-label="Ouvrir le menu" class="hamburger hamburger-btn">
+        <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+    </button>
+  <!-- Menu mobile hamburger -->
+  <div class="mobile-nav-wrapper">
+   
+
+    <nav aria-label="Navigation principale" id="main-nav" class="nav-collapsed">
+      <!-- header mobile -->
+      <div class="mobile-nav-header" style="margin-bottom:24px;text-align:center;">
+         <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 60px;height:60px;border-radius:50%;" alt="">
+     
+        <div style="color:white;font-weight:700;font-size:16px">Association Maison Verte d'Haïti</div>
+      </div>
+      <ul>
+        <li> <a href="/">🛖 Accueil</a></li>
+        <li> <a href="/about/"> Qui sommes-nous</a></li> 
+        <li><a href="/blog/">📰 Actualités</a></li> 
+        <li><a href="/presses/">🎙️ La presse</a></li>
+         <li><a href="/projects/">🌿 Nos projets</a></li>
+        <li><a href="/don/" class="cta">💚 Don</a></li>
+         <li><a href="/#contact">✉️ Contact</a></li>
+      </ul>
+     
+    </nav>
+  </div>
+
+  <!-- overlay mobile -->
+  <div id="nav-overlay"></div>
+</header>
     <!-- NATURAL ANIMATIONS -->
 <div id="leaf-container"></div>
 <div id="mist-layer"></div>
@@ -57,12 +114,14 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">{{page.title}}</h1>
-                <p class="fs-5 text-white mb-4">{{page.description}}</p>
+            <h3 class="text-white display-3 mb-4">Festival CINECOLO-HAÏTI</h1>
+                <p class="fs-5 text-white mb-4">Le premier festival
+international du film de l’environnement
+d’Haïti.</p>
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="/">Accueil</a></li>
                     <li class="breadcrumb-item"><a href="/">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">{{page.title}}</li>
+                    <li class="breadcrumb-item active text-white">Festival CINECOLO-HAÏTI</li>
                 </ol>
         </div>
     </div>
@@ -71,14 +130,210 @@
 
     <!-- Header End -->
     <!--content-->
-    <main>
-        <!--Display content here -->
-        {{ content }}
-        <!-- NATURAL ANIMATIONS -->
- 
-    </main>
+<main class="journal">
+
+  <!-- PROJET -->
+  <article class="entry">
+    <h2>🎥 Festival CINECOLO-HAÏTI</h2>
+    <p class="meta">2015 · Port-au-Prince</p>
+
+    <p>
+     Le Festival CINECOLO-HAÏTI, initié à Port-
+au-Prince en 2015, est le premier festival
+international du film de l’environnement
+d’Haïti. Cet évènement a été créé dans
+l’objectif de placer l’être humain et l’écologie
+au cœur des préoccupations actuelles. Il
+s’inscrit dans une dynamique de contribuer à
+l’éducation environnementale de la
+population haïtienne dont les jeunes les en
+particulier.
+    </p>
+
+    <figure class="image-left">
+      <img src="/img/Picture1.png" alt="Reboisement">
+      <figcaption>5 ème édition du festival</figcaption>
+    </figure>
+
+    <p>
+    CINECOLO-HAITI vise à promouvoir, à travers le 7e art, plus précisément le documentaire, un éveil de la conscience écocitoyenne des Haïtiennes et des Haïtiens. Notre démarche consiste à sensibiliser, éduquer, informer la population haïtienne sur les enjeux de la crise écologique et climatique actuelle et de leur offrir des alternatives possibles et durables pouvant concilier le progrès économique et social à la lutte pour la protection de l'environnement. 
+    </p>
+    <p>
+ Étant en conformité aux ODD (Objectifs de Développement Durable) 4, 5 et 13 (Accès à une éducation de qualité, égalité entre les sexes, lutte contre le changement climatique), le festival CINECOLO poursuit les objectifs suivants : <br><br>
+a)Promouvoir l'éducation à l'environnement et au développement durable auprès de la population haïtienne. 
+<br><br>
+b)Amener la population haïtienne, particulièrement les jeunes, à mieux comprendre les enjeux de la crise écologique et climatique actuelle qui nous menace et d’engager des actions individuelles et collectives vers une transition écologique haïtienne.
+ <br><br>
+c)Faire du cinéma l’élément déclencheur d’un éveil de la conscience écocitoyenne de la population haïtienne particulièrement les jeunes 
+    </p>
+    
+
+    <blockquote>
+      « Philosophie du festival. »
+    </blockquote>
+  </article>
+<figure class="image-right">
+      <img src="/assets/img/cnecolo.jpg" alt="Formation">
+      <figcaption>Logo du festival</figcaption>
+    </figure>
+
+    <p>
+      En tant que festival, CINECOLO-HAITI n’est pas seulement un produit culturel. C’est aussi un canal de transmission d’une vision, une philosophie visant à nous reconnecter à notre Terre-mère, à l’écosystème du vivant pour une gestion rationnelle de nos ressources. Voilà pourquoi notre festival tient compte des éléments fondamentaux suivants :
+    </p>
+    <br><br>
+    <h3>-Accessibilité à toutes les couches sociales</h3>
+    <p>
+        Dans le dessein de faire du festival CINECOLO un outil incontournable d’éducation relative à l’écocitoyenneté et au développement durable d’Haïti, nous avons décidé de mettre en accès libre toutes nos activités. Cela s’explique par notre devoir citoyen de contribuer à la protection de l’environnement et au développement de notre pays.
+    </p>
+     <br><br>
+    <h3>Espaces de rencontres, de formation et d’échanges</h3>
+    <p>
+        Ce festival offre tout une gamme de choix très diversifiée à son public. Au-delà des projections-échanges de films documentaires portant sur les problématiques écologiques et climatiques, le public a rendez-vous à toute une pléiade d’activités telles que conférences- débats, formations, ateliers, masters class, visites guidées, expositions-ventes de produits non préjudiciables à l’environnement, rencontres entre acteurs de la société civile et des politiques, des jeunes et des sommités dans le domaine de l’environnement.
+    </p>
+  <!-- PROJET -->
+  <!--Les differentes editions du festival cinecolo ,un projet maison verte ,image,titre,date,invite d'honneur-->
+  <section id="cinecolo" class="section">
+    <div class="section-head">
+      <h3>Les éditions du festival</h3>
+      <div class="muted">Plus de 10 ans de cinéma écologique en Haïti</div>
+    </div>
+    <div class="cinecolo-content grid">
+        <!--Load all editions from collection leseditions using jekyll-->
+        {% for edition in site.leseditions %}
+        <div class="cinecolo-card card" role="article" aria-label="Édition {{ edition.title }}" tabindex="0">
+            <img style="width: 100%; height: 250px; object-fit: cover;" src="{{ edition.image }}" alt="Image de l'édition {{ edition.title }}">
+            <div class="cinecolo-info">
+                <h4>{{ edition.title }}</h4>
+                <p>{{ edition.date }}</p>
+                <p>Invité d'honneur : {{ edition.invite }}</p>
+            </div>
+            <a  class="btn btn-primary" href="{{ edition.url | relative_url }}">En savoir plus</a>
+        
+        </div> 
+        {% endfor %}
+
+    </div>
+        
+         
+       
+  </section>
+
+</main>
+
     <!--footer-->
-    {% include footer.html %}
+    <!-- Footer Start -->
+<div class="container-fluid footer bg-dark text-body py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item">
+                    <h4 class="mb-4 text-white">🌿 Newsletter 🌿</h4>
+                    <p class="mb-4">
+                        Recevez des idées écoresponsables pour vivre plus sainement tout en respectant la nature.
+                    </p>
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-0 bg-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre email">
+                        <button type="button" class="btn-hover-bg btn btn-primary position-absolute top-0 end-0 py-2 mt-2 me-2">S'INSCRIRE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4 text-white">Nos Projets</h4>
+                    <a href="/projects/"><i class="fas fa-angle-right me-2"></i> CINECOLO</a>
+                    <a href="/projects/"><i class="fas fa-angle-right me-2"></i> KARIBIODIV</a>
+                    <a href="/projects/"><i class="fas fa-angle-right me-2"></i> JADENFANM</a>
+                    <a href="/projects/"><i class="fas fa-angle-right me-2"></i> JEDISVERT</a>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4 text-white">Lien Utiles</h4>
+                    <a href="/"><i class="fas fa-angle-right me-2"></i> Acuueil</a>
+                    <a href="/blog/"><i class="fas fa-angle-right me-2"></i> Actualit&eacute;s</a>
+                    <a href="/don/"><i class="fas fa-angle-right me-2"></i> Don</a>
+                    <a href="/#contact"><i class="fas fa-angle-right me-2"></i> Contact</a>
+
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item">
+                    <h4 class="mb-4 text-white">Nos Partenaires</h4>
+                    <div class="row g-2">
+                        <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="/img/partenaire1.png" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="/img/partenaire1.png" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="/img/partenaire2.png" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="/img/partenaire2.png" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="/img/partenaire3.png" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="/img/partenaire3.png" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="/img/partenaire4.png" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="/img/partenaire4.png" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Copyright Start -->
+<div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4 text-center text-md-start mb-md-0">
+                <span class="text-body"><a href="#"><i class="fas fa-copyright text-light me-2"></i>A. Maison Verte d'Haïti
+</a>, Tous droits réservés.</span>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="btn-hover-color btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center text-md-end text-body">
+                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                Conçu par: <a class="border-bottom" href="https://konbittech.org">CHARLDE WEDSER</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
         
   
     <script src="/assets/js/main.js" defer></script>
