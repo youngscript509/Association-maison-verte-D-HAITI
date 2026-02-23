@@ -206,7 +206,7 @@ c)Faire du cinéma l’élément déclencheur d’un éveil de la conscience éc
                 <p>{{ edition.date }}</p>
                 <p>Invité d'honneur : {{ edition.invite }}</p>
             </div>
-            <a  class="btn btn-primary" href="/leseditions/{{ edition.slug }}">En savoir plus</a>
+            <a  class="btn btn-primary" href="{{ edition.link | relative_url }}">En savoir plus</a>
         
         </div> 
         {% endfor %}
