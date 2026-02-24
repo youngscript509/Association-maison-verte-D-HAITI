@@ -277,8 +277,9 @@
     padding: 100px 0 0 0;
    
 }
-p{
-  justify-content: center;
+p,a{
+  text-align: justify;
+
 }
 
 /*** Single Page Hero Header End ***/
