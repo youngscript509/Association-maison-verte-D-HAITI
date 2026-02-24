@@ -172,12 +172,12 @@ title: Accueil
         <article class="news-item">
           <img src="{{ news.image }}" alt="{{ news.title }}"/>
           <div>
-            <div style="font-weight:800">{{ news.title }}</div>
+            <div style="font-weight:800">{{ news.title | truncatewords: 10 }}</div>
             <div class="muted">{{ news.date | date: "%d/%m/%Y" }}</div>
-                <p>{{ news.excerpt }}</p>
-                <a href="{{ news.url | relative_url }}" class="btn btn-secondary">Lire plus  sur {{ news.reference }}</a>
+                <p>{{ news.excerpt | truncatewords: 20 }}</p>
+                <a href="{{ news.link | relative_url }}" class="btn btn-secondary">Lire plus  sur {{ news.reference }}</a>
           </div>
-        </article>
+        </article
         {% endfor %}
       
          <div class="d-flex align-items-center justify-content-start">

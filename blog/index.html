@@ -33,9 +33,9 @@ description: Suivez les informations récentes, initiatives et actions en faveur
                         </div>
                     </div>
                     <div class="text-dark border p-4 ">
-                        <h4 class="mb-4">{{ post.title }}</h4>
-                        <p class="mb-4">{{ post.excerpt }}</p>
-                        <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="{{ post.url }}">Lire plus sur {{ post.reference }}</a>
+                        <h4 class="mb-4">{{ post.title | truncatewords: 10 }}</h4>
+                        <p class="mb-4">{{ post.excerpt | truncatewords: 20 }}</p>
+                        <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="{{ post.link }}">Lire plus sur {{ post.reference }}</a>
                     </div>
                 </div>
             </div>
