@@ -27,7 +27,7 @@ collections:
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Extrait", name: "excerpt", widget: "text" }
       - { label: "Actif", name: "active", widget: "boolean", default: true }
-      - { label: "Lien de l'Article", name: "url", widget: "string"}
+      - { label: "Lien de l'Article", name: "link", widget: "string"}
       - { label: "Reference", name: "reference", widget: "string" }
       - { label: "Contenu Complet", name: "body", widget: "markdown" }
      
