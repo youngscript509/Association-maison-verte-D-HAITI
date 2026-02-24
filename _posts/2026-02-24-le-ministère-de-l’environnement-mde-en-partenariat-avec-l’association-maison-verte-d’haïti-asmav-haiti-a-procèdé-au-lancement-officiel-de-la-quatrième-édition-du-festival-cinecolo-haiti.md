@@ -1,7 +1,6 @@
 ---
 title: Le Ministère de l’Environnement(MdE) en partenariat avec l’Association
-  Maison Verte d’Haïti (ASMAV-HAITI) a procèdé au lancement officiel de la
-  quatrième édition du Festival CINECOLO-HAITI
+  Maison Verte d’Haïti (ASMAV-HAITI) a procèdé au lancement officiel de la ..
 date: 2026-02-24T21:20:20.090Z
 image: https://www.mediaterre.org/users/christin/images/cinecolo-haiti.jpg
 excerpt: Le Ministère de l’Environnement(MdE) en partenariat avec l’Association
