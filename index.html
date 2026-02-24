@@ -175,7 +175,7 @@ title: Accueil
             <div style="font-weight:800">{{ news.title }}</div>
             <div class="muted">{{ news.date | date: "%d/%m/%Y" }}</div>
                 <p>{{ news.excerpt }}</p>
-                <a href="{{ news.url | relative_url }}" class="btn btn-primary">Lire plus</a>
+                <a href="{{ news.url | relative_url }}" class="btn btn-secondary">Lire plus  sur {{ news.reference }}</a>
           </div>
         </article>
         {% endfor %}
