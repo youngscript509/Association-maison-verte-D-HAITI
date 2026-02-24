@@ -1,6 +1,6 @@
 ---
 title: "Haïti : Le Nord se prépare à accueillir la 6e édition du Festival
-  Cinécolo-Haïti"
+  Cinécolo-Haïti | Le climat change et vous les musiciens du Titanic"
 date: 2026-02-24T21:14:47.695Z
 image: https://haiticlimat.org/site/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-23-at-12.23.20-PM.jpeg
 excerpt: Le climat change et vous les musiciens du Titanic’’. C’est autour de ce
