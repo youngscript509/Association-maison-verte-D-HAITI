@@ -1,5 +1,6 @@
 ---
-title: La 3e édition du festival Cinécolo-Haïti est lancée
+title: "La 3e édition du festival Cinécolo-Haïti est lancée sur le thème : «
+  Gouvernance locale et gestion de l’environnement. »"
 date: 2026-02-24T21:22:02.102Z
 image: /assets/uploads/ed2018.png
 excerpt: "Du 23 février au 3 mars se déroule la 3e édition du festival
