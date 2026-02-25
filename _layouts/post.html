@@ -78,6 +78,37 @@
         </div>
     </div>
 </div>
+<!--gallery of the post-->
+ <div id="post-gallery" class="post-gallery">
+    {% if page.gallery %}
+        <div class="gallery-grid">
+            {% for image in page.gallery %}
+                <a href="{{ image }}" data-lightbox="post-gallery">
+                    <img src="{{ image }}" alt="Image de la galerie du post" class="gallery-image">
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}         
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        
+    </style>
     </main>
 <!--footer-->
   <style>

@@ -277,7 +277,9 @@
     padding: 100px 0 0 0;
    
 }
-
+p,a{
+  text-align: justify;
+}
 
 /*** Single Page Hero Header End ***/
 
@@ -290,6 +292,9 @@
     color: var(--bs-white) !important;
 }
 
+.breadcrumb p {
+    text-align: center;
+}
 
 /*** A Propos End ***/
 
