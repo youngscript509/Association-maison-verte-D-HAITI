@@ -78,29 +78,7 @@
         </div>
     </div>
 </div>
-<!--Biographie de l'invite de l'edition-->
-<div>
-    {% if page.invite %}
-        <div id="invite-biography" class="invite-biography">
-            <h3>Biographie de l'invité d'honneur</h3>
-            <p>{{ page.invite }}</p>
-            <img src="{{ page.invite_photo }}" alt="Photo de l'invité d'honneur" class="invite-photo">
-
-            <p>{{ page.about_invite }}</p>
-        </div>
-    {% endif %}
-</div>
-<!--gallery of the post-->
- <div id="post-gallery" class="post-gallery">
-    {% if page.gallery %}
-        <div class="gallery-grid">
-            {% for image in page.gallery %}
-                <a href="{{ image }}" data-lightbox="post-gallery">
-                    <img src="{{ image }}" alt="Image de la galerie du post" class="gallery-image">
-                </a>
-            {% endfor %}
-        </div>
-    {% endif %}         
+         
     <style>
         .gallery-grid {
             display: grid;
@@ -119,20 +97,6 @@
         .gallery-image:hover {
             transform: scale(1.05);
         }
-        #invite-biography {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-        .invite-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-top: 20px;
-        }
-        
         
     </style>
     </main>
