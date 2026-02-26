@@ -194,4 +194,4 @@ collections:
       - { label: "Invite d'honneur", name: "invite", widget: "string" }
       - { label: "Ordre d'Affichage", name: "order", widget: "number" }
       - { label: "Actif", name: "active", widget: "boolean", default: true }
-      - { label: "Lien de l'Édition", name: "link", widget: "hidden", default: "{{year}}-{{month}}-{{day}}-{{slug}}" } 
+      - { label: "Lien de l'Édition", name: "link", widget: "string" } 
