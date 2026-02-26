@@ -220,6 +220,32 @@ description: "Le Festival CINECOLO-HAÏTI, initié à Port-au-Prince en 2015, es
 
          </div><!-- Container end -->
 		</section><!-- Main container end -->
+        <section id="cinecolo" class="section">
+    <div class="section-head">
+      <h3>Festival CINECOLO</h3>
+      <div class="muted">Plus de 10 ans de cinéma écologique en Haïti</div>
+    </div>
+    <div class="cinecolo-content grid">
+        <!--Load all editions from collection leseditions using jekyll-->
+        {% for edition in site.leseditions %}
+        <div class="cinecolo-card card" role="article" aria-label="Édition {{ edition.title }}" tabindex="0">
+            <img style="width: 100%; height: 250px; object-fit: cover;" src="{{ edition.image }}" alt="Image de l'édition {{ edition.title }}">
+            <div class="cinecolo-info">
+                <h4>{{ edition.title }}</h4>
+              
+                <p>Invité d'honneur : {{ edition.invite }}</p>
+            </div>
+            <button class="btn btn-primary" onclick="location.href='{{ edition.link | relative_url }}'">En savoir plus</button>
+        
+        </div> 
+        {% endfor %}
+
+    </div>
+        
+         
+       
+  </section>
+    
 		
       {% include footer.html %}
 
