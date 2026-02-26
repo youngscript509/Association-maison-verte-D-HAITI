@@ -168,20 +168,20 @@ title: Accueil
         <div class="muted">Dernières actions & histoires</div>
       </div>
       <div class="news-list">
-        {% for news in site.posts limit: 4 %}
+        {% for news in site.posts limit: 3%}
         <article class="news-item">
           <img src="{{ news.image }}" alt="{{ news.title }}"/>
           <div>
-            <div style="font-weight:800">{{ news.title | truncatewords: 10 }}</div>
+            <div style="font-weight:800">{{ news.title | truncatewords: 15 }}</div>
            
-                <p>{{ news.excerpt | truncatewords: 20 }}</p>
+                <p>{{ news.excerpt | truncatewords: 25 }}</p>
                 <a href="{{ news.link }}" class="btn btn-secondary">Lire plus  sur {{ news.reference }}</a>
           </div>
         </article>
         {% endfor %}
       
          <div class="d-flex align-items-center justify-content-start">
-                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/blog/">Plus articles</a>
+    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/projects/cinecolo/public/lapresse.html">Plus articles</a>
          </div>
       </div>
     </section>
