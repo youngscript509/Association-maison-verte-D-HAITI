@@ -58,74 +58,31 @@ description: "Le Festival CINECOLO-HAÏTI, initié à Port-au-Prince en 2015, es
    <!-- Responsive styles-->
    <link rel="stylesheet" href="css/responsive.css">
 
-   <link href="/css/style.css" rel="stylesheet">
+  
+  <link href="/css/style.css" rel="stylesheet">
     <link href="/assets/css/styles.css" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
+     <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+     <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 
 <body>
    <div class="body-inner">
-      <div class="slide-background">
-         <!-- Header start -->
-         <header id="header" class="header header-transparent">
-          <div class="container">
-              <nav class="navbar navbar-expand-lg navbar-light">
-                  <!-- logo-->
-                  <a class="navbar-brand" href="index.html">
-                      <img style="width: 70px; height: 70px; border-radius: 50%;" src="assets/images/cnecolo.jpg" alt="">
-                      
-                  </a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                     <span class="navbar-toggler-icon"><i class="icon icon-menu"></i></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                     <ul class="navbar-nav ml-auto">
-                        <li class="dropdown nav-item active">
-                           <a href="#" class="" data-toggle="dropdown">Le festival <i class="fa fa-angle-down"></i></a>
-                           <ul class="dropdown-menu" role="menu">
-                              <li><a href="index.html#aboutus">Qui sommes-nous?</a></li>
-                              <li><a href="index.html#president">Mot du pr&eacute;sident</a></li>
-                            
-                           </ul>
-                        </li>
-                        <li class="dropdown nav-item">
-                           <a href="#" class="" data-toggle="dropdown">Les editions <i class="fa fa-angle-down"></i></a>
-                           <ul class="dropdown-menu" role="menu">
-                              
-                              <li><a href="2021.html">Edition 2022</a></li>
-                              <li><a href="2020.html">Edition 2020</a></li>
-                              <li><a href="2019.html">Edition 2019</a></li>
-                              <li><a href="2018.html">Edition 2018</a></li>
-                              <li><a href="2017.html">Edition 2017</a></li>
-                              <li><a href="2016.html">Edition 2016</a></li>
-                              
-                           </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                           <a href="invites.html" class="" >Les invités <i class="fa fa-angle-down"></i></a>
-                           
-      
-                        </li>
-                        <li class="nav-item dropdown">
-                           <a href="actualitees.html" class="" >Actualit&eacute;s <i class="fa fa-angle-down"></i></a>
-                           
-                        </li>
-                        
-                        <li class="nav-item">
-                           <a href="index.html#contact">Contact</a>
-                        </li>
-                       
-                     </ul>
-                  </div>
-               </nav>
-          </div><!-- container end-->
-       </header>
-      </div>
-
-      <!-- banner start-->
-      <br><br><br>
+   {% include header.html %}
 
       <div id="page-banner-area" class="page-banner-area" style="background-image:url(images/hero_area/bg1.jpg)">
          <!-- Subpage title start -->
@@ -964,164 +921,12 @@ avoir obtenu son diplôme en biologie, Anne Laudisoit a passé deux années sabb
          <!-- shap img end-->
       </section>
      
-	<!-- ts footer area start-->
-   <div class="footer-area">
+	
 
-      <!-- ts-book-seat start-->
-      <section class="ts-book-seat" style="background-image: url(images/book_seat_img.jpg)">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-8 mx-auto">
-                  <div class="book-seat-content text-center mb-70">
-                     <h2 class="section-title white">
-                        CINECOLO-HAITI
-                        <span>Le festival international du film de l'environnement</span>
-                        
-                     </h2>
-                  
-                  </div><!-- book seat end-->
-               </div><!-- col end-->
+      {% include footer.html %}
 
-            </div><!-- row end-->
-            <div class="ts-footer-newsletter">
-               <div class="ts-newsletter" style="background-image: url(images/shap/subscribe_pattern.png)">
-                  <div class="row">
-                     <div class="col-lg-6 mx-auto">
-                        <div class="ts-newsletter-content">
-                           <h2 class="section-title">
-                              <span>S'INSCRIRE À LA NEWSLETTER</span>
-                              Vous voulez quelque chose en plus ?
-                           </h2>
-                        </div>
-                        <div class="newsletter-form">
-                           <form action="#" method="post" class="media align-items-end">
-                              <div class="email-form-group media-body">
-                                 <input type="email" name="email" id="newsletter-form-email" class="form-control"
-                                    placeholder="Your Email" autocomplete="off" required="">
-                              </div>
-                              <div class="d-flex ts-submit-btn">
-                                 <button style="width: 100%; background-color: rgb(19, 5, 58); margin-top: 15px;margin-left: 10px;" class="btn" id="subscribebtn">Subscribe</button>
-                                        
-                              </div>
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div><!-- container end-->
-      </section>
-      <!-- book seat  end-->
-
-      <!-- footer start-->
-      <footer class="ts-footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-8 mx-auto">
-                  <div class="ts-footer-social text-center mb-30">
-                     <ul>
-                        <li>
-                           <a href="https://www.facebook.com/cinecolohaiti7/?locale=fr_FR"><i class="fa fa-facebook"></i></a>
-                           </li>
-                           
-                     </ul>
-                     <p style="color: white;" class="display-7">Copyright © 2024 CINECOLO-HAITI. Tous droits réservés.~Design by <a href="https://scriptdata.netlify.app">Wedser Charld&eacute;</a></p>
-                    
-                  </div>
-                  <!-- footer social end-->
-                  
-                  
-               
-               </div>
-            </div>
-         </div>
-      </footer>
-               <!-- footer end-->
-               
-            
-
-      </div>
-      <!-- ts footer area end-->
-
-      <script src="https://konbitmarket.netlify.app/js/js/firebase-app.js"></script>
-      <script src="https://konbitmarket.netlify.app/js/js/auth.js"></script>
-      <script src="https://konbitmarket.netlify.app/js/js/firebase-firestore.js"></script>
-      <script src="firebase-config.js"></script>
-
-      <script>
-         // Attendre que le DOM soit chargé
-     document.addEventListener('DOMContentLoaded', function() {
-     
-     // Sélectionner le bouton d'abonnement
-     const subscribeBtn = document.getElementById('subscribebtn');
-     
-     // Ajouter un écouteur d'événement sur le clic du bouton
-     subscribeBtn.addEventListener('click', function() {
-         
-         // Sélectionner l'élément de saisie de l'email
-         const emailInput = document.getElementById('newsletter-form-email');
-         
-         // Récupérer la valeur de l'email
-         const email = emailInput.value.trim();
-     
-         // Vérifier si l'email est valide
-         if (!validateEmail(email)) {
-             alert('Veuillez entrer une adresse email valide.');
-             return;
-         }
-     
-         // Vérifier si l'email n'est pas déjà dans la collection newsletter de Firestore
-         checkEmailExists(email)
-             .then((exists) => {
-                 if (exists) {
-                     alert('Cet email est déjà inscrit à la newsletter.');
-                 } else {
-                     // Ajouter l'email à la collection newsletter de Firestore
-                     addEmailToNewsletter(email);
-                     alert('Email ajouté à la newsletter avec succès !');
-                 }
-             })
-             .catch((error) => {
-                 console.error('Erreur lors de la vérification de l\'email:', error);
-                 alert('Une erreur s\'est produite. Veuillez réessayer.');
-             });
-     });
-     });
-     
-     // Fonction de validation d'email
-     function validateEmail(email) {
-     const re = /\S+@\S+\.\S+/;
-     return re.test(email);
-     }
-     
-     // Fonction pour vérifier si l'email existe déjà dans Firestore
-     function checkEmailExists(email) {
-     return new Promise((resolve, reject) => {
-         // Vérifier si l'email existe déjà dans la collection newsletter de Firestore
-         const newsletterCollectionRef = firebase.firestore().collection('newsletter'); // Remplacer 'newsletter' par le nom de votre collection
-         newsletterCollectionRef.where('email', '==', email).get()
-             .then((querySnapshot) => {
-                 resolve(!querySnapshot.empty); // true si l'email existe déjà, sinon false
-             })
-             .catch((error) => {
-                 reject(error);
-             });
-     });
-     }
-     
-     // Fonction pour ajouter l'email à la collection newsletter de Firestore
-     function addEmailToNewsletter(email) {
-     // Ajouter l'email à la collection newsletter de Firestore
-     const newsletterCollectionRef = firebase.firestore().collection('newsletter'); // Remplacer 'newsletter' par le nom de votre collection
-     newsletterCollectionRef.add({
-         email: email,
-         subscribedAt: firebase.firestore.FieldValue.serverTimestamp() // Ajoute la date d'inscription
-     });
-     }
-     
-     </script>
-
-
+      <!-- initialize jQuery Library -->
+   <script src="/assets/js/main.js" defer></script>
       <!-- Javascript Files
             ================================================== -->
       <!-- initialize jQuery Library -->
