@@ -252,7 +252,7 @@ gap:8px;
 @media (max-width: 850px) {
   .desktop-nav { display: none; }  /* cacher menu desktop */
   #hero-principal{
-    margin-top: 680px;
+    margin-top: 500px;
   }
   #blockMini{
     display: block;
