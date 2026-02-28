@@ -63,8 +63,10 @@
     @keyframes bar{0%{opacity:.12;transform:scaleY(.8)}50%{opacity:1;transform:scaleY(1.35)}100%{opacity:.12;transform:scaleY(.8)}}
 
     /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;margin:18px 0}
-    .hero-left{padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.45));border-radius:18px;box-shadow:var(--card-shadow)}
+    .hero{display:grid;gap:20px;align-items:center;margin:8px 0}
+    .hero-left{padding:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.45));
+      border-radius:18px;box-shadow:var(--card-shadow)}
     .hero-left h2{margin:0;font-size:34px;color:var(--green-1)}
     .hero-left p{margin:12px 0 18px;color:#2b4d36}
     .cta-row{display:flex;gap:12px}
