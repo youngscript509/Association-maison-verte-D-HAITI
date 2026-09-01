@@ -1,57 +1,48 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Ce fichier configure l'ensemble du site. La plupart des textes affichés sur
+# le site ne sont PAS ici : ils sont gérés via le CMS (/admin) dans les
+# dossiers _data, _posts, _slides, _leseditions, _projects, _gallery,
+# _presses et _aboutus. Ne modifie ce fichier que pour des changements
+# techniques (thème, plugins, structure des collections).
 
-title: maison verte haiti
+title: "Maison Verte Haïti"
 email: info@maisonvertehaiti.org
-description: "L’Association Maison Verte d’Haïti (ASMAV-HAITI), fondée en 2017, œuvre pour la protection de l’environnement, la résilience climatique et l’autonomisation des communautés vulnérables, en particulier des femmes rurales. Elle place au cœur de son action des valeurs fortes : éducation à l’écocitoyenneté, développement durable, économie solidaire, non- violence, gouvernance locale, équité sociale, égalité des droits et respect du vivant sous toutes ses formes."
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+description: "L'Association Maison Verte d'Haïti (ASMAV-HAITI), fondée en 2017, œuvre pour la protection de l'environnement, la résilience climatique et l'autonomisation des communautés vulnérables, en particulier des femmes rurales."
+baseurl: ""
+url: "https://maisonvertehaiti.org"
+lang: fr
 
 # Build settings
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
 
+kramdown:
+  parse_block_html: true
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - GUIDE-CMS.md
+  - node_modules
+  - vendor
 
+# Collections
+# `output: true`  -> chaque élément obtient sa propre page publique
+# `output: false` -> l'élément est seulement utilisé dans des listes (accueil, etc.)
 collections:
-
   posts:
-    output: true
+    output: false
   slides:
-    output: true
-  presses:
-    output: true 
-  events:
-    output: true  
-  pages:
-    output: true
-  aboutus:
-    output: true
-  partners:
-    output: true
+    output: false
   leseditions:
     output: true
-
-    
-
-  
+  aboutus:
+    output: false
+  projects:
+    output: false
+  gallery:
+    output: false

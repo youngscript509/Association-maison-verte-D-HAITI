@@ -9,16 +9,16 @@ title: Accueil
     <section class="hero" id="hero-principal" aria-label="Bannière principale">
       <div class="hero-left">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-          <div class="badge">Éco‑héros</div>
-          <div class="muted" style="font-weight:700">Agir. Protéger. Inspirer.</div>
+          <div class="badge">{{ site.data.home.hero.badge }}</div>
+          <div class="muted" style="font-weight:700">{{ site.data.home.hero.tagline }}</div>
         </div>
-        <h2>Protéger la nature. Soutenir les communautés locales.</h2>
-        <p> L'Association Maison Verte d'Haïti réunit volontaires, partenaires et citoyens autour de projets durables : éducation environnementale, protection de l'environnement, résilience climatique, renforcement des communotés locales.</p>
+        <h2>{{ site.data.home.hero.title }}</h2>
+        <p>{{ site.data.home.hero.text }}</p>
         <div class="cta-row">
-          <button class="btn primary" onclick="location.href='/projects'">Découvrir nos projets</button>
-          <button class="btn ghost" onclick="location.href='/don'">Faire un don</button>
+          <button class="btn primary" onclick="location.href='{{ site.data.home.hero.button1_link }}'">{{ site.data.home.hero.button1_text }}</button>
+          <button class="btn ghost" onclick="location.href='{{ site.data.home.hero.button2_link }}'">{{ site.data.home.hero.button2_text }}</button>
         </div>
-        <div style="margin-top:14px;font-size:13px;color:#2a4e36">Participez à nos missions, gagnez des badges et suivez votre impact.</div>
+        <div style="margin-top:14px;font-size:13px;color:#2a4e36">{{ site.data.home.hero.small_text }}</div>
       </div>
 
     </section>
@@ -142,7 +142,8 @@ title: Accueil
         <div class="muted">Dernières actions & histoires</div>
       </div>
       <div class="news-list">
-        {% for news in site.posts limit: 3%}
+        {% assign active_posts = site.posts | where: "active", true %}
+        {% for news in active_posts limit: 3 %}
         <article class="news-item">
           <img src="{{ news.image }}" alt="{{ news.title }}"/>
           <div>
@@ -155,7 +156,7 @@ title: Accueil
         {% endfor %}
       
          <div class="d-flex align-items-center justify-content-start">
-    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/projects/cinecolo/public/lapresse.html">Plus articles</a>
+    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/blog/">Plus articles</a>
          </div>
       </div>
     </section>
@@ -175,49 +176,18 @@ title: Accueil
                 <h1 class="mb-0"> Découvrez nos differents projets </h1>
             </div>
             <div class="row g-4">
+                {% assign sorted_projects = site.projects | where: "active", true | sort: "order" %}
+                {% for project in sorted_projects %}
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="service-item">
-                        <a href="/projects/cinecolo/">
-                        <img src="/assets/img/cnecolo.jpg" class="img w-100" alt="Image"></a>
-                       
-                    </div>
-                   
-                    <p class="my-4">
-                       🎥Créé en 2015, CINECOLO‑HAITI est le premier festival international haïtien de cinéma sur l’environnement. Il sensibilise le public aux enjeux climatiques et à la biodiversité, s’inscrivant dans la dynamique d’une transition écologique haïtienne. 
-                    </p>
-                      
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="service-item">
-                        <a href="/projects/karibiodiv/">
-                        <img src="/assets/img/Logo-Karibiodiv-Header.png" class="img-fluid w-100" alt="Image"></a>
-                        
+                        <a href="{{ project.link }}">
+                        <img src="{{ project.image }}" class="img w-100" alt="{{ project.title }}"></a>
                     </div>
                     <p class="my-4">
-                        📚Karibiodiv est un outil pédagogique permettant de découvrir la richesse de l’environnement et de la biodiversité caribéenne.
-
-De la géologie aux biotopes, « Karibiodiv » balaie un large éventail de connaissances sur les spécificités faisant la richesse de la biodiversité insulaire caribéenne.
-
-
+                       {{ project.courtedescription }}
                     </p>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="service-item"><a href="/projects/jadenfanm/">
-                        <img src="/assets/img/jaden.jpeg" class="img-fluid w-100" alt="Image"></a>
-                      
-                    </div>
-                    <p class="my-4">👩🏾‍🌾Jaden Fanm est une coopérative maraîchère solidaire créée pour les femmes rurales de Jean-Rabel, promouvant l’agroécologie et renforçant leur autonomie. Elle valorise leur rôle clé dans la sécurité alimentaire et la résilience des communautés face au changement climatique.
-                    </p>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3">
-                    <div class="service-item"><a href="/projects/jedisvert/">
-                        <img src="/assets/img/jedisvert.jpg" class="img-fluid w-100" alt="Image"></a>
-                       
-                    </div>
-                    <p class="my-4">
-                        🌍 Je dis Vert est un magazine écologique innovant, conçu pour permettre aux citoyens et citoyennes de mieux comprendre l’urgence climatique et ses conséquences, tout en leur offrant des repères essentiels pour agir à travers l’innovation, l’engagement et la mobilisation collective.
-                    </p>
-                </div>
+                {% endfor %}
                 <div class="col-12">
                     <div class="d-flex align-items-center justify-content-center">
                         <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/projects/">Lire plus</a>
@@ -238,17 +208,16 @@ De la géologie aux biotopes, « Karibiodiv » balaie un large éventail de conn
     <!-- Don centeriser-->
      
 <section id="don" class="section" style="text-align:center;align-items:center;">
-<h2 class="section-title">Faire un Don</h2>
-<p style="text-align: center;">Merci de soutenir Maison Verte Haïti. Chaque contribution compte.</p>
+<h2 class="section-title">{{ site.data.don.title }}</h2>
+<p style="text-align: center;">{{ site.data.don.intro }}</p>
 <div class="don-box">
     <h3>Options de don</h3>
     <ul>
-      
-        <li>Virement bancaire : IBAN 00000000000</li>
-        <li>Chèque à l'ordre de "Association Maison Verte Haïti", à envoyer à notre siège social.</li>
-      
+      {% for option in site.data.don.options %}
+        <li>{{ option }}</li>
+      {% endfor %}
     </ul>
-    <button class="btn primary">Faire un don maintenant</button>
+    <button class="btn primary" onclick="location.href='{{ site.data.don.button_link }}'">{{ site.data.don.button_text }}</button>
 </div>
 
 </section>
@@ -281,10 +250,10 @@ De la géologie aux biotopes, « Karibiodiv » balaie un large éventail de conn
                  
                     <div class="col-xl-15">
                         <div class="volunteer-img h-100">
-                            <img src="/img/coordonateur.jpg" class="img-fluid w-100" alt="Image">
+                            <img src="{{ site.data.home.coordinateur.photo }}" class="img-fluid w-100" alt="Image">
                             <div class="volunteer-title">
-                                <h5 class="mb-2 text-white">Messerne SAGESSE</h5>
-                                <p class="mb-0 text-white">Militant Ecologiste</p>
+                                <h5 class="mb-2 text-white">{{ site.data.home.coordinateur.name }}</h5>
+                                <p class="mb-0 text-white">{{ site.data.home.coordinateur.role }}</p>
                             </div>
                         </div>
                     </div>
@@ -293,18 +262,9 @@ De la géologie aux biotopes, « Karibiodiv » balaie un large éventail de conn
             <div class="col-lg-7">
                 <h5 class="text-uppercase text-primary" style="margin-top:25px;">Mot du coordonateur general</h5>
                 
-                <p class="mb-4" style="text-align: justify;">
-                   Chers visiteurs,
-<br>
-L’Association Maison Verte d’Haïti est née d’une conviction profonde : la justice sociale, l’égalité de genre et la protection de l’environnement sont étroitement liées. Face aux crises climatiques, aux inégalités persistantes et à la fragilisation de nos territoires, nous sommes convaincus que les solutions durables doivent émerger des communautés elles-mêmes, avec un rôle central joué par les femmes et les jeunes.
-Notre engagement repose sur une vision à la fois militante et responsable. <br>
-Militante, parce que nous défendons un modèle de société dans lequel les ressources naturelles sont protégées, les droits des femmes pleinement reconnus et exercés, et où l’agroécologie, la culture et l’éducation citoyenne deviennent de véritables leviers de transformation sociale. <br>
-Responsable, parce que nos actions s’appuient sur la rigueur, le dialogue, le partenariat et la recherche d’un impact durable, mesurable et partagé. <br>
-À travers nos programmes et initiatives, nous accompagnons les dynamiques locales, valorisons les savoir-faire communautaires et plaidons pour des modèles de développement plus justes, plus résilients et respectueux des équilibres écologiques. Nous œuvrons également à créer des espaces d’expression, de participation citoyenne et de solidarité, convaincus que le changement durable s’opère lorsque les voix longtemps marginalisées sont entendues, reconnues et intégrées aux processus de décision. <br>
-L’Association Maison Verte d’Haïti poursuivra, avec détermination et responsabilité, son action aux côtés des communautés, des organisations partenaires et des institutions, afin de contribuer à la construction d’un avenir où l’humain et la nature avancent ensemble, dans un esprit de solidarité, de justice et de responsabilité partagée. <br>
-<br> <br>
-<strong>Messerne SAGESSE , Ecologiste</strong>
-                </p>
+                <div class="mb-4" style="text-align: justify;">
+                   {{ site.data.home.coordinateur.message | markdownify }}
+                </div>
                 
               
             </div>
@@ -368,19 +328,19 @@ L’Association Maison Verte d’Haïti poursuivra, avec détermination et respo
                                     <div class="bg-white p-4">
                                         <i class="fas fa-map-marker-alt fa-2x text-primary mb-2"></i>
                                         <h4>Addresse</h4>
-                                        <p class="mb-0">P-A-P Haiti</p>
+                                        <p class="mb-0">{{ site.data.site.address }}</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="bg-white p-4">
                                         <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
                                         <h4>Email</h4>
-                                        <p class="mb-0">info@maisonvertehaiti.org</p>
+                                        <p class="mb-0">{{ site.data.site.email }}</p>
                                     </div>
                                 </div>
                               
                                 <div class="col-lg-12">
-                                    <iframe class="w-100" style="height: 412px; margin-bottom: -6px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121020.34891971707!2d-72.3668628472702!3d18.579181929868223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb9dd57503eaa91%3A0x3cd5815df929aa08!2sPort-au-Prince!5e0!3m2!1sen!2sht!4v1767909895371!5m2!1sen!2sht"
+                                    <iframe class="w-100" style="height: 412px; margin-bottom: -6px;" src="{{ site.data.site.map_embed_url }}"
                                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div>
@@ -400,7 +360,8 @@ L’Association Maison Verte d’Haïti poursuivra, avec détermination et respo
     </div>
     <div class="cinecolo-content grid">
         <!--Load all editions from collection leseditions using jekyll-->
-        {% for edition in site.leseditions %}
+        {% assign sorted_editions = site.leseditions | where: "active", true | sort: "order" %}
+        {% for edition in sorted_editions %}
         <div class="cinecolo-card card" role="article" aria-label="Édition {{ edition.title }}" tabindex="0">
             <img style="width: 100%; height: 250px; object-fit: cover;" src="{{ edition.image }}" alt="Image de l'édition {{ edition.title }}">
             <div class="cinecolo-info">
@@ -430,96 +391,28 @@ L’Association Maison Verte d’Haïti poursuivra, avec détermination et respo
         
     </div>
     <div class="row g-0">
+        {% assign sorted_gallery = site.gallery | where: "active", true | sort: "order" %}
+        {% for col in (1..3) %}
         <div class="col-lg-4">
-            <div class="gallery-item">
-                <img src="/assets/img/gal1.png" class="img-fluid w-100" alt="">
+            {% for item in sorted_gallery %}
+              {% assign idx = forloop.index0 | modulo: 3 | plus: 1 %}
+              {% if idx == col %}
+              <div class="gallery-item">
+                <img src="{{ item.image }}" class="img-fluid w-100" alt="{{ item.title }}">
                 <div class="search-icon">
-                    <a href="/assets/img/gal1.png" data-lightbox="gallery-2" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
+                    <a href="{{ item.image }}" data-lightbox="gallery-{{ forloop.index }}" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
                 </div>
                 <div class="gallery-content">
                     <div class="gallery-inner pb-5">
-                        <a href="#" class="h4 text-white">10 ans Festival</a>
-                        <a href="#" class="text-white">
-                            <p class="mb-0">Cinecolo</p>
-                        </a>
+                        <span class="h4 text-white">{{ item.title }}</span>
+                        <p class="mb-0 text-white">{{ item.category }}</p>
                     </div>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/img/gal2.png" class="img-fluid w-100" alt="">
-                <div class="search-icon">
-                    <a href="/assets/img/gal2.png" data-lightbox="gallery-3" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-inner pb-5">
-                        <a href="#" class="h4 text-white">10 ans Festival</a>
-                        <a href="#" class="text-white">
-                            <p class="mb-0">CINECOLO</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
+              </div>
+              {% endif %}
+            {% endfor %}
         </div>
-        <div class="col-lg-4">
-            <div class="gallery-item">
-                <img src="/assets/img/gal3.png" class="img-fluid w-100" alt="">
-                <div class="search-icon">
-                    <a href="/assets/img/gal3.png" data-lightbox="gallery-1" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-inner pb-5">
-                        <a href="#" class="h4 text-white">10 ans Festival</a>
-                        <a href="#" class="text-white">
-                            <p class="mb-0">CINECOLO</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/img/hero3.jpg" class="img-fluid w-100" alt="">
-                <div class="search-icon">
-                    <a href="/assets/img/hero3.jpg" data-lightbox="gallery-1" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-inner pb-5">
-                        <a href="#" class="h4 text-white">4 eme edition </a>
-                        <a href="#" class="text-white">
-                            <p class="mb-0">Festival CINECOLO</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="gallery-item">
-                <img src="/assets/img/hero2.png" class="img-fluid w-100" alt="">
-                <div class="search-icon">
-                    <a href="/assets/img/hero2.png" data-lightbox="gallery-4" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-inner pb-5">
-                        <a href="#" class="h4 text-white">Marche pour le climat</a>
-                        <a href="#" class="text-white">
-                            <p class="mb-0">Festival CINECOLO</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="/assets/img/hero1.png" class="img-fluid w-100" alt="">
-                <div class="search-icon">
-                    <a href="/assets/img/hero1.png" data-lightbox="gallery-5" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-inner pb-5">
-                        <a href="#" class="h4 text-white">5 eme edition</a>
-                        <a href="#" class="text-white">
-                            <p class="mb-0">Festival CINECOLO</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 <!-- Gallery End -->

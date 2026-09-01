@@ -2,196 +2,201 @@ backend:
   name: git-gateway
   branch: main
 
+# Où sont stockées les images/fichiers ajoutés depuis le CMS
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "index.html"
-        label: "Accueil"
-        name: "home"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+locale: "fr"
 
+collections:
+
+  # ------------------------------------------------------------------
+  # 1) RÉGLAGES DU SITE — menu, coordonnées, mot du coordonnateur, dons
+  # ------------------------------------------------------------------
+  - name: "reglages"
+    label: "⚙️ Réglages du site"
+    files:
+
+      - name: "menu"
+        label: "Menu de navigation"
+        file: "_data/nav.yml"
+        fields:
+          - label: "Liens du menu (glisser pour réordonner)"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Texte affiché", name: "label", widget: "string" }
+              - { label: "Lien (ex: /apropos/ ou /#contact)", name: "url", widget: "string" }
+              - { label: "Mettre en avant comme un bouton ?", name: "cta", widget: "boolean", required: false, default: false }
+
+      - name: "coordonnees"
+        label: "Coordonnées & réseaux sociaux"
+        file: "_data/site.yml"
+        fields:
+          - { label: "Nom de l'organisation", name: "organisation", widget: "string" }
+          - { label: "Slogan", name: "tagline", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "Email de contact", name: "email", widget: "string" }
+          - { label: "Adresse", name: "address", widget: "string" }
+          - { label: "Lien Google Maps (URL d'intégration \"embed\")", name: "map_embed_url", widget: "text" }
+          - { label: "Facebook (laisser vide si aucun)", name: "facebook_url", widget: "string", required: false }
+          - { label: "Twitter / X (laisser vide si aucun)", name: "twitter_url", widget: "string", required: false }
+          - { label: "Instagram (laisser vide si aucun)", name: "instagram_url", widget: "string", required: false }
+          - { label: "LinkedIn (laisser vide si aucun)", name: "linkedin_url", widget: "string", required: false }
+          - { label: "Texte de la newsletter (footer)", name: "newsletter_text", widget: "text" }
+          - { label: "Texte partenaire (footer)", name: "footer_partner_text", widget: "string" }
+          - { label: "Lien du partenaire (footer)", name: "footer_partner_url", widget: "string" }
+          - { label: "Nom du concepteur du site", name: "credit_name", widget: "string" }
+          - { label: "Lien du concepteur du site", name: "credit_url", widget: "string" }
+
+      - name: "accueil"
+        label: "Page d'accueil (bandeau + mot du coordonnateur)"
+        file: "_data/home.yml"
+        fields:
+          - label: "Bandeau principal (hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge (petit texte)", name: "badge", widget: "string" }
+              - { label: "Accroche courte", name: "tagline", widget: "string" }
+              - { label: "Titre principal", name: "title", widget: "string" }
+              - { label: "Paragraphe", name: "text", widget: "text" }
+              - { label: "Texte du 1er bouton", name: "button1_text", widget: "string" }
+              - { label: "Lien du 1er bouton", name: "button1_link", widget: "string" }
+              - { label: "Texte du 2e bouton", name: "button2_text", widget: "string" }
+              - { label: "Lien du 2e bouton", name: "button2_link", widget: "string" }
+              - { label: "Petite note sous les boutons", name: "small_text", widget: "string" }
+          - label: "Mot du coordonnateur"
+            name: "coordinateur"
+            widget: "object"
+            fields:
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Fonction", name: "role", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Message", name: "message", widget: "text" }
+
+      - name: "don"
+        label: "Section \"Faire un don\""
+        file: "_data/don.yml"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Texte d'introduction", name: "intro", widget: "text" }
+          - { label: "Options de don (une par ligne)", name: "options", widget: "list" }
+          - { label: "Texte du bouton", name: "button_text", widget: "string" }
+          - { label: "Lien du bouton", name: "button_link", widget: "string" }
+
+  # ------------------------------------------------------------------
+  # 2) ACTUALITÉS — apparaissent sur l'accueil, /blog/ et /presses/
+  # ------------------------------------------------------------------
   - name: "posts"
-    label: "Actualités"
+    label: "📰 Actualités"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Titre", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Extrait", name: "excerpt", widget: "text" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }
-      - { label: "Lien de l'Article", name: "link", widget: "string"}
-      - { label: "Reference", name: "reference", widget: "string" }
-      - { label: "Contenu Complet", name: "body", widget: "markdown" }
-     
+      - { label: "Résumé (affiché sur les listes)", name: "excerpt", widget: "text" }
+      - { label: "Lien vers l'article complet (source externe, ou laisser vide)", name: "link", widget: "string", required: false }
+      - { label: "Nom de la source (ex: lenouveliste.com)", name: "reference", widget: "string", required: false }
+      - { label: "Publier cet article ?", name: "active", widget: "boolean", default: true }
+      - { label: "Contenu complet (optionnel)", name: "body", widget: "markdown", required: false }
 
-
-  - name: "slides"
-    label: "Slides"
-    folder: "_slides"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre du Slide", name: "title", widget: "string" }
-      - { label: "Image du Slide", name: "image", widget: "image" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }
-      - { label: "Description", name: "description", widget: "markdown" }
-  - name: "presses"
-    label: "Presse"
-    folder: "_presses"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre de l'Article", name: "title", widget: "string" }
-      - { label: "Source", name: "source", widget: "string" }
-      - { label: "Lien de l'Article", name: "link", widget: "string" }
-      - { label: "Date de Publication", name: "date", widget: "datetime" }
-      - { label: "Résumé", name: "summary", widget: "text" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }
-      - { label: "Contenu Complet", name: "body", widget: "markdown" }
-      
-  - name: "events"
-    label: "Événements"
-    folder: "_events"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre de l'Événement", name: "title", widget: "string" }
-      - { label: "Date de l'Événement", name: "event_date", widget: "datetime" }
-      - { label: "Lieu", name: "location", widget: "string" }
-      - { label: "Description", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" } 
-      - { label: "Actif", name: "active", widget: "boolean", default: true } 
-
-  - name: "aboutus"
-    label: "À Propos de Nous"
-    folder: "_aboutus"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Mission", name: "mission", widget: "markdown" }
-      - { label: "Vision", name: "vision", widget: "markdown" }
-      - { label: "Slogan", name: "slogan", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }
-      - { label: "Description", name: "description", widget: "markdown" }
-       
-  - name: "projets"
-    label: "Projets"
-    folder: "_projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre du Projet", name: "title", widget: "string" }
-      - { label: "Description", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Courte Description", name: "courtedescription", widget: "string" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
-      - { label: "Images Gallery", name: "images_gallery", widget: "list", allow_add: true,
-          field: { label: "Image", name: "image", widget: "image" }
-        }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }
-
-  - name: "Mot du Coordonnateur"
-    label: "Mot du Coordonnateur"
-    folder: "_motducoordonateur"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Nom du Coordonnateur", name: "name", widget: "string" }
-      - { label: "Message", name: "message", widget: "markdown" }
-      - { label: "Photo", name: "photo", widget: "image" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }
-
-  - name: "Rapports Annuels"
-    label: "Rapports Annuels"
-    folder: "_rapportsannuels"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Année", name: "year", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Fichier PDF", name: "pdf_file", widget: "file" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }
-
-  - name: "Courses et Ateliers"
-    label: "Cours et Ateliers"
-    folder: "_coursesetateliers"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre du Cours/Atelier", name: "title", widget: "string" }
-      - { label: "Description", name: "body", widget: "markdown" }
-      - { label: "Niveau du cours", name: "level", widget: "select", options: ["Débutant", "Intermédiaire", "Avancé"] }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Lien d'Inscription", name: "registration_link", widget: "string" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true } 
-      - { label: "Videos", name: "videos", widget: "list", allow_add: true,
-          field: { label: "Video URL", name: "video_url", widget: "string" }
-        }
-
-  - name: "contact"
-    label: "Contact"
-    folder: "_contact"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Nom", name: "name", widget: "string" }
-      - { label: "Email", name: "email", widget: "string" }
-      - { label: "Message", name: "message", widget: "markdown" }
-
-  - name: "faireundon"
-    label: "Faire un Don"
-    folder: "_faireundon"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Description", name: "body", widget: "markdown" }
-      - { label: "Lien de Don", name: "lien", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Bouton Texte", name: "button_text", widget: "string" }
-      - { label: "Bouton Lien", name: "button_link", widget: "string" }
-
-
-
-  - name: "Les Editions"
-    label: "Les Editions"
+  # ------------------------------------------------------------------
+  # 3) ÉDITIONS DU FESTIVAL CINÉCOLO
+  # ------------------------------------------------------------------
+  - name: "leseditions"
+    label: "🎬 Éditions du festival Cinécolo"
     folder: "_leseditions"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Titre (ex: Édition 2018)", name: "title", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Date", name: "date", widget: "date" }
-      - { label: "Invite d'honneur", name: "invite", widget: "string" }
-      - { label: "Ordre d'Affichage", name: "order", widget: "number" }
-      - { label: "Actif", name: "active", widget: "boolean", default: true }
-      - { label: "Lien de l'Édition", name: "link", widget: "string" } 
+      - { label: "Invité(e) d'honneur", name: "invite", widget: "string" }
+      - { label: "Lien de la page détaillée de cette édition", name: "link", widget: "string" }
+      - { label: "Ordre d'affichage (1, 2, 3…)", name: "order", widget: "number", default: 1 }
+      - { label: "Afficher sur le site ?", name: "active", widget: "boolean", default: true }
+      - { label: "Description complète", name: "body", widget: "markdown" }
+
+  # ------------------------------------------------------------------
+  # 4) NOS PROJETS
+  # ------------------------------------------------------------------
+  - name: "projects"
+    label: "📁 Nos projets"
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom du projet", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Courte description (affichée sur l'accueil et la liste des projets)", name: "courtedescription", widget: "text" }
+      - { label: "Lien vers la page complète du projet", name: "link", widget: "string" }
+      - { label: "Ordre d'affichage (1, 2, 3…)", name: "order", widget: "number", default: 1 }
+      - { label: "Afficher sur le site ?", name: "active", widget: "boolean", default: true }
+
+  # ------------------------------------------------------------------
+  # 5) GALERIE PHOTO
+  # ------------------------------------------------------------------
+  - name: "gallery"
+    label: "🖼️ Galerie photo"
+    folder: "_gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre de la photo", name: "title", widget: "string" }
+      - { label: "Catégorie / légende", name: "category", widget: "string" }
+      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Ordre d'affichage (1, 2, 3…)", name: "order", widget: "number", default: 1 }
+      - { label: "Afficher sur le site ?", name: "active", widget: "boolean", default: true }
+
+  # ------------------------------------------------------------------
+  # 6) HERO / BANDEAU DÉFILANT DE L'ACCUEIL
+  # ------------------------------------------------------------------
+  - name: "slides"
+    label: "🎞️ Bandeau défilant (accueil)"
+    folder: "_slides"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre affiché", name: "title", widget: "string" }
+      - { label: "Description affichée", name: "description", widget: "text" }
+      - { label: "Image de fond", name: "image", widget: "image" }
+      - { label: "Ordre d'affichage (1, 2, 3…)", name: "order", widget: "number", default: 1 }
+      - { label: "Afficher sur le site ?", name: "active", widget: "boolean", default: true }
+
+  # ------------------------------------------------------------------
+  # 7) À PROPOS DE MAISON VERTE
+  # ------------------------------------------------------------------
+  - name: "aboutus"
+    label: "🌿 À propos de Maison Verte"
+    folder: "_aboutus"
+    create: false
+    delete: false
+    slug: "a-propos-de-maison-verte"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Slogan (affiché en haut de la page)", name: "slogan", widget: "text" }
+      - { label: "Qui sommes-nous (onglet 1)", name: "description", widget: "text" }
+      - { label: "Notre mission (onglet 2)", name: "mission", widget: "text" }
+      - { label: "Notre vision (onglet 3)", name: "vision", widget: "text" }
+      - { label: "Afficher sur le site ?", name: "active", widget: "boolean", default: true }
+
+  # ------------------------------------------------------------------
+  # 8) PAGES AVANCÉES — pages riches en HTML (mini-sites Cinécolo, etc.)
+  #    À modifier avec prudence : le contenu est en HTML brut.
+  # ------------------------------------------------------------------
+  - name: "pages_avancees"
+    label: "🛠️ Pages avancées (HTML) — à modifier avec prudence"
+    files:
+      - { name: "cinecolo_accueil", label: "Cinécolo — page d'accueil du projet", file: "projects/cinecolo/index.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }
+      - { name: "cinecolo_galerie", label: "Cinécolo — galerie", file: "projects/cinecolo/public/gallery.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }
+      - { name: "cinecolo_invites", label: "Cinécolo — invités", file: "projects/cinecolo/public/invites.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }
+      - { name: "cinecolo_presse", label: "Cinécolo — revue de presse", file: "projects/cinecolo/public/lapresse.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }
+      - { name: "cinecolo_editions", label: "Cinécolo — éditions (archive)", file: "projects/cinecolo/public/leseditions.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }
+      - { name: "cinecolo_actus", label: "Cinécolo — actualités", file: "projects/cinecolo/public/news.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }
+      - { name: "karibiodiv", label: "Projet Karibiodiv — page complète", file: "projects/karibiodiv/index.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }
+      - { name: "jadenfanm", label: "Projet Jaden Fanm — page complète", file: "projects/jadenfanm/index.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }
+      - { name: "jedisvert", label: "Projet Je Dis Vert — page complète", file: "projects/jedisvert/index.html", fields: [{label: "Contenu HTML complet", name: "body", widget: "markdown"}] }

@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Maison Verte Haiti - Semer le Vert , Proteger La Terre , Faire Respirer Haiti</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} - Semer le Vert, Protéger La Terre, Faire Respirer Haïti</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Maison verte,Haiti,Cinecolo,Jaden fanm,KAribiodiv,Je dis vert,Biodiverste,Environnement,Protection Environnement" name="keywords">
-    <meta content="Maison Verte Haiti -Semer le Vert , Proteger La Terre , Faire Respirer Haiti" name="description">
+    <meta content="{% if page.description %}{{ page.description | strip_html | truncate: 160 }}{% else %}{{ site.description | truncate: 160 }}{% endif %}" name="description">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +57,7 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">{{page.title}}</h1>
+            <h3 class="text-white display-3 mb-4">{{page.title}}</h3>
                 <p class="fs-5 text-white mb-4">{{page.description}}</p>
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="/">Accueil</a></li>

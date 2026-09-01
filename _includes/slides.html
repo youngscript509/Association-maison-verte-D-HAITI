@@ -1,14 +1,11 @@
----
-layout: slides
-
----
 <!-- HERO START -->
 <section id="hero" class="relative w-full h-screen overflow-hidden">
   <div class="hero-slider" style="background-image:url('/img/hiron.jpg')">
     
 
     <!--Afficher les heroslides depuis la collection "slides" -->
-    {% for slide in site.slides %}
+    {% assign sorted_slides = site.slides | where: "active", true | sort: "order" %}
+    {% for slide in sorted_slides %}
     
     <div class="hero-slide" style="background-image:url('{{ slide.image }}')">
       <div class="hero-content">
@@ -20,11 +17,9 @@ layout: slides
     {% endfor %}
 
   <div class="hero-nav">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+    {% for slide in sorted_slides %}
+    <span class="dot{% if forloop.first %} active{% endif %}"></span>
+    {% endfor %}
   </div>
 </section>
 <!-- HERO END -->

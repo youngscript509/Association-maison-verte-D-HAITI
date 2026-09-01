@@ -1,50 +1,36 @@
 <header class="wrap" role="banner">
   <div class="logo">
-     <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 70px;height:70px;border-radius:20%;" alt="">
-     
+     <img src="{{ site.data.site.logo }}" style="width: 70px;height:70px;border-radius:20%;" alt="{{ site.data.site.organisation }}">
     <div>
-      <div class="brand">Association Maison Verte d'Haïti</div>
-      <div class="muted" style="font-size:12px">Semer le vert, protéger la Terre, faire respirer Haïti</div>
+      <div class="brand">{{ site.data.site.organisation }}</div>
+      <div class="muted" style="font-size:12px">{{ site.data.site.tagline }}</div>
     </div>
   </div>
 
   <!-- Menu desktop -->
   <nav aria-label="Navigation principale" class="desktop-nav">
-     <a href="/">Accueil</a>
-      <a href="/apropos/"> Qui sommes-nous</a>
-      <a href="/blog/">Actualités</a>
-     
-      <a href="/projects/"> Nos projets</a>
-      <a href="/don/" class="cta"> Don</a>
-      <a href="/#contact">Contact</a>
-
+    {% for item in site.data.nav.items %}
+    <a href="{{ item.url }}"{% if item.cta %} class="cta"{% endif %}>{{ item.label }}</a>
+    {% endfor %}
   </nav>
- <button id="menu-toggle" aria-label="Ouvrir le menu" class="hamburger hamburger-btn">
+  <button id="menu-toggle" aria-label="Ouvrir le menu" class="hamburger hamburger-btn">
         <span class="line"></span>
             <span class="line"></span>
             <span class="line"></span>
     </button>
   <!-- Menu mobile hamburger -->
   <div class="mobile-nav-wrapper">
-   
-
     <nav aria-label="Navigation principale" id="main-nav" class="nav-collapsed">
       <!-- header mobile -->
       <div class="mobile-nav-header" style="margin-bottom:24px;text-align:center;">
-         <img src="https://maisonvertehaiti.org/assets/img/logomaisonverte.jpg" style="width: 60px;height:60px;border-radius:50%;" alt="">
-     
-        <div style="color:white;font-weight:700;font-size:16px">Association Maison Verte d'Haïti</div>
+         <img src="{{ site.data.site.logo }}" style="width: 60px;height:60px;border-radius:50%;" alt="{{ site.data.site.organisation }}">
+        <div style="color:white;font-weight:700;font-size:16px">{{ site.data.site.organisation }}</div>
       </div>
       <ul>
-        <li> <a href="/">🛖 Accueil</a></li>
-        <li> <a href="/apropos/"> Qui sommes-nous</a></li> 
-        <li><a href="/blog/"> Actualités</a></li> 
-      
-         <li><a href="/projects/"> Nos projets</a></li>
-        <li><a href="/don/" class="cta"> Don</a></li>
-         <li><a href="/#contact"> Contact</a></li>
+        {% for item in site.data.nav.items %}
+        <li><a href="{{ item.url }}"{% if item.cta %} class="cta"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
       </ul>
-     
     </nav>
   </div>
 

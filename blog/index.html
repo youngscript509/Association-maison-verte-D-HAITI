@@ -3,10 +3,6 @@ layout: display
 title: Dernières Actualités
 description: Suivez les informations récentes, initiatives et actions en faveur de l’environnement. 
 ---
-  
-<!DOCTYPE html>
-<html lang="fr">
-
 <!-- Blog Start -->
 <div class="container-fluid blog py-5 mb-5">
     <div class="container py-5">
@@ -16,7 +12,8 @@ description: Suivez les informations récentes, initiatives et actions en faveur
             </h1>
         </div>
         <div class="row g-4">
-            {% for post in site.posts %}
+            {% assign active_posts = site.posts | where: "active", true %}
+            {% for post in active_posts %}
             <div class="col-lg-6 col-xl-3">
                 <div class="blog-item">
                     <div class="blog-img">

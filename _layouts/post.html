@@ -6,14 +6,14 @@
     <title>{{ page.title }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Maison verte,Haiti,Cinecolo,Jaden fanm,KAribiodiv,Je dis vert,Biodiverste,Environnement,Protection Environnement" name="keywords">
-    <meta content="Maison Verte Haiti -Semer le Vert , Proteger La Terre , Faire Respirer Haiti" name="description">
+    <meta content="{% if page.description %}{{ page.description | strip_html | truncate: 160 }}{% else %}{{ site.description | truncate: 160 }}{% endif %}" name="description">
      <meta property="og:title" content="{{ page.title }} - Maison Verte d'Haïti" />
   <meta property="og:description" content="{{ page.title }}" />
   <meta property="og:image" content="{{ page.image }}" />
   <meta property="og:url" content="{{ page.url}}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="author" content="CHARLDÉ WEDSER">
-  <meta name="robots" content="post, follow">
+  <meta name="robots" content="index, follow">
   <meta name="language" content="French">
   
     <!-- Google Web Fonts -->
@@ -72,8 +72,8 @@
        
         <div id="single-post-inner-content">
                 <h2>{{ page.title }}</h2>
-                <img src="{{ page.image }}" alt="{{ page.title }}" class="single-post-image">
-                <p>{{ page.content }}</p>
+                {% if page.image %}<img src="{{ page.image }}" alt="{{ page.title }}" class="single-post-image">{% endif %}
+                <div class="single-post-body">{{ content }}</div>
 
         </div>
     </div>
@@ -142,17 +142,18 @@
     </div>
     <div class="cinecolo-content grid">
         <!--Load all editions from collection leseditions using jekyll-->
-        {% for edition in site.leseditions %}
+        {% assign sorted_editions = site.leseditions | where: "active", true | sort: "order" %}
+        {% for edition in sorted_editions %}
+        {% unless edition.title == page.title %}
         <div class="cinecolo-card card" role="article" aria-label="Édition {{ edition.title }}" tabindex="0">
             <img style="width: 100%; height: 250px; object-fit: cover;" src="{{ edition.image }}" alt="Image de l'édition {{ edition.title }}">
             <div class="cinecolo-info">
                 <h4>{{ edition.title }}</h4>
-                
                 <p>Invité d'honneur : {{ edition.invite }}</p>
             </div>
-            <a  class="btn btn-primary" href="{{ edition.url | relative_url }}">En savoir plus</a>
-        
-        </div> 
+            <a class="btn btn-primary" href="{{ edition.link | relative_url }}">En savoir plus</a>
+        </div>
+        {% endunless %}
         {% endfor %}
 
     </div>

@@ -28,7 +28,7 @@ description:  Votre soutien protège l’environnement et construit un avenir du
                             Agir aujourd’hui pour planter les graines d’un avenir durable, solidaire et respectueux de la nature.
                         </p>
                         <div class="donation-btn d-flex align-items-center justify-content-start">
-                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#">Agir !</a>
+                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#options-don">Agir !</a>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ description:  Votre soutien protège l’environnement et construit un avenir du
                            Préserver notre planète en agissant ensemble pour un environnement sain et durable.
                         </p>
                         <div class="donation-btn d-flex align-items-center justify-content-start">
-                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#">Agir !</a>
+                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#options-don">Agir !</a>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ description:  Votre soutien protège l’environnement et construit un avenir du
                             Redonner souffle à notre pays par des actions écologiques et communautaires durables.
                         </p>
                         <div class="donation-btn d-flex align-items-center justify-content-start">
-                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#">Agir !</a>
+                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#options-don">Agir !</a>
                         </div>
                     </div>
                 </div>
@@ -73,6 +73,16 @@ description:  Votre soutien protège l’environnement et construit un avenir du
 </div>
 
 <!--Methode de don-->
-
+<div class="container pb-5" id="options-don" style="text-align:center;">
+    <div class="don-box" style="background:linear-gradient(180deg,#f0f9f4,#dff3e8);padding:24px;border-radius:12px;max-width:520px;margin:0 auto;box-shadow:0 8px 24px rgba(6,30,15,0.1);text-align:left">
+        <h3 style="margin-top:0">{{ site.data.don.title }}</h3>
+        <p>{{ site.data.don.intro }}</p>
+        <ul style="padding-left:20px">
+          {% for option in site.data.don.options %}
+            <li style="margin-bottom:6px">{{ option }}</li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
 
 <!-- Donation End -->

@@ -1,70 +1,10 @@
 ---
-layout: aboutus
-title: A propos
+layout: display
+title: "A propos de Maison Verte"
+description: "L'Association Maison Verte d'Haïti est une organisation non gouvernementale haïtienne dédiée à la promotion du développement durable, de la justice sociale et de la protection de l'environnement. Fondée en 2017, l'association s'engage à sensibiliser, éduquer et mobiliser les communautés locales autour des enjeux environnementaux et sociaux cruciaux auxquels Haïti est confrontée."
 ---
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8">
-    <title>Maison Verte Haiti - Semer le Vert , Proteger La Terre , Faire Respirer Haiti</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Maison verte,Haiti,Cinecolo,Jaden fanm,KAribiodiv,Je dis vert,Biodiverste,Environnement,Protection Environnement" name="keywords">
-    <meta content="Maison Verte Haiti -Semer le Vert , Proteger La Terre , Faire Respirer Haiti" name="description">
-     <meta name="description"
- content="Maison verte,Haiti,Cinecolo,Jaden fanm,KAribiodiv,Je dis vert,Biodiverste,Environnement,Protection Environnement" />
-  <meta name="keywords"
-    content="Maison verte,association maison,association maison verte,ecologie,environnement,biodiversite" />
-  <meta property="og:title" content="Association Maison Verte D'Haiti" />
-  <meta property="og:description"
-    content="Maison Verte Haiti - Semer le Vert , Proteger La Terre , Faire Respirer Haiti" />
-  <meta property="og:image" content="https://maisonvertehaiti.org/img/about-1.jpg" />
-  <meta property="og:url" content="https://maisonvertehaiti.org" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="author" content="CHARLDÉ WEDSER">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="French">
-  
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/assets/css/styles.css" rel="stylesheet">
-</head>
-<body>
-   {% include header.html %}
-  <!--heroslides-->
-    <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">A propos de Maison Verte</h1>
-                <p class="fs-5 text-white mb-4">L'Association Maison Verte d'Haïti est une organisation non gouvernementale haïtienne dédiée à la promotion du développement durable, de la justice sociale et de la protection de l'environnement. Fondée en 2017, l'association s'engage à sensibiliser, éduquer et mobiliser les communautés locales autour des enjeux environnementaux et sociaux cruciaux auxquels Haïti est confrontée.
-international du film de l’environnement
-d’Haïti.</p>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                    <li class="breadcrumb-item"><a href="/">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">A Propos</li>
-                </ol>
-        </div>
-    </div>
-   
 <!-- About Start -->
- {% for about in site.aboutus %}
+{% for about in site.aboutus %}
 <div class="container-fluid about  py-5" id="about">
     <div class="container py-5">
         <div class="row g-5">
@@ -75,7 +15,6 @@ d’Haïti.</p>
             </div>
             <div class="col-xl-7"><br>
                 <h5 class="text-uppercase text-primary"> À propos de Maison Verte</h5>
-              
                 <p class="fs-5 mb-4">
                   {{ about.slogan }}
                 </p>
@@ -107,9 +46,6 @@ d’Haïti.</p>
                                             <p class="mb-4">
                                                 {{ about.description }}
                                             </p>
-                                           <div class="d-flex align-items-center justify-content-start">
-                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/apropos/">Lire plus</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -124,9 +60,6 @@ d’Haïti.</p>
                                             <p class="mb-4">
                                                 {{ about.mission }}
                                             </p>
-                                           <div class="d-flex align-items-center justify-content-start">
-                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/apropos/">Lire plus</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -138,14 +71,9 @@ d’Haïti.</p>
                                     <div class="d-flex">
                                         <div class="text-start my-auto">
                                             <h5 class="text-uppercase mb-3"> Notre Vision</h5>
-                                            
                                             <p class="mb-4">
                                               {{ about.vision }}
                                             </p>
-                                            <div class="d-flex align-items-center justify-content-start">
-                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/apropos/">Lire plus</a>
-                                            </div>
-                                           
                                         </div>
                                     </div>
                                 </div>
@@ -157,20 +85,5 @@ d’Haïti.</p>
         </div>
     </div>
 </div>
-
 {% endfor %}
-   {% include footer.html %}
-
- <script src="/assets/js/main.js" defer></script>
-     <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/lib/easing/easing.min.js"></script>
-    <script src="/lib/waypoints/waypoints.min.js"></script>
-    <script src="/lib/counterup/counterup.min.js"></script>
-    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="/lib/lightbox/js/lightbox.min.js"></script>
-
-</body>
-
-</html>
+<!-- About End -->
