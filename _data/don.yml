@@ -1,0 +1,7 @@
+title: "Faire un Don"
+intro: "Merci de soutenir Maison Verte Haïti. Chaque contribution compte."
+options:
+  - "Virement bancaire : IBAN 00000000000"
+  - "Chèque à l'ordre de \"Association Maison Verte Haïti\", à envoyer à notre siège social."
+button_text: "Faire un don maintenant"
+button_link: "/don/"

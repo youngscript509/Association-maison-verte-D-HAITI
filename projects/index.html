@@ -1,0 +1,29 @@
+--- 
+layout: display 
+title: 📁 Nos projets
+description:  Découvrez nos differents projets 
+---
+    <!-- Services Start -->
+    <div class="container-fluid service py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+                <h5 class="text-uppercase text-primary">📁 Nos projets</h5>
+                <h1 class="mb-0"> Découvrez nos differents projets </h1>
+            </div>
+            <div class="row g-4">
+                {% assign sorted_projects = site.projects | where: "active", true | sort: "order" %}
+                {% for project in sorted_projects %}
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="service-item">
+                        <a href="{{ project.link }}">
+                        <img src="{{ project.image }}" class="img w-100" alt="{{ project.title }}"></a>
+                    </div>
+                    <p class="my-4">
+                       {{ project.courtedescription }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
