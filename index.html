@@ -1,203 +1,423 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0f8b8d"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="AW-Med"><title>AW-Med</title><link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png">
+---
+layout: default
+title: Accueil
+---
+
+<!--Beautifull and modern home page environnement protection with multiple projects website for Association Maison Verte Haiti-->
+  <main class="wrap">
+    <!-- HERO START -->
+    <section class="hero" id="hero-principal" aria-label="Bannière principale">
+      <div class="hero-left">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div class="badge">{{ site.data.home.hero.badge }}</div>
+          <div class="muted" style="font-weight:700">{{ site.data.home.hero.tagline }}</div>
+        </div>
+        <h2>{{ site.data.home.hero.title }}</h2>
+        <p>{{ site.data.home.hero.text }}</p>
+        <div class="cta-row">
+          <button class="btn primary" onclick="location.href='{{ site.data.home.hero.button1_link }}'">{{ site.data.home.hero.button1_text }}</button>
+          <button class="btn ghost" onclick="location.href='{{ site.data.home.hero.button2_link }}'">{{ site.data.home.hero.button2_text }}</button>
+        </div>
+        <div style="margin-top:14px;font-size:13px;color:#2a4e36">{{ site.data.home.hero.small_text }}</div>
+      </div>
+
+    </section>
+<!-- About Start -->
+ {% for about in site.aboutus %}
+<div class="container-fluid about  py-5" id="about">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-xl-5">
+                <div class="h-100">
+                    <img src="{{ about.image }}" class="img-fluid w-100 h-100" style="border-radius: 20px;margin-top:20px;" alt="Image">
+                </div>
+            </div>
+            <div class="col-xl-7"><br>
+                <h5 class="text-uppercase text-primary"> À propos de Maison Verte</h5>
+              
+                <p class="fs-5 mb-4">
+                  {{ about.slogan }}
+                </p>
+                <div class="tab-class bg-secondary p-4">
+                    <ul class="nav d-flex mb-2">
+                        <li class="nav-item mb-3">
+                            <a class="d-flex py-2 text-center bg-white active" data-bs-toggle="pill" href="#tab-1">
+                                <span class="text-dark" style="width: 150px;">À Propos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="d-flex py-2 mx-3 text-center bg-white" data-bs-toggle="pill" href="#tab-2">
+                                <span class="text-dark" style="width: 150px;">Mission</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-3">
+                            <a class="d-flex py-2 text-center bg-white" data-bs-toggle="pill" href="#tab-3">
+                                <span class="text-dark" style="width: 150px;">Vision</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex">
+                                        <div class="text-start my-auto">
+                                            <h5 class="text-uppercase mb-3"> Qui sommes-nous</h5>
+                                            <p class="mb-4">
+                                                {{ about.description }}
+                                            </p>
+                                           <div class="d-flex align-items-center justify-content-start">
+                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/apropos/">Lire plus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex">
+                                        <div class="text-start my-auto">
+                                            <h5 class="text-uppercase mb-3"> Notre Mission</h5>
+                                            <p class="mb-4">
+                                                {{ about.mission }}
+                                            </p>
+                                           <div class="d-flex align-items-center justify-content-start">
+                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/apropos/">Lire plus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-3" class="tab-pane fade show p-0">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="d-flex">
+                                        <div class="text-start my-auto">
+                                            <h5 class="text-uppercase mb-3"> Notre Vision</h5>
+                                            
+                                            <p class="mb-4">
+                                              {{ about.vision }}
+                                            </p>
+                                            <div class="d-flex align-items-center justify-content-start">
+                                                <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/apropos/">Lire plus</a>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+<!-- About End -->
+    <!-- Flux RSS-->
+ <!-- Services Start -->
+<div class="container-fluid service py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+          
+            <h1 class="mb-0">Dernières actualités – Biodiversité</h1>
+        </div>
+        <div class="row g-4" id="flux-rss">
+
+
+
+
+        </div>
+    </div>
+</div>
+    <!-- Actualites -->
+    <section id="news">
+      <div class="section-head">
+        <h3>Actualités</h3>
+        <div class="muted">Dernières actions & histoires</div>
+      </div>
+      <div class="news-list">
+        {% assign active_posts = site.posts | where: "active", true %}
+        {% for news in active_posts limit: 3 %}
+        <article class="news-item">
+          <img src="{{ news.image }}" alt="{{ news.title }}"/>
+          <div>
+            <div style="font-weight:800">{{ news.title | truncatewords: 15 }}</div>
+           
+                <p>{{ news.excerpt | truncatewords: 25 }}</p>
+                <a href="{{ news.link }}" class="btn btn-secondary">Lire plus  sur {{ news.reference }}</a>
+          </div>
+        </article>
+        {% endfor %}
+      
+         <div class="d-flex align-items-center justify-content-start">
+    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/blog/">Plus articles</a>
+         </div>
+      </div>
+    </section>
+
+
+ 
+<!-- Services End -->
+     
+
+
+
+     <!-- Services Start -->
+    <div class="container-fluid service py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+                <h5 class="text-uppercase text-primary">📁 Nos projets</h5>
+                <h1 class="mb-0"> Découvrez nos differents projets </h1>
+            </div>
+            <div class="row g-4">
+                {% assign sorted_projects = site.projects | where: "active", true | sort: "order" %}
+                {% for project in sorted_projects %}
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="service-item">
+                        <a href="{{ project.link }}">
+                        <img src="{{ project.image }}" class="img w-100" alt="{{ project.title }}"></a>
+                    </div>
+                    <p class="my-4">
+                       {{ project.courtedescription }}
+                    </p>
+                </div>
+                {% endfor %}
+                <div class="col-12">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="/projects/">Lire plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
 <style>
-:root{--bg:#f3f7fa;--cd:#fff;--tx:#1b2a3a;--mu:#6b7b8c;--pr:#0f8b8d;--bd:#dde5ec;--dg:#d64545;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1720;--cd:#18232f;--tx:#e6edf3;--mu:#8ea0b2;--bd:#2a3948}}
-:root[data-theme=dark]{--bg:#0f1720;--cd:#18232f;--tx:#e6edf3;--mu:#8ea0b2;--bd:#2a3948}
-*{box-sizing:border-box}html,body{margin:0}body{background:var(--bg);color:var(--tx);font:15px system-ui,Segoe UI,sans-serif;min-height:100vh}
-header{background:var(--pr);color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
-#top{position:sticky;top:0;z-index:6;box-shadow:0 2px 6px #0002}
-header b{font-size:18px}nav{display:flex;gap:4px;overflow-x:auto;padding:8px;background:var(--cd);border-bottom:1px solid var(--bd)}
-nav a{padding:8px 12px;border-radius:8px;white-space:nowrap;cursor:pointer;color:var(--mu)}nav a.on{background:var(--pr);color:#fff}
-main{padding:14px;max-width:1100px;margin:auto;padding-bottom:60px}
-.card{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:12px}
-.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}.st .card{margin:0}.st h2{margin:4px 0 0;color:var(--pr)}
-button{background:var(--pr);color:#fff;border:0;border-radius:8px;padding:9px 14px;cursor:pointer;font:inherit}button.b2{background:var(--bd);color:var(--tx)}button.sm{padding:3px 9px;font-size:12px}button.dg{background:var(--dg)}
-input,select,textarea{width:100%;padding:9px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit;margin-top:3px}
-label{display:block;font-size:12px;color:var(--mu)}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
-.tb{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}.tb input{flex:1;min-width:140px;margin:0}
-.w{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--bd);white-space:nowrap}th{color:var(--mu);font-size:12px}
-a.l{color:var(--pr);cursor:pointer;margin-right:8px}.m{color:var(--mu)}.it{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px dashed var(--bd)}
-#mo{position:fixed;inset:0;background:#0008;display:none;align-items:flex-start;justify-content:center;overflow:auto;z-index:20;padding:20px 10px}#mo>div{background:var(--cd);border-radius:12px;padding:16px;width:100%;max-width:640px}
-.ra{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}#lg{max-width:360px;margin:12vh auto;text-align:center}#lg input{margin-bottom:8px}
-#ft{position:fixed;bottom:0;left:0;right:0;text-align:center;font-size:12px;padding:6px;background:var(--cd);border-top:1px solid var(--bd);color:var(--mu)}
-#tt{position:fixed;top:60px;right:10px;background:#222;color:#fff;padding:9px 14px;border-radius:8px;display:none;z-index:30}
-.bar{height:14px;background:var(--pr);border-radius:4px;min-width:2px}#pr{display:none}
-@media print{body>*:not(#pr){display:none!important}#pr{display:block;color:#000;background:#fff;padding:20px}#pr table{width:100%}}
-</style></head><body>
-<div id="app"></div><div id="mo"><div id="mb"></div></div><div id="tt"></div><div id="pr"></div>
-<div id="ft">Build by KonbitTech</div>
-<script src="https://cdn.jsdelivr.net/npm/firebase@10.12.2/firebase-app-compat.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/firebase@10.12.2/firebase-auth-compat.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/firebase@10.12.2/firebase-firestore-compat.js"></script>
-<script>
-let DP=null,REG=null;const APP_VER='1.3.0';
-const isStd=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone,isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
-addEventListener('beforeinstallprompt',e=>{e.preventDefault();DP=e;refreshInst()});
-addEventListener('appinstalled',()=>{DP=null;refreshInst();toast('Application installée ✅')});
-function refreshInst(){const h=!isStd()&&(DP||isIOS)?'<button class="sm b2" onclick="inst()">📲 Installer</button>':'';document.querySelectorAll('.ib').forEach(e=>e.innerHTML=h)}
-async function inst(){if(DP){DP.prompt();try{await DP.userChoice}catch(e){}DP=null;refreshInst()}else modal(`<h3>Installer AW-Med</h3><p>Sur iPhone/iPad : touchez <b>Partager</b> ⬆️ puis <b>Sur l'écran d'accueil</b>.</p><div class="ra"><button onclick="closeM()">OK</button></div>`)}
-function chkUp(){REG?REG.update().then(()=>toast('Vérification effectuée : app à jour ou mise à jour en cours')).catch(()=>toast('Vérification impossible')):toast('Service worker indisponible ici')}
-const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const L=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}},S=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
-let DB=L('kt_db',{}),SET={name:'AW-Med',cur:'HTG',fb:'',...L('kt_set',{})},DIRTY=L('kt_dirty',[]),ME=L('kt_me',null),fb=null,V='dash',CUR=null,Q='';
-const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-const RO=['Admin','Médecin','Réception','Comptable'],ST=['Prévu','Confirmé','Terminé','Annulé'];
-const COLS={
-patients:{t:'Patients',f:[['nom','Nom complet','text',1],['naissance','Naissance','date'],['sexe','Sexe','select',['F','M']],['tel','Téléphone','text'],['adresse','Adresse','text'],['groupe','Groupe sanguin','select',['','A+','A-','B+','B-','AB+','AB-','O+','O-']],['notes','Antécédents / notes','textarea']],show:['nom','tel','sexe','naissance']},
-rdv:{t:'Rendez-vous',f:[['patientId','Patient','ref:patients',1],['docteurId','Docteur','ref:docteurs'],['date','Date & heure','datetime-local',1],['motif','Motif','text'],['statut','Statut','select',ST]],show:['date','patientId','docteurId','motif','statut']},
-suivis:{t:'Suivis',f:[['patientId','Patient','ref:patients',1],['date','Date','date',1],['note','Observation','textarea']],show:['date','patientId','note']},
-traitements:{t:'Traitements',f:[['patientId','Patient','ref:patients',1],['docteurId','Docteur','ref:docteurs'],['medicament','Traitement / médicament','text',1],['posologie','Posologie','text'],['debut','Début','date'],['fin','Fin','date']],show:['patientId','medicament','posologie','debut']},
-services:{t:'Services',f:[['nom','Nom du service','text',1],['prix','Prix','number',1],['description','Description','textarea']],show:['nom','prix','description']},
-docteurs:{t:'Docteurs',f:[['nom','Nom','text',1],['specialite','Spécialité','text'],['tel','Téléphone','text']],show:['nom','specialite','tel']},
-employes:{t:'Employés',f:[['nom','Nom','text',1],['poste','Poste','text'],['tel','Téléphone','text'],['salaire','Salaire','number']],show:['nom','poste','tel','salaire']},
-compta:{t:'Comptabilité',f:[['type','Type','select',['Entrée','Sortie']],['date','Date','date',1],['libelle','Libellé','text',1],['montant','Montant','number',1]],show:['date','type','libelle','montant']},
-recus:{t:'Reçus',f:[],show:[]},
-prescriptions:{t:'Prescriptions',f:[],show:[]},
-plans:{t:'Plans de traitement',f:[],show:[]},
-settings:{t:'Réglages',f:[],show:[]},
-users:{t:'Utilisateurs',f:[['email','Email','email',1],['nom','Nom','text'],['role','Rôle','select',RO],['pw','Mot de passe (mode local)','password']],show:['email','nom','role']}};
-const NAV=[['dash','🏠','Accueil'],['patients','🧑','Patients'],['rdv','📅','Rendez-vous'],['prescriptions','📝','Prescriptions'],['services','💊','Services'],['docteurs','🩺','Docteurs'],['employes','👥','Employés'],['recus','🧾','Reçus'],['compta','💰','Comptabilité'],['rapports','📊','Rapports'],['archives','🗄','Archives'],['users','🔑','Utilisateurs'],['params','⚙','Paramètres']];
-const ACC={Admin:'*',Médecin:['dash','patients','rdv','prescriptions','services'],Réception:['dash','patients','rdv','services','recus'],Comptable:['dash','recus','compta','rapports','services']};
-const rows=c=>(DB[c]||[]).filter(r=>!r.deleted),act=c=>rows(c).filter(r=>!r.arch),M=n=>Number(n||0).toLocaleString('fr-FR')+' '+SET.cur;
-const nm=(c,id)=>{const r=rows(c).find(x=>x.id==id);return r?r.nom||r.email:'—'};
-let FR={};
-const FL={patients:"Date d'enregistrement",services:'Date de création',archives:"Date d'archivage",rdv:'Date du RDV',compta:'Date',recus:'Date du reçu',prescriptions:'Date de prescription'};
-const dOf=(v,r)=>{if(v=='rdv'||v=='compta'||v=='recus'||v=='prescriptions')return(r.date||'').slice(0,10);const t=v=='archives'?r.u:(r.cr||r.u);return t?new Date(t).toLocaleDateString('sv-SE'):''};
-const dfilt=(v,a)=>{const f=FR[v]||{};return f.a||f.b?a.filter(r=>{const d=dOf(v,r);return(!f.a||d>=f.a)&&(!f.b||d<=f.b)}):a};
-function setF(v,k,val){if(!k)FR[v]={};else(FR[v]=FR[v]||{})[k]=val;render()}
-function setP(v,p){const t=new Date(),f=d=>d.toLocaleDateString('sv-SE');let a=f(t),b=a;if(p=='7'){const d=new Date(t);d.setDate(d.getDate()-6);a=f(d)}else if(p=='m')a=f(new Date(t.getFullYear(),t.getMonth(),1));else if(p=='y')a=f(new Date(t.getFullYear(),0,1));FR[v]={a,b};render()}
-const fbar=v=>{const f=FR[v]||{};return`<div class="card" style="padding:10px"><div class="tb" style="margin:0;align-items:end"><label style="flex:1;min-width:130px">${FL[v]} — du<input type="date" value="${f.a||''}" onchange="setF('${v}','a',this.value)"></label><label style="flex:1;min-width:130px">au<input type="date" value="${f.b||''}" onchange="setF('${v}','b',this.value)"></label><button class="b2 sm" onclick="setP('${v}','0')">Aujourd'hui</button><button class="b2 sm" onclick="setP('${v}','7')">7 jours</button><button class="b2 sm" onclick="setP('${v}','m')">Ce mois</button><button class="b2 sm" onclick="setP('${v}','y')">Cette année</button><button class="b2 sm" onclick="setF('${v}')">✕ Tout</button></div></div>`};
-const R=n=>Math.round(n*100)/100,TD=()=>new Date().toLocaleDateString('sv-SE'),M2=(n,c)=>Number(n||0).toLocaleString('fr-FR',{maximumFractionDigits:2})+' '+(c||SET.cur2),canPlan=()=>['Admin','Médecin','Réception'].includes(ME.role),canRecu=()=>['Admin','Réception','Comptable'].includes(ME.role);
-const deny=c=>ME&&((c=='plans'&&!canPlan())||(c=='services'&&!['Admin','Comptable'].includes(ME.role))||(c=='prescriptions'&&!['Admin','Médecin'].includes(ME.role)));
-const toast=m=>{const t=$('#tt');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',3000)};
-/* ---- data + sync ---- */
-function put(c,r){if(!r.id)r.cr=Date.now();r.id=r.id||uid();r.u=Date.now();const a=DB[c]=DB[c]||[],i=a.findIndex(x=>x.id==r.id);i<0?a.push(r):a[i]=r;S('kt_db',DB);push(c,r);return r}
-function push(c,r){if(fb&&navigator.onLine)fb.db.collection('kt_'+c).doc(r.id).set(r).catch(()=>q(c,r.id));else q(c,r.id)}
-function q(c,id){if(!DIRTY.some(d=>d[0]==c&&d[1]==id)){DIRTY.push([c,id]);S('kt_dirty',DIRTY)}}
-function flush(){if(!fb||!navigator.onLine)return;const d=DIRTY;DIRTY=[];S('kt_dirty',[]);d.forEach(([c,id])=>{const r=(DB[c]||[]).find(x=>x.id==id);r&&push(c,r)})}
-function initFb(){try{if(!SET.fb||!window.firebase)return;const cfg=JSON.parse(SET.fb);firebase.apps.length||firebase.initializeApp(cfg);const db=firebase.firestore();db.enablePersistence({synchronizeTabs:true}).catch(()=>{});fb={db,auth:firebase.auth()};
-Object.keys(COLS).forEach(c=>db.collection('kt_'+c).onSnapshot(s=>{let ch=0;s.forEach(d=>{const r=d.data(),a=DB[c]=DB[c]||[],i=a.findIndex(x=>x.id==r.id);if(i<0){a.push(r);ch++}else if((r.u||0)>(a[i].u||0)){a[i]=r;ch++}});if(ch){S('kt_db',DB);ME&&render()}}));
-addEventListener('online',flush);flush()}catch(e){fb=null;toast('Config Firebase invalide')}}
-/* ---- auth ---- */
-async function login(reg){const e=$('#le').value.trim().toLowerCase(),p=$('#lp').value;if(!e||!p)return toast('Email et mot de passe requis');
-try{let us=rows('users');
-if(fb){reg?await fb.auth.createUserWithEmailAndPassword(e,p):await fb.auth.signInWithEmailAndPassword(e,p)}
-else if(reg){if(us.length)return toast("Création réservée à l'admin");put('users',{email:e,nom:e,role:'Admin',pw:btoa(p)})}
-else if(!us.find(x=>x.email==e&&x.pw==btoa(p)))return toast('Identifiants incorrects');
-us=rows('users');let u=us.find(x=>x.email==e);if(!u&&!us.length)u=put('users',{email:e,nom:e,role:'Admin'});
-if(!u)return toast("Compte non autorisé : demandez à l'admin");ME={email:e,role:u.role};S('kt_me',ME);V='dash';render()}catch(x){toast(x.message)}}
-function logout(){ME=null;S('kt_me',null);fb&&fb.auth.signOut();render()}
-/* ---- ui helpers ---- */
-function modal(h){$('#mb').innerHTML=h;$('#mo').style.display='flex'}function closeM(){$('#mo').style.display='none';CUR=null}
-function cell(c,f,r){const t=f[2],v=r[f[0]];if(t.startsWith('ref:'))return esc(nm(t.slice(4),v));if(f[0]=='prix'||f[0]=='montant'||f[0]=='salaire')return M(v);if(t=='datetime-local')return esc((v||'').replace('T',' '));if(t=='password')return'';return esc(v)}
-function openForm(c,r={},pre={}){if(deny(c))return toast("Réservé à l'admin et au comptable");const o={...pre,...r};modal(`<h3>${r.id?'Modifier':'Nouveau'} · ${COLS[c].t}</h3><div class="g">`+COLS[c].f.map(([k,l,t,x])=>{const v=o[k]??'';let i;
-if(t=='select')i=`<select id="f_${k}">${x.map(a=>`<option ${a==v?'selected':''}>${esc(a)}</option>`).join('')}</select>`;
-else if(t.startsWith('ref:'))i=`<select id="f_${k}"><option value="">—</option>${act(t.slice(4)).map(a=>`<option value="${a.id}" ${a.id==v?'selected':''}>${esc(a.nom||a.email)}</option>`).join('')}</select>`;
-else if(t=='textarea')i=`<textarea id="f_${k}" rows="3">${esc(v)}</textarea>`;else i=`<input id="f_${k}" type="${t}" value="${t=='password'?'':esc(v)}">`;
-return`<label>${l}${x==1?' *':''}${i}</label>`}).join('')+`</div><div class="ra"><button class="b2" onclick="${pre.patientId?`dossier('${pre.patientId}')`:'closeM()'}">Annuler</button><button onclick="saveF('${c}','${r.id||''}','${pre.patientId||''}')">Enregistrer</button></div>`)}
-function saveF(c,id,pid){if(deny(c))return;const old=id?rows(c).find(x=>x.id==id):{},r={...old};for(const[k,l,t,x]of COLS[c].f){let v=$('#f_'+k).value.trim();if(x==1&&!v)return toast(l+' obligatoire');if(t=='number')v=Number(v)||0;if(t=='password'){if(!v)continue;v=btoa(v)}r[k]=v}
-put(c,r);pid?dossier(pid):(closeM(),render())}
-const edit=(c,id)=>openForm(c,rows(c).find(x=>x.id==id),{patientId:CUR||''});
-function arch(c,id,undo){if(deny(c))return;const r=rows(c).find(x=>x.id==id);r.arch=!undo;put(c,r);CUR?dossier(CUR):render()}
-function del(c,id){if(deny(c))return;if(!confirm('Supprimer définitivement ?'))return;const r=rows(c).find(x=>x.id==id);r.deleted=true;put(c,r);render()}
-/* ---- views ---- */
-function table(c,list){const ro=deny(c),D=COLS[c],fs=D.show.map(k=>D.f.find(f=>f[0]==k));return`<div class="w"><table><tr>${fs.map(f=>`<th>${f[1]}</th>`).join('')}<th></th></tr>${list.map(r=>`<tr>${fs.map(f=>`<td>${cell(c,f,r)}</td>`).join('')}<td>${c=='patients'?`<a class="l" onclick="dossier('${r.id}')">📁 Dossier</a>${canPlan()?`<a class="l" onclick="plans('${r.id}')">📋 Plan</a>`:''}`:''}${ro?'':`<a class="l" onclick="edit('${c}','${r.id}')">✎</a><a class="l" onclick="arch('${c}','${r.id}')">🗄</a>`}</td></tr>`).join('')||'<tr><td class="m">Aucun enregistrement</td></tr>'}</table></div>`}
-function list(c){let l=dfilt(c,act(c));const L0=l;if(Q)l=l.filter(r=>JSON.stringify(Object.values(r)).toLowerCase().includes(Q));if(c=='rdv'||c=='compta')l.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-let x='';if(c=='compta'){const e=L0.filter(r=>r.type=='Entrée').reduce((s,r)=>s+r.montant,0),o=L0.filter(r=>r.type=='Sortie').reduce((s,r)=>s+r.montant,0);x=`<div class="st"><div class="card">Entrées<h2>${M(e)}</h2></div><div class="card">Sorties<h2>${M(o)}</h2></div><div class="card">Solde<h2>${M(e-o)}</h2></div></div>`}
-return x+fbar(c)+`<div class="tb"><input id="qs" placeholder="🔍 Rechercher…" value="${esc(Q)}" oninput="Q=this.value.toLowerCase();render(1)">${deny(c)?'<span class="m">Lecture seule (admin et comptable peuvent modifier)</span>':`<button onclick="openForm('${c}')">+ Nouveau</button>`}<button class="b2" onclick="csv('${c}')">⬇ CSV</button></div><div class="card">${table(c,l)}</div>`}
-function dossier(id){const p=rows('patients').find(x=>x.id==id);CUR=id;
-const ln={rdv:x=>`${esc((x.date||'').replace('T',' '))} · ${esc(nm('docteurs',x.docteurId))} · ${esc(x.motif)} [${x.statut}]`,suivis:x=>`${esc(x.date)} — ${esc(x.note)}`,traitements:x=>`<b>${esc(x.medicament)}</b> ${esc(x.posologie)} (${esc(x.debut)} → ${esc(x.fin)})`};
-const sec=(c,t)=>`<h4>${t} <button class="sm" onclick="openForm('${c}',{},{patientId:'${id}'})">+ Ajouter</button></h4>`+(act(c).filter(x=>x.patientId==id).map(x=>`<div class="it"><span>${ln[c](x)}</span><span><a class="l" onclick="edit('${c}','${x.id}')">✎</a><a class="l" onclick="arch('${c}','${x.id}')">🗄</a></span></div>`).join('')||'<p class="m">Aucun</p>');
-const rx=!['Admin','Médecin'].includes(ME.role)?'':`<h4>Prescriptions <button class="sm" onclick="newPresc('','${id}')">+ Ajouter</button></h4>`+(act('prescriptions').filter(x=>x.patientId==id).map(x=>`<div class="it"><span>${esc(x.date)} · ${esc(nm('docteurs',x.docteurId))} · ${x.lines.length} méd.</span><span><a class="l" onclick="printPresc('${x.id}')">🖨</a><a class="l" onclick="newPresc('${x.id}','${id}')">✎</a><a class="l" onclick="arch('prescriptions','${x.id}')">🗄</a></span></div>`).join('')||'<p class="m">Aucune</p>');
-modal(`<h3>📁 ${esc(p.nom)}</h3><p class="m">${esc(p.sexe)} · né(e) le ${esc(p.naissance)||'—'} · ${esc(p.tel)} · Groupe ${esc(p.groupe)||'—'}<br>${esc(p.adresse)}<br>${esc(p.notes)}</p>${sec('rdv','Rendez-vous')}${sec('suivis','Suivis')}${sec('traitements','Traitements')}${rx}<div class="ra">${canPlan()?`<button class="b2" onclick="plans('${id}')">📋 Plan de traitement</button>`:''}<button class="b2" onclick="printDossier('${id}')">🖨 Imprimer</button><button onclick="closeM();render()">Fermer</button></div>`)}
-function pr(h){$('#pr').innerHTML=h+(SET.foot?`<p style="text-align:center">${esc(SET.foot)}</p>`:'')+`<hr><p style="text-align:center;font-size:12px">Build by KonbitTech</p>`;print()}
-const hd=()=>`<div style="display:flex;gap:12px;align-items:center;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:10px">${SET.logo?`<img src="${SET.logo}" style="height:60px">`:''}<div><h2 style="margin:0">${esc(SET.legal||SET.name)}</h2>${SET.slogan?`<i>${esc(SET.slogan)}</i><br>`:''}${[SET.addr,SET.city].filter(Boolean).map(esc).join(', ')}<br>${[SET.tel,SET.tel2].filter(Boolean).map(esc).join(' / ')} ${esc(SET.email)} ${esc(SET.web)}<br>${SET.nif?'NIF : '+esc(SET.nif)+' ':''}${SET.lic?'Agrément : '+esc(SET.lic):''}</div></div>`;
-function printDossier(id){const p=rows('patients').find(x=>x.id==id),f=c=>act(c).filter(x=>x.patientId==id);pr(hd()+`<h3>Dossier : ${esc(p.nom)}</h3><p>${esc(p.sexe)} · ${esc(p.naissance)} · ${esc(p.tel)} · ${esc(p.groupe)}<br>${esc(p.notes)}</p><h4>Rendez-vous</h4>`+f('rdv').map(x=>`<p>${esc(x.date)} ${esc(x.motif)} [${x.statut}]</p>`).join('')+'<h4>Suivis</h4>'+f('suivis').map(x=>`<p>${esc(x.date)} — ${esc(x.note)}</p>`).join('')+'<h4>Traitements</h4>'+f('traitements').map(x=>`<p>${esc(x.medicament)} ${esc(x.posologie)} (${esc(x.debut)}→${esc(x.fin)})</p>`).join(''))}
-/* prescriptions */
-function prescs(){let l=dfilt('prescriptions',act('prescriptions'));if(Q)l=l.filter(r=>(nm('patients',r.patientId)+nm('docteurs',r.docteurId)+r.num+(r.diag||'')+r.lines.map(x=>x.nom).join(' ')).toLowerCase().includes(Q));l.sort((a,b)=>b.date.localeCompare(a.date));const can=!deny('prescriptions');
-return fbar('prescriptions')+`<div class="tb"><input id="qs" placeholder="🔍 Rechercher…" value="${esc(Q)}" oninput="Q=this.value.toLowerCase();render(1)">${can?'<button onclick="newPresc()">+ Nouvelle prescription</button>':''}</div><div class="card w"><table><tr><th>N°</th><th>Date</th><th>Patient</th><th>Docteur</th><th>Diagnostic</th><th>Méd.</th><th></th></tr>${l.map(r=>`<tr><td>${r.num}</td><td>${r.date}</td><td>${esc(nm('patients',r.patientId))}</td><td>${esc(nm('docteurs',r.docteurId))}</td><td>${esc(r.diag)}</td><td>${r.lines.length}</td><td><a class="l" onclick="printPresc('${r.id}')">🖨</a>${can?`<a class="l" onclick="newPresc('${r.id}')">✎</a><a class="l" onclick="arch('prescriptions','${r.id}')">🗄</a>`:''}</td></tr>`).join('')||'<tr><td class="m">Aucune prescription</td></tr>'}</table></div>`}
-function newPresc(id,pid){if(deny('prescriptions'))return toast("Réservé aux docteurs et à l'admin");const r=id?rows('prescriptions').find(x=>x.id==id):{},pp=r.patientId||pid||'';
-const op=(c,v)=>act(c).map(a=>`<option value="${a.id}" ${a.id==v?'selected':''}>${esc(a.nom)}</option>`).join('');
-modal(`<h3>${id?'Modifier':'Nouvelle'} prescription</h3><div class="g"><label>Patient *<select id="pp">${op('patients',pp)}</select></label><label>Docteur *<select id="pd">${op('docteurs',r.docteurId)}</select></label><label>Date<input id="pdt" type="date" value="${r.date||new Date().toLocaleDateString('sv-SE')}"></label><label>Diagnostic<input id="pdg" value="${esc(r.diag)}"></label></div><h4>Médicaments <button class="sm" onclick="addM()">+ Ligne</button></h4><div id="ml"></div><label>Instructions / conseils<textarea id="pin" rows="3">${esc(r.instr)}</textarea></label><div class="ra"><button class="b2" onclick="${pid?`dossier('${pid}')`:'closeM()'}">Annuler</button><button onclick="savePresc('${id||''}','${pid||''}')">Enregistrer</button></div>`);
-(r.lines&&r.lines.length?r.lines:[{}]).forEach(l=>addM(l))}
-function addM(l){l=l||{};const d=document.createElement('div');d.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px dashed var(--bd)';
-d.innerHTML=[['nom','Médicament'],['dose','Dosage (ex: 500 mg)'],['poso','Posologie (ex: 3x/jour)'],['duree','Durée (ex: 7 jours)']].map(([k,p])=>`<input data-k="${k}" placeholder="${p}" value="${esc(l[k])}">`).join('')+'<button class="sm dg" onclick="this.parentNode.remove()">✕</button>';$('#ml').append(d)}
-function savePresc(id,pid){const lines=[...$('#ml').children].map(d=>{const o={};d.querySelectorAll('input').forEach(i=>o[i.dataset.k]=i.value.trim());return o}).filter(o=>o.nom),p=$('#pp').value,d=$('#pd').value;
-if(!p||!d)return toast('Patient et docteur requis');if(!lines.length)return toast('Ajoutez au moins un médicament');
-const old=id?rows('prescriptions').find(x=>x.id==id):{};put('prescriptions',{...old,num:old.num||'P-'+String(rows('prescriptions').length+1).padStart(5,'0'),date:$('#pdt').value,patientId:p,docteurId:d,diag:$('#pdg').value.trim(),instr:$('#pin').value.trim(),lines});pid?dossier(pid):(closeM(),render())}
-function printPresc(id){const r=rows('prescriptions').find(x=>x.id==id),p=rows('patients').find(x=>x.id==r.patientId)||{},d=rows('docteurs').find(x=>x.id==r.docteurId)||{},age=p.naissance?Math.floor((Date.now()-new Date(p.naissance))/31557600000)+' ans':'';
-pr(hd()+`<h2 style="text-align:center">ORDONNANCE MÉDICALE</h2><p>N° ${r.num} · Date : ${r.date}</p><p><b>Patient :</b> ${esc(p.nom)} ${age} ${esc(p.sexe)}${p.tel?' · '+esc(p.tel):''}<br>${r.diag?'<b>Diagnostic :</b> '+esc(r.diag):''}</p><table border="1" cellpadding="6" style="border-collapse:collapse;width:100%"><tr><th>#</th><th>Médicament</th><th>Dosage</th><th>Posologie</th><th>Durée</th></tr>${r.lines.map((l,i)=>`<tr><td>${i+1}</td><td>${esc(l.nom)}</td><td>${esc(l.dose)}</td><td>${esc(l.poso)}</td><td>${esc(l.duree)}</td></tr>`).join('')}</table>${r.instr?`<p><b>Instructions :</b><br>${esc(r.instr)}</p>`:''}<div style="margin-top:50px;text-align:right">${esc(d.nom)}<br>${esc(d.specialite)}<br><br>Signature et cachet : ________________</div>`)}
-/* reçus */
-function recus(){const l=dfilt('recus',act('recus')).sort((a,b)=>b.date.localeCompare(a.date)),T=k=>l.reduce((s,r)=>s+(k=='paid'?(r.paid??r.total):k=='bal'?(r.balance||0):r.total),0);
-return fbar('recus')+`<div class="tb"><button onclick="newRecu()">+ Nouveau reçu</button><button class="b2" onclick="csv('recus')">⬇ CSV</button><b style="align-self:center">Net : ${M(T('t'))} · Encaissé : ${M(T('paid'))} · Reste : ${M(T('bal'))}</b></div><div class="card w"><table><tr><th>N°</th><th>Date</th><th>Patient</th><th>Net</th><th>Payé</th><th>Reste</th><th>Mode</th><th></th></tr>${l.map(r=>`<tr><td>${r.num}</td><td>${r.date}</td><td>${esc(nm('patients',r.patientId))}</td><td>${M(r.total)}</td><td>${M(r.paid??r.total)}</td><td>${r.balance?`<b style="color:var(--dg)">${M(r.balance)}</b>`:'—'}</td><td>${esc(r.mode)}</td><td><a class="l" onclick="printRecu('${r.id}')">🖨</a>${r.balance?`<a class="l" onclick="payRecu('${r.id}')">💵</a>`:''}<a class="l" onclick="arch('recus','${r.id}')">🗄</a></td></tr>`).join('')||'<tr><td class="m">Aucun reçu</td></tr>'}</table></div>`}
-function newRecu(o){o=o||{};const two=!!(SET.cur2&&Number(SET.taux)>0);
-modal(`<h3>Nouveau reçu${o.planId?' — plan de traitement':''}</h3><label>Patient<select id="rp">${act('patients').map(p=>`<option value="${p.id}" ${p.id==o.patientId?'selected':''}>${esc(p.nom)}</option>`).join('')}</select></label><div id="rl"></div><button class="b2 sm" style="margin-top:8px" onclick="addL()">+ Ligne</button>
-<div class="g" style="margin-top:10px"><label>Rabais<input id="rbv" type="number" min="0" value="0" oninput="calc()"></label><label>Type de rabais<select id="rbt" onchange="calc()"><option>%</option><option>Montant</option></select></label><label>Assurance (nom)<input id="ran"></label><label>Couverture assurance (%)<input id="rap" type="number" min="0" max="100" value="0" oninput="calc()"></label><label>N° police assurance<input id="rpn"></label><label>Mode de paiement<select id="rm"><option>Cash</option><option>MonCash</option><option>NatCash</option><option>Carte</option><option>Chèque</option><option>Virement</option></select></label>${two?`<label>Devise du paiement<select id="rdv" onchange="calc()"><option>${esc(SET.cur)}</option><option>${esc(SET.cur2)}</option></select></label><label>Taux du jour (1 ${esc(SET.cur2)} = ? ${esc(SET.cur)})<input id="rtx" type="number" min="0" step="0.01" value="${Number(SET.taux)}" oninput="calc()"></label>`:''}<label>Montant donné<input id="rdn" type="number" min="0" placeholder="= net à payer" oninput="calc()"></label></div><div id="rs" class="card" style="margin-top:10px"></div><div class="ra"><button class="b2" onclick="${o.planId?`plans('${o.patientId}')`:'closeM()'}">Annuler</button><button onclick="saveRecu('${o.planId||''}')">Enregistrer</button></div>`);
-(o.lines&&o.lines.length?o.lines:[{}]).forEach(l=>addL(l))}
-function addL(l,box){l=l||{};box=box||'#rl';const cf=box=='#pl'?'calcP()':'calc()',sv=act('services'),d=document.createElement('div');d.style.cssText='display:grid;grid-template-columns:3fr 1fr 1.4fr auto;gap:6px;margin-top:8px';if(l.pi!=null)d.dataset.pi=l.pi;if(l.billed)d.dataset.b=1;
-d.innerHTML=`<select onchange="this.parentNode.children[2].value=this.selectedOptions[0].dataset.p;${cf}">${l.sid&&!sv.some(x=>x.id==l.sid)?`<option value="${l.sid}" data-p="${l.prix}" selected>${esc(l.nom)}</option>`:''}${sv.map(x=>`<option value="${x.id}" data-p="${x.prix}" ${x.id==l.sid?'selected':''}>${esc(x.nom)}</option>`).join('')}</select><input type="number" min="1" value="${l.qty||1}" title="Qté" oninput="${cf}"><input type="number" min="0" value="${l.prix!=null?l.prix:(sv[0]?sv[0].prix:0)}" title="Prix unitaire" oninput="${cf}"><button class="sm dg" onclick="this.parentNode.remove();${cf}">✕</button>`;$(box).append(d);$(box)&&(box=='#pl'?calcP():calc())}
-const addP=l=>addL(l,'#pl');
-function lines(box){return[...$(box||'#rl').children].map(d=>{const o=d.querySelector('select').selectedOptions[0];if(!o)return null;const[a,b]=d.querySelectorAll('input');return{sid:o.value,nom:o.textContent,prix:Number(b.value)||0,qty:Number(a.value)||1,pi:d.dataset.pi,b:d.dataset.b}}).filter(Boolean)}
-function rc(){const ls=lines(),sub=R(ls.reduce((s,l)=>s+l.prix*l.qty,0)),rv=Number($('#rbv').value)||0,rt=$('#rbt').value,rab=R(Math.min(sub,rt=='%'?sub*rv/100:rv)),ap=Math.min(100,Number($('#rap').value)||0),ass=R((sub-rab)*ap/100),net=R(sub-rab-ass),dev=$('#rdv')?$('#rdv').value:SET.cur,rate=$('#rtx')?Number($('#rtx').value)||0:0,dr=$('#rdn').value,donOrig=dr===''?null:Number(dr)||0,donne=donOrig===null?net:R(donOrig*(dev!=SET.cur?rate:1));
-return{ls,sub,rv,rt,rab,ap,ass,net,dev,rate,donOrig,donne,paid:Math.min(donne,net),bal:R(Math.max(0,net-donne)),chg:R(Math.max(0,donne-net))}}
-function calc(){if(!$('#rs'))return;const c=rc();$('#rs').innerHTML=`Sous-total : ${M(c.sub)}<br>`+(c.rab?`Rabais : −${M(c.rab)}<br>`:'')+(c.ass?`Assurance (${c.ap}%) : −${M(c.ass)}<br>`:'')+`<b>Net à payer : ${M(c.net)}</b>`+(SET.cur2&&c.rate?` ≈ ${M2(c.net/c.rate,SET.cur2)}`:'')+'<br>'+(c.bal?`<span style="color:var(--dg)">Reste à payer : ${M(c.bal)}</span>`:(c.chg?`Monnaie à rendre : ${M(c.chg)}`:'✅ Payé en totalité'))}
-function saveRecu(planId){const c=rc(),pid=$('#rp').value;if(!c.ls.length||!pid)return toast('Patient et service requis');if(c.dev!=SET.cur&&!c.rate)return toast('Taux du jour requis');
-const num='R-'+String(rows('recus').length+1).padStart(5,'0'),date=TD();
-const r=put('recus',{num,date,patientId:pid,lines:c.ls.map(l=>({nom:l.nom,prix:l.prix,qty:l.qty})),sub:c.sub,rab:c.rab,rbv:c.rv,rbt:c.rt,assNom:$('#ran').value.trim(),assPol:$('#rpn').value.trim(),ap:c.ap,ass:c.ass,total:c.net,dev:c.dev,cur2:SET.cur2||'',taux:c.rate,donOrig:c.donOrig,donne:c.donne,paid:c.paid,balance:c.bal,chg:c.chg,mode:$('#rm').value,planId:planId||'',pays:[{date,amount:c.paid}]});
-if(c.paid>0)put('compta',{type:'Entrée',date,libelle:'Reçu '+num+' – '+nm('patients',pid),montant:c.paid});
-if(planId){const p=rows('plans').find(x=>x.id==planId);if(p){c.ls.forEach(l=>{if(l.pi!=null&&p.lines[l.pi])p.lines[l.pi].billed=true});put('plans',p)}}
-render();planId?plans(pid):closeM();printRecu(r.id)}
-function payRecu(id){const r=rows('recus').find(x=>x.id==id);modal(`<h3>Encaisser le solde — ${r.num}</h3><p>Reste à payer : <b>${M(r.balance)}</b></p><label>Montant reçu (${esc(SET.cur)})<input id="pa" type="number" min="0" value="${r.balance}"></label><div class="ra"><button class="b2" onclick="closeM()">Annuler</button><button onclick="savePay('${id}')">Encaisser</button></div>`)}
-function savePay(id){const r=rows('recus').find(x=>x.id==id),a=R(Math.min(Number($('#pa').value)||0,r.balance));if(a<=0)return toast('Montant invalide');const date=TD();r.paid=R((r.paid??r.total)+a);r.balance=R(r.balance-a);r.pays=[...(r.pays||[]),{date,amount:a}];put('recus',r);put('compta',{type:'Entrée',date,libelle:'Solde '+r.num+' – '+nm('patients',r.patientId),montant:a});closeM();render();printRecu(id)}
-function printRecu(id){const r=rows('recus').find(x=>x.id==id),paid=r.paid??r.total,bal=r.balance||0,sub=r.sub??r.total,td='<td style="text-align:right">';
-pr(hd()+`<h3>Reçu ${r.num}</h3><p>Date : ${r.date}<br>Patient : ${esc(nm('patients',r.patientId))}${r.planId?`<br>Plan : ${esc((rows('plans').find(x=>x.id==r.planId)||{}).num||'')}`:''}</p><table border="1" cellpadding="6" style="border-collapse:collapse;width:100%"><tr><th>Service</th><th>Qté</th><th>PU</th><th>Total</th></tr>${r.lines.map(l=>`<tr><td>${esc(l.nom)}</td><td>${l.qty}</td><td>${M(l.prix)}</td><td>${M(l.prix*l.qty)}</td></tr>`).join('')}</table>
-<table style="margin:10px 0 0 auto;min-width:50%"><tr><td>Sous-total</td>${td}${M(sub)}</td></tr>${r.rab?`<tr><td>Rabais ${r.rbt=='%'?'('+r.rbv+'%)':''}</td>${td}−${M(r.rab)}</td></tr>`:''}${r.ass?`<tr><td>Assurance ${esc(r.assNom)} (${r.ap}%)${r.assPol?' · N° '+esc(r.assPol):''}</td>${td}−${M(r.ass)}</td></tr>`:''}<tr><td><b>Net à payer</b></td>${td}<b>${M(r.total)}</b>${r.cur2&&r.taux?`<br>≈ ${M2(r.total/r.taux,r.cur2)} (taux ${r.taux})`:''}</td></tr>
-${r.donOrig!=null&&r.dev&&r.dev!=SET.cur?`<tr><td>Montant donné (${esc(r.dev)})</td>${td}${M2(r.donOrig,r.dev)}</td></tr>`:''}<tr><td>Montant payé</td>${td}${M(paid)}</td></tr>${r.chg?`<tr><td>Monnaie rendue</td>${td}${M(r.chg)}</td></tr>`:''}${bal?`<tr><td><b>Balance restante</b></td>${td}<b>${M(bal)}</b></td></tr>`:''}</table>
-${(r.pays||[]).length>1?`<p style="font-size:12px">Versements : ${r.pays.map(p=>p.date+' → '+M(p.amount)).join(' · ')}</p>`:''}<p>Mode de paiement : ${esc(r.mode)}</p>`)}
-/* plans de traitement */
-function bilan(p){const rc=rows('recus').filter(r=>r.planId==p.id&&!r.arch),sm=(a,f)=>a.reduce((s,x)=>s+f(x),0),tot=sm(p.lines,l=>l.prix*l.qty),fac=sm(p.lines.filter(l=>l.billed),l=>l.prix*l.qty);return{tot,fac,rest:tot-fac,paid:sm(rc,r=>r.paid??r.total),bal:sm(rc,r=>r.balance||0),ass:sm(rc,r=>r.ass||0),rab:sm(rc,r=>r.rab||0)}}
-function plans(pid){const pt=rows('patients').find(x=>x.id==pid),ps=act('plans').filter(x=>x.patientId==pid).sort((a,b)=>b.date.localeCompare(a.date)),bx=(t,v,c)=>`<div class="card" style="padding:8px;margin:0">${t}<br><b${c?` style="color:${c}"`:''}>${M(v)}</b></div>`;
-modal(`<h3>📋 Plans de traitement — ${esc(pt.nom)}</h3><button onclick="newPlan('${pid}')">+ Nouveau plan</button>`+(ps.map(p=>{const b=bilan(p);return`<div class="card" style="margin-top:10px"><b>${p.num} · ${esc(p.titre)}</b> <span class="m">[${p.statut}] · ${esc(nm('docteurs',p.docteurId))} · ${p.date}</span>${p.notes?`<p class="m">${esc(p.notes)}</p>`:''}<div class="w"><table><tr><th>Service</th><th>Qté</th><th>PU</th><th>Total</th><th></th></tr>${p.lines.map(l=>`<tr><td>${esc(l.nom)}</td><td>${l.qty}</td><td>${M(l.prix)}</td><td>${M(l.prix*l.qty)}</td><td>${l.billed?'✅':'⏳'}</td></tr>`).join('')}</table></div><h4>Bilan</h4><div class="st" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr));margin:0">${bx('Total du plan',b.tot)}${bx('Facturé',b.fac)}${bx('Reste à facturer',b.rest)}${bx('Encaissé',b.paid,'var(--pr)')}${bx('Solde dû',b.bal,b.bal?'var(--dg)':'')}${b.ass?bx('Part assurance',b.ass):''}${b.rab?bx('Rabais',b.rab):''}</div><div class="tb" style="margin:10px 0 0">${canRecu()&&b.rest>0?`<button class="sm" onclick="recuPlan('${p.id}')">🧾 Créer le reçu</button>`:''}<button class="sm b2" onclick="newPlan('${pid}','${p.id}')">✎ Modifier</button><button class="sm b2" onclick="printPlan('${p.id}')">🖨 Imprimer</button><button class="sm b2" onclick="archPlan('${pid}','${p.id}')">🗄</button></div></div>`}).join('')||'<p class="m">Aucun plan de traitement</p>')+`<div class="ra"><button class="b2" onclick="closeM();render()">Fermer</button></div>`)}
-function newPlan(pid,id){if(deny('plans'))return toast('Accès refusé');const r=id?rows('plans').find(x=>x.id==id):{};
-modal(`<h3>${id?'Modifier':'Nouveau'} plan de traitement</h3><div class="g"><label>Traitement / titre *<input id="ptt" value="${esc(r.titre)}"></label><label>Docteur<select id="ptd"><option value="">—</option>${act('docteurs').map(a=>`<option value="${a.id}" ${a.id==r.docteurId?'selected':''}>${esc(a.nom)}</option>`).join('')}</select></label><label>Date<input id="ptx" type="date" value="${r.date||TD()}"></label><label>Statut<select id="pts">${['En cours','Terminé','Annulé'].map(a=>`<option ${a==r.statut?'selected':''}>${a}</option>`).join('')}</select></label></div><label>Notes<textarea id="ptn" rows="2">${esc(r.notes)}</textarea></label><h4>Services nécessaires <button class="sm" onclick="addP()">+ Service</button></h4><div id="pl"></div><div id="ps" class="card" style="margin-top:10px"></div><div class="ra"><button class="b2" onclick="plans('${pid}')">Annuler</button><button onclick="savePlan('${pid}','${id||''}')">Enregistrer</button>${canRecu()?`<button onclick="savePlan('${pid}','${id||''}',1)">Enregistrer + reçu</button>`:''}</div>`);
-(r.lines&&r.lines.length?r.lines:[{}]).forEach(l=>addP(l))}
-function calcP(){if($('#ps'))$('#ps').innerHTML='Total estimé : <b>'+M(lines('#pl').reduce((s,l)=>s+l.prix*l.qty,0))+'</b>'}
-function savePlan(pid,id,rcp){const t=$('#ptt').value.trim(),ls=lines('#pl');if(!t)return toast('Titre requis');if(!ls.length)return toast('Ajoutez au moins un service');const old=id?rows('plans').find(x=>x.id==id):{};
-const p=put('plans',{...old,patientId:pid,num:old.num||'PT-'+String(rows('plans').length+1).padStart(5,'0'),titre:t,docteurId:$('#ptd').value,date:$('#ptx').value,statut:$('#pts').value,notes:$('#ptn').value.trim(),lines:ls.map(l=>({sid:l.sid,nom:l.nom,prix:l.prix,qty:l.qty,billed:!!l.b}))});render();rcp?recuPlan(p.id):plans(pid)}
-function recuPlan(id){if(!canRecu())return toast('Accès refusé');const p=rows('plans').find(x=>x.id==id),ls=p.lines.map((l,i)=>({...l,pi:i})).filter(l=>!l.billed);if(!ls.length)return toast('Tout est déjà facturé');newRecu({patientId:p.patientId,planId:p.id,lines:ls})}
-function archPlan(pid,id){if(deny('plans'))return;const r=rows('plans').find(x=>x.id==id);r.arch=true;put('plans',r);plans(pid)}
-function printPlan(id){const p=rows('plans').find(x=>x.id==id),pt=rows('patients').find(x=>x.id==p.patientId)||{},b=bilan(p);pr(hd()+`<h2 style="text-align:center">PLAN DE TRAITEMENT</h2><p>N° ${p.num} · ${p.date} · ${p.statut}<br><b>Patient :</b> ${esc(pt.nom)}<br><b>Traitement :</b> ${esc(p.titre)}<br><b>Docteur :</b> ${esc(nm('docteurs',p.docteurId))}</p>${p.notes?`<p>${esc(p.notes)}</p>`:''}<table border="1" cellpadding="6" style="border-collapse:collapse;width:100%"><tr><th>Service</th><th>Qté</th><th>PU</th><th>Total</th><th>Facturé</th></tr>${p.lines.map(l=>`<tr><td>${esc(l.nom)}</td><td>${l.qty}</td><td>${M(l.prix)}</td><td>${M(l.prix*l.qty)}</td><td>${l.billed?'Oui':'Non'}</td></tr>`).join('')}</table><h3>Bilan</h3><p>Total du plan : <b>${M(b.tot)}</b><br>Déjà facturé : ${M(b.fac)}<br>Reste à facturer : ${M(b.rest)}<br>Encaissé : ${M(b.paid)}<br>Solde dû : ${M(b.bal)}${b.ass?`<br>Part assurance : ${M(b.ass)}`:''}</p>`)}
-/* rapports, archives, params */
-function rapports(){const c=act('compta'),by={};c.forEach(r=>{const m=(r.date||'').slice(0,7);by[m]=by[m]||{e:0,o:0};r.type=='Entrée'?by[m].e+=r.montant:by[m].o+=r.montant});const mx=Math.max(1,...Object.values(by).map(x=>Math.max(x.e,x.o))),sv={};act('recus').forEach(r=>r.lines.forEach(l=>sv[l.nom]=(sv[l.nom]||0)+l.qty));
-return`<div class="st"><div class="card">Patients<h2>${act('patients').length}</h2></div><div class="card">Rendez-vous<h2>${act('rdv').length}</h2></div><div class="card">Reçus<h2>${act('recus').length}</h2></div></div><div class="card"><h3>Revenus / dépenses par mois</h3>${Object.keys(by).sort().map(m=>`<p>${m}<br><div class="bar" style="width:${by[m].e/mx*100}%"></div> ${M(by[m].e)}<div class="bar" style="width:${by[m].o/mx*100}%;background:var(--dg)"></div> ${M(by[m].o)}</p>`).join('')||'<p class="m">Pas de données</p>'}</div><div class="card"><h3>Services les plus vendus</h3>${Object.entries(sv).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="it"><span>${esc(k)}</span><b>${v}</b></div>`).join('')||'<p class="m">—</p>'}</div><button onclick="print2()">🖨 Imprimer</button>`}
-const print2=()=>pr(hd()+$('main').innerHTML);
-function archives(){const a=[];Object.keys(COLS).forEach(c=>dfilt('archives',rows(c).filter(r=>r.arch)).forEach(r=>a.push([c,r])));return fbar('archives')+`<div class="card w"><table><tr><th>Type</th><th>Élément</th><th></th></tr>${a.map(([c,r])=>`<tr><td>${COLS[c].t}</td><td>${esc(r.nom||r.libelle||r.num||r.medicament||r.date||r.email)}</td><td><a class="l" onclick="arch('${c}','${r.id}',1)">↩ Restaurer</a><a class="l" onclick="del('${c}','${r.id}')">🗑</a></td></tr>`).join('')||'<tr><td class="m">Archive vide</td></tr>'}</table></div>`}
-function params(){return`<div class="card"><h3>Informations de l'entreprise</h3><div class="g">${SF.map(([k,l])=>`<label>${l}<input id="s_${k}" value="${esc(SET[k])}"></label>`).join('')}</div><div style="margin-top:10px">${SET.logo?`<img src="${SET.logo}" style="height:50px;vertical-align:middle"> <button class="sm dg" onclick="noLogo()">Retirer</button>`:''} <label>Logo (image)<input type="file" accept="image/*" onchange="logoUp(this.files[0])"></label></div><p class="m">Ces infos apparaissent sur les reçus et impressions. La mention « Build by KonbitTech » reste toujours affichée.</p></div>
-<div class="card"><h3>Firebase (Auth + Firestore, sync auto)</h3><label>Config JSON (Firebase console → Paramètres du projet)<textarea id="s5" rows="5" placeholder='{"apiKey":"…","authDomain":"…","projectId":"…","appId":"…"}'>${esc(SET.fb)}</textarea></label><p class="m">Statut : ${fb?'🟢 connecté':'⚪ mode local'} · en attente de sync : ${DIRTY.length}</p></div>
-<div class="tb"><button onclick="saveS()">Enregistrer</button><button class="b2" onclick="theme()">🌓 Thème</button><button class="b2" onclick="bk()">⬇ Sauvegarde JSON</button><button class="b2" onclick="$('#imp').click()">⬆ Restaurer</button><input id="imp" type="file" accept=".json" hidden onchange="rs(this.files[0])"><button class="b2" onclick="chkUp()">🔄 Vérifier les mises à jour</button><span class="ib"></span></div><p class="m">AW-Med v${APP_VER} · Build by KonbitTech</p>`}
-const SF=[['name','Nom du logiciel'],['legal','Raison sociale / nom officiel'],['slogan','Slogan'],['addr','Adresse'],['city','Ville / Pays'],['tel','Téléphone'],['tel2','Téléphone 2 / WhatsApp'],['email','Email'],['web','Site web'],['nif','NIF / Patente'],['lic','Agrément / Licence (MSPP)'],['foot','Message bas de reçu'],['cur','Devise principale'],['cur2','Devise secondaire (ex: USD)'],['taux','Taux du jour (1 devise secondaire = ? devise principale)']];
-function coRead(){SF.forEach(([k])=>{const e=$('#s_'+k);if(e)SET[k]=e.value.trim()});SET.name=SET.name||'AW-Med';SET.cur=SET.cur||'HTG'}
-function saveCo(){S('kt_set',SET);const co={...SET};delete co.fb;put('settings',{id:'main',co})}
-function saveS(){coRead();SET.fb=$('#s5').value.trim();saveCo();if(SET.fb&&!fb)initFb();toast('Paramètres enregistrés');render()}
-function logoUp(f){if(!f)return;coRead();const im=new Image();im.onload=()=>{const k=Math.min(1,240/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);SET.logo=c.toDataURL('image/png');saveCo();render()};im.src=URL.createObjectURL(f)}
-function noLogo(){coRead();SET.logo='';saveCo();render()}
-function applySet(){const r=(DB.settings||[]).find(x=>x.id=='main');if(r&&r.co)SET={...SET,...r.co,fb:SET.fb}}
-function theme(){const r=document.documentElement,d=r.dataset.theme=='dark';r.dataset.theme=d?'light':'dark';S('kt_th',r.dataset.theme)}
-function dl(n,t,m){try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:m}));a.download=n;a.click()}catch(e){toast('Téléchargement indisponible ici')}}
-const bk=()=>dl('clinique-backup.json',JSON.stringify(DB),'application/json');
-function rs(f){f&&f.text().then(t=>{try{DB=JSON.parse(t);S('kt_db',DB);Object.keys(DB).forEach(c=>DB[c].forEach(r=>q(c,r.id)));flush();render();toast('Restauré')}catch(e){toast('Fichier invalide')}})}
-function csv(c){const D=COLS[c],fs=c=='recus'?[['num','N°'],['date','Date'],['total','Net'],['paid','Payé'],['balance','Reste'],['mode','Mode']]:D.f.filter(f=>f[2]!='password'),h=fs.map(f=>f[1]);dl(c+'.csv','\ufeff'+[h,...dfilt(c,act(c)).map(r=>fs.map(f=>{let v=r[f[0]];if(f[2]&&f[2].startsWith&&f[2].startsWith('ref:'))v=nm(f[2].slice(4),v);return'"'+String(v??'').replace(/"/g,'""')+'"'}))].map(r=>r.join(',')).join('\n'),'text/csv')}
-function dash(){const t=new Date().toISOString().slice(0,10),e=act('compta').filter(r=>r.type=='Entrée'&&r.date.slice(0,7)==t.slice(0,7)).reduce((s,r)=>s+r.montant,0),up=act('rdv').filter(r=>(r.date||'')>=t&&r.statut!='Annulé').sort((a,b)=>a.date.localeCompare(b.date)).slice(0,8);
-return`<div class="st"><div class="card">Patients<h2>${act('patients').length}</h2></div><div class="card">RDV aujourd'hui<h2>${act('rdv').filter(r=>(r.date||'').slice(0,10)==t).length}</h2></div><div class="card">Docteurs<h2>${act('docteurs').length}</h2></div><div class="card">Revenus du mois<h2>${M(e)}</h2></div></div><div class="card"><h3>Prochains rendez-vous</h3>${up.map(r=>`<div class="it"><span>${esc(r.date.replace('T',' '))} · ${esc(nm('patients',r.patientId))}</span><span class="m">${esc(nm('docteurs',r.docteurId))}</span></div>`).join('')||'<p class="m">Aucun</p>'}</div>`}
-/* render */
-function render(keep){applySet();const a=$('#app');if(!ME){a.innerHTML=`<div id="lg" class="card"><h2>🏥 ${esc(SET.name)}</h2><p class="m">${fb?'Connexion Firebase':'Mode local hors-ligne'}</p><input id="le" type="email" placeholder="Email"><input id="lp" type="password" placeholder="Mot de passe"><button onclick="login()">Connexion</button> <button class="b2" onclick="login(1)">Créer un compte</button><div class="ib" style="margin-top:10px"></div></div>`;refreshInst();return}
-const ok=ACC[ME.role]=='*'?NAV:NAV.filter(n=>ACC[ME.role].includes(n[0]));if(!ok.some(n=>n[0]==V))V='dash';
-const body={dash,rapports,archives,params,recus,prescriptions:prescs}[V]?.()??list(V);const fo=keep&&document.activeElement.tagName=='INPUT';
-a.innerHTML=`<div id="top"><header><b>${SET.logo?`<img src="${SET.logo}" style="height:26px;vertical-align:middle;border-radius:4px">`:'🏥'} ${esc(SET.name)}</b><span><span class="ib"></span> ${esc(ME.email)} <button class="sm b2" onclick="logout()">Quitter</button></span></header><nav>${ok.map(n=>`<a class="${n[0]==V?'on':''}" onclick="V='${n[0]}';Q='';render()">${n[1]} ${n[2]}</a>`).join('')}</nav></div><main>${body}</main>`;
-const on=$('nav a.on');on&&on.scrollIntoView({inline:'center',block:'nearest'});if(fo){const i=$('#qs');if(i){i.focus();i.setSelectionRange(i.value.length,i.value.length)}}refreshInst()}
-const th=L('kt_th',null);if(th)document.documentElement.dataset.theme=th;
-initFb();render();
-if('serviceWorker' in navigator){let had=!!navigator.serviceWorker.controller,rl=false;
-navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!had){had=true;return}if(rl)return;rl=true;toast('Nouvelle version installée — rechargement…');const go=()=>$('#mo').style.display=='flex'?setTimeout(go,3000):location.reload();setTimeout(go,1500)});
-addEventListener('load',()=>{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{REG=r;r.update();setInterval(()=>r.update(),1800000)}).catch(()=>{});document.addEventListener('visibilitychange',()=>{document.visibilityState=='visible'&&REG&&REG.update()})})}
-</script></body></html>
+.don-box{background:linear-gradient(180deg,#f0f9f4,#dff3e8);padding:16px;border-radius:12px;max-width:500px;margin:0 auto;box-shadow:0 8px 24px rgba(6,30,15,0.1);text-align:left}
+.don-box h3{margin-top:0}
+.don-box ul{list-style-type:disc;padding-left:20px;margin-top:8px;margin-bottom:16px}
+.don-box li{margin-bottom:6px;font-size:14px;color:#2a4e36}
+
+</style>
+    <!-- Don centeriser-->
+     
+<section id="don" class="section" style="text-align:center;align-items:center;">
+<h2 class="section-title">{{ site.data.don.title }}</h2>
+<p style="text-align: center;">{{ site.data.don.intro }}</p>
+<div class="don-box">
+    <h3>Options de don</h3>
+    <ul>
+      {% for option in site.data.don.options %}
+        <li>{{ option }}</li>
+      {% endfor %}
+    </ul>
+    <button class="btn primary" onclick="location.href='{{ site.data.don.button_link }}'">{{ site.data.don.button_text }}</button>
+</div>
+
+</section>
+<!--Section Notre Equippe Avec jolie carte des membres -->
+<style>
+#team .grid{grid-template-columns:repeat(3,1fr);gap:20px}
+#team .card{background:#f9fff5;padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(6,30,15,0.08);text-align:center}
+
+#team .profil{width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:12px}
+#team h4{margin:8px 0;font-size:18px}   
+#team p{font-size:14px;color:#3b5a46;margin-bottom:12px}
+.reseaux-sociaux-contact{display:flex;justify-content:center;gap:12px}
+.icon-social{width:24px;height:24px;transition:filter 0.3s}
+.icon-social:hover{filter:grayscale(0%) brightness(50%)}        
+/* Responsive */
+@media (max-width:768px){
+    #team .grid{grid-template-columns:1fr;gap:16px}
+}
+
+</style>
+   <!--Mot du coordonateur general-->
+
+<!-- Volunteers Start -->
+<div class="container-fluid volunteer py-5 mt-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="row g-5">
+                    
+                 
+                    <div class="col-xl-15">
+                        <div class="volunteer-img h-100">
+                            <img src="{{ site.data.home.coordinateur.photo }}" class="img-fluid w-100" alt="Image">
+                            <div class="volunteer-title">
+                                <h5 class="mb-2 text-white">{{ site.data.home.coordinateur.name }}</h5>
+                                <p class="mb-0 text-white">{{ site.data.home.coordinateur.role }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h5 class="text-uppercase text-primary" style="margin-top:25px;">Mot du coordonateur general</h5>
+                
+                <div class="mb-4" style="text-align: justify;">
+                   {{ site.data.home.coordinateur.message | markdownify }}
+                </div>
+                
+              
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Volunteers End -->
+ 
+    <!-- Contact Start -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container py-5">
+            <div class="contact p-5">
+                <div class="row g-4" id="contact">
+                    <div class="col-xl-5">
+                        <h1 class="mb-4">Contactez nous</h1>
+                        <p class="mb-4">
+                        N'hesitez pas à nous contacter pour toutes informations.. 
+                            .</p>
+                      
+                               <form
+                               action="https://formsubmit.co/lhommeverthaiti@gmail.com"
+                            method="POST">
+
+  <!-- FormSubmit config -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_subject" value="Message depuis le site Maison Verte Haiti">
+  <input type="hidden" name="_next" value="https://maisonvertehaiti.org/thankyou.html">
+  <input type="hidden" name="_cc" value="info@maisonvertehaiti.org">
+  <!-- Anti-spam blacklist -->
+  <input type="hidden" name="_blacklist" value="viagra, spam, free money, test spam , script, php, href, url, link">
+  <input type="hidden" name="_autoresponse" value="Merci pour votre message. Nous vous répondrons dans le plus bref délai.">
+
+                            <div class="row gx-4 gy-3">
+                                
+                                <div class="col-xl-6">
+                                    <input type="text" class="form-control bg-white border-0 py-3 px-4" name="name" placeholder="Votre nom">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="email" class="form-control bg-white border-0 py-3 px-4" name="email" placeholder="Votre email">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="text" class="form-control bg-white border-0 py-3 px-4" name="phone" placeholder="Telephone">
+                                </div>
+                                <div class="col-xl-6">
+                                    <input type="text" class="form-control bg-white border-0 py-3 px-4" name="subject" placeholder="Sujet">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control bg-white border-0 py-3 px-4" rows="7" cols="10" name="message" placeholder="Votre Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn-hover-bg btn btn-primary w-100 py-3 px-5" type="submit">Envoyer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xl-7">
+                        <div>
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="bg-white p-4">
+                                        <i class="fas fa-map-marker-alt fa-2x text-primary mb-2"></i>
+                                        <h4>Addresse</h4>
+                                        <p class="mb-0">{{ site.data.site.address }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="bg-white p-4">
+                                        <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                                        <h4>Email</h4>
+                                        <p class="mb-0">{{ site.data.site.email }}</p>
+                                    </div>
+                                </div>
+                              
+                                <div class="col-lg-12">
+                                    <iframe class="w-100" style="height: 412px; margin-bottom: -6px;" src="{{ site.data.site.map_embed_url }}"
+                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+    <!-- Contact -->
+  <!--Les differentes editions du festival cinecolo ,un projet maison verte ,image,titre,date,invite d'honneur-->
+  <section id="cinecolo" class="section">
+    <div class="section-head">
+      <h3>Festival CINECOLO</h3>
+      <div class="muted">Plus de 10 ans de cinéma écologique en Haïti</div>
+    </div>
+    <div class="cinecolo-content grid">
+        <!--Load all editions from collection leseditions using jekyll-->
+        {% assign sorted_editions = site.leseditions | where: "active", true | sort: "order" %}
+        {% for edition in sorted_editions %}
+        <div class="cinecolo-card card" role="article" aria-label="Édition {{ edition.title }}" tabindex="0">
+            <img style="width: 100%; height: 250px; object-fit: cover;" src="{{ edition.image }}" alt="Image de l'édition {{ edition.title }}">
+            <div class="cinecolo-info">
+                <h4>{{ edition.title }}</h4>
+              
+                <p>Invité d'honneur : {{ edition.invite }}</p>
+            </div>
+            <button class="btn btn-primary" onclick="location.href='{{ edition.link | relative_url }}'">En savoir plus</button>
+        
+        </div> 
+        {% endfor %}
+
+    </div>
+        
+         
+       
+  </section>
+    
+
+    <br>
+
+<!-- Gallery Start -->
+<div class="container-fluid gallery py-5 px-0">
+    <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+        <h5 class="text-uppercase text-primary">Notre travail</h5>
+        <h1 class="mb-4">Le vivant au cœur de nos actions. La planète au cœur de nos choix.</h1>
+        
+    </div>
+    <div class="row g-0">
+        {% assign sorted_gallery = site.gallery | where: "active", true | sort: "order" %}
+        {% for col in (1..3) %}
+        <div class="col-lg-4">
+            {% for item in sorted_gallery %}
+              {% assign idx = forloop.index0 | modulo: 3 | plus: 1 %}
+              {% if idx == col %}
+              <div class="gallery-item">
+                <img src="{{ item.image }}" class="img-fluid w-100" alt="{{ item.title }}">
+                <div class="search-icon">
+                    <a href="{{ item.image }}" data-lightbox="gallery-{{ forloop.index }}" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-inner pb-5">
+                        <span class="h4 text-white">{{ item.title }}</span>
+                        <p class="mb-0 text-white">{{ item.category }}</p>
+                    </div>
+                </div>
+              </div>
+              {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- Gallery End -->
+
+   
+
+    
+  </main>
