@@ -1,14 +1,48 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="FR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} - Maison Verte Haiti</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="icon" type="image/png" href="/assets/img/logomaisonverte.jpg">
-  <!--Allow origin for RSS feed -->
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }} - Semer le Vert, Protéger La Terre, Faire Respirer Haïti</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="shortcut icon" href="/assets/img/logomaisonverte.jpg" type="image/jpg">
+     <meta name="generator" content="Maison Verte Haiti v1.0, https://maisonvertehaiti.org">
+    <meta content="Maison verte,Haiti,Cinecolo,Jaden fanm,KAribiodiv,Je dis vert,Biodiverste,Environnement,Protection Environnement" name="keywords">
+    <meta content="{% if page.description %}{{ page.description | strip_html | truncate: 160 }}{% else %}{{ site.description | truncate: 160 }}{% endif %}" name="description">
+     <meta name="description"
+ content="Maison verte,Haiti,Cinecolo,Jaden fanm,KAribiodiv,Je dis vert,Biodiverste,Environnement,Protection Environnement" />
+  <meta name="keywords"
+    content="Maison verte,association maison,association maison verte,ecologie,environnement,biodiversite" />
+  <meta property="og:title" content="Association Maison Verte D'Haiti" />
+  <meta property="og:description"
+    content="Maison Verte Haiti - Semer le Vert , Proteger La Terre , Faire Respirer Haiti" />
+  <meta property="og:image" content="https://maisonvertehaiti.org/img/about-1.jpg" />
+  <meta property="og:url" content="https://maisonvertehaiti.org" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="author" content="CHARLDÉ WEDSER">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="French">
   
-   
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
       <!-- PRELOADER -->
@@ -28,10 +62,11 @@
 
   <div class="leaf" id="leaf1" style="left:6%;top:20%;transform:rotate(-22deg);"><img src="/assets/img/oi2.png" alt=""></div>
   <div class="leaf" id="leaf2" style="right:8%;top:38%;transform:rotate(12deg);"><img src="/assets/img/oi1.png" alt=""></div>
-<!--heroslides-->
-    {% include slides.html %}
 <!--header-->
    {% include header.html %}
+  <!--heroslides-->
+    {% include slides.html %}
+
 <!--content-->
     <main>
 <!--Display content here -->
@@ -42,142 +77,54 @@
 <div id="light-rays"></div>
     </main>
 <!--footer-->
-   {% include footer.html %}
- <div class="floating-menu">
-        <a href="https://wa.me/50912345678" aria-label="Contactez-nous sur WhatsApp" target="_blank" class="floating-btn whatsapp-btn">
-            <img src="/assets/img/whatsapplogo2.png" alt="WhatsApp" />
-        </a>
-        <a href="mailto:contact@maisonvertehaiti.org" aria-label="Envoyez-nous un email" class="floating-btn email-btn">
-            <img src="/assets/img/emailus.png" alt="Email" /> 
-        </a>
-        <a href="#don" aria-label="Faire un don" class="floating-btn donate-btn" onclick="scrollToSection('#don')">
-            <img src="/assets/img/donate.png" alt="Don" />
-        </a>
-        
-    </div>
-    <style>
-        /* modern transparent and smooth bottom menu floating bar */
-        .floating-menu {
-            position: fixed;
-            bottom: 20px;
-            background: rgba(5, 5, 5, 0.1);
-            padding: 10px;
-            border-radius: 30px;
-            width: auto;
-            height: 45px;
-            position: sticky;
-            z-index: 10000;
-            display: flex;
-            flex-direction: row;
-            gap: 12px;
-            z-index: 1000;   
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            width: fit-content;
-            left: 0;
-            right: 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(7px);
-            border-radius: 30px;
-            padding: 10px;
-            margin: 0 auto;
-           
+  
 
-        }
-        .floating-btn {
-           width: 30px;    
-            height: 30px;    
-            border-radius: 50%;
-            display: flex;    
-            align-items: center;    
-            justify-content: center;    
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);    
-            transition: background-color 0.3s, transform 0.3s;    
-        }
-        .floating-btn img {
-            
-            width: 30px;    
-            height: 30px;    
-            border-radius: 50%; 
-        }
-        .floating-btn:hover {
-          background-color: #f8f9fa;    
-        }
+     {% include footer.html %}
 
-    </style>
    <!--scripts-->
-   <script>
-const RSS_URL = "https://www.actu-environnement.com/flux/rss/biodiversite/";
-const API = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(RSS_URL);
+    <script>
+        const RSS_URL = "https://www.actu-environnement.com/flux/rss/biodiversite/";
 
-fetch(API)
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("feed-list");
-    container.innerHTML = "";
+        const API = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&api_key=occvkqqyvr6kzin0a9k98fzrlyyvwj3im5fhpjfw`;
 
-    data.items.slice(0, 6).forEach((item, i) => {
-      container.innerHTML += `
-        <div class="rss-slide card ${i === 0 ? "active" : ""}">
-          <h3>${item.title}</h3>
-          <p>${item.pubDate.split(" ")[0]}</p>
-          <a href="${item.link}" target="_blank">Lire l’article</a>
-        </div>
+        fetch(API)
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById("flux-rss");
+                container.innerHTML = "";
+
+                data.items.slice(0, 4).forEach((item, i) => {
+                    container.innerHTML += `
+        <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="service-item">
+                        <img src="/img/service-4.jpg" class="img-fluid w-100" alt="Image">
+                        <div class="service-link">
+                            <a href="${item.link}" class="h4 mb-0">${item.title}</a>
+                        </div>
+                    </div>
+                    <p class="my-4">
+                        ${item.pubDate.split(" ")[0]}
+                    </p>
+                     <a href="${item.link}" target="_blank">Lire l’article</a>
+                </div>
       `;
-    });
+                });
 
-    // ✅ Lancer le slider UNIQUEMENT après injection
-   
-  })
-  .catch(err => console.error("Erreur RSS :", err));
+                // ✅ Lancer le slider UNIQUEMENT après l'injection
 
-   </script>
-   <style>
-    /* RSS Feed Styles */
-    .grid{grid-template-columns:repeat(3,1fr);gap:20px}
+            })
+            .catch(err => console.error("Erreur RSS :", err));
+    </script>
 
-     .rss-slide{background:#f9fff5;padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(6,30,15,0.08);text-align:center}
-    @media (max-width:768px){
-    .grid{grid-template-columns:1fr;gap:16px}
-}
-
-    #rss-feed {
-      margin: 40px auto;
-      width: 100%;
-      padding: 0 10px;
-    }
-    #rss-feed h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #2c3e50;
-    }
-   
-    .rss-slide:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(247, 145, 2, 0.5);
-    }
-    .rss-slide h3 {
-      margin-top: 0;
-      color: #27ae60;
-    }
-    .rss-slide p {
-      color: #7f8c8d;
-      font-size: 0.9em;
-    }
-    .rss-slide a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .rss-slide a:hover {
-      text-decoration: underline;
-    }
-   </style>
  <script src="/assets/js/main.js" defer></script>
+     <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/counterup/counterup.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/lightbox/js/lightbox.min.js"></script>
  
 </body>
 </html>

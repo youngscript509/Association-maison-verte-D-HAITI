@@ -26,6 +26,35 @@ function floatLeaves(){
 }
 setInterval(floatLeaves, 2600);
 
+// on scroll, hide leaves for better readability, show them again when near top
+
+
+const element = document.getElementById('leaf1');
+const element1 = document.getElementById('leaf2');
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+
+    // Vérifie si hauteur écran > 150px
+    if (window.innerHeight > 150) {
+        
+        // Cache si scroll > 150px
+        if (scrollTop > 150) {
+            element.classList.add("hidden");
+            element1.classList.add("hidden");
+             
+            
+        }
+
+        // Réaffiche UNIQUEMENT si retour en haut
+        if (scrollTop === 0) {
+            element.classList.remove("hidden");
+             element1.classList.remove("hidden");
+        }
+    }
+});
+
+
+
 // Nice popup (instead of alert)
 function popup(message){
   const box = document.createElement('div');
@@ -57,7 +86,7 @@ function confirmDonate(){
 
   // gamified badge
   const badge = document.createElement('div');
-  badge.textContent = 'Badge débloqué : Éco‑Héros Débutant 🌱';
+  badge.textContent = 'Badge débloqué : Éco‑Héros Débutant ';
   Object.assign(badge.style,{
     position:'fixed',left:'50%',top:'50%',transform:'translate(-50%,-50%) scale(0.6)',opacity:'0',
     background:'linear-gradient(90deg,var(--accent),#ffe1ba)',padding:'18px 22px',
@@ -70,15 +99,7 @@ function confirmDonate(){
   setTimeout(()=>badge.remove(),3000);
 }
 
-// contact mock
-function sendContact(){
-  const status=document.getElementById('contact-status');
-  status.textContent='Envoi...';
-  setTimeout(()=>{
-    status.textContent='Message envoyé — merci de nous avoir contactés.';
-    document.getElementById('contact-form').reset();
-  },900);
-}
+
 
 // Gamified focus for hero cards
 document.querySelectorAll('.hero-card').forEach(card=>{
@@ -86,36 +107,6 @@ document.querySelectorAll('.hero-card').forEach(card=>{
   card.addEventListener('blur',()=> card.style.transform='');
 });
 
-
-// =======================
-// HERO SLIDER ENHANCED
-// =======================
-let slideIndex = 0;
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.dot');
-let sliderPaused = false;
-
-function showSlide(i){
-  slides.forEach(s=>s.classList.remove('active'));
-  dots.forEach(d=>d.classList.remove('active'));
-  slides[i].classList.add('active');
-  dots[i].classList.add('active');
-}
-
-function autoSlide(){
-  if(!sliderPaused){ slideIndex = (slideIndex+1)%slides.length; showSlide(slideIndex);} }
-setInterval(autoSlide, 4800);
-
-dots.forEach((d,i)=> d.addEventListener('click',()=>{ sliderPaused=true; slideIndex=i; showSlide(i); setTimeout(()=>sliderPaused=false,6000);}));
-
-// Swipe mobile
-let startX=0;
-document.getElementById('hero').addEventListener('touchstart', e=> startX = e.touches[0].clientX);
-document.getElementById('hero').addEventListener('touchend', e=>{
-  let endX=e.changedTouches[0].clientX;
-  if(endX < startX - 50){ slideIndex=(slideIndex+1)%slides.length; showSlide(slideIndex);} 
-  if(endX > startX + 50){ slideIndex=(slideIndex-1+slides.length)%slides.length; showSlide(slideIndex); }
-});
 
 // =======================
 // NATURAL EFFECTS
@@ -182,4 +173,77 @@ window.addEventListener('load', initMobileMenu);
 // Recalcul si redimensionnement
 window.addEventListener('resize', initMobileMenu);
 
+
+(function ($) {
+    "use strict";
+
+    // Spinner
+    var spinner = function () {
+        setTimeout(function () {
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
+            }
+        }, 1);
+    };
+    spinner(0);
+
+
+    // Fixed Navbar
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.fixed-top .container').addClass('shadow-sm').css('max-width', '100%');
+        } else {
+            $('.fixed-top .container').removeClass('shadow-sm').css('max-width', '85%');
+        }
+    });
+
+
+ 
+
+    // Event carousel
+    $(".event-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 200,
+        center: false,
+        dots: false,
+        loop: true,
+        margin: 10,
+        nav : true,
+        navText : [
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ],
+        responsiveClass: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            768:{
+                items:1
+            },
+            992:{
+                items:2
+            },
+            1200:{
+                items:3
+            }
+        }
+    });
+
+    
+   // Back to top button
+   $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+        $('.back-to-top').fadeIn('slow');
+    } else {
+        $('.back-to-top').fadeOut('slow');
+    }
+    });
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+
+
+})(jQuery);
 

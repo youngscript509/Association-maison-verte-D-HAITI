@@ -1,0 +1,39 @@
+---
+layout: display
+title: Dernières Actualités
+description: Suivez les informations récentes, initiatives et actions en faveur de l’environnement. 
+---
+<!-- Blog Start -->
+<div class="container-fluid blog py-5 mb-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+            <h5 class="text-uppercase text-primary">Dernières Actualit&eacute;s</h5>
+            <h1 class="mb-0">Suivez les informations récentes, initiatives et actions en faveur de l’environnement. 
+            </h1>
+        </div>
+        <div class="row g-4">
+            {% assign active_posts = site.posts | where: "active", true %}
+            {% for post in active_posts %}
+            <div class="col-lg-6 col-xl-3">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="{{ post.image }}" class="img-fluid w-100" alt="">
+                      
+                        <div class="search-icon">
+                            <a href="{{ post.image }}" data-lightbox="Blog-1" class="my-auto"><i class="fas fa-search-plus btn-primary text-white p-3"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-dark border p-4 ">
+                        <h4 class="mb-4">{{ post.title | truncatewords: 10 }}</h4>
+                        <p class="mb-4">{{ post.excerpt | truncatewords: 20 }}</p>
+                        <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="{{ post.link }}">Lire plus sur {{ post.reference }}</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+           
+       
+        </div>
+    </div>
+</div>
+<!-- Blog End -->

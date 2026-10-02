@@ -1,0 +1,88 @@
+--- 
+layout: display 
+title: Faire un don
+description:  Votre soutien protège l’environnement et construit un avenir durable. 🌍
+---
+
+
+
+
+   <!-- Donation Start -->
+<div class="container-fluid donation py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+            <h5 class="text-uppercase text-primary">💚 Faire un don</h5>
+            <h1 class="mb-0">
+               Votre soutien protège l’environnement et construit un avenir durable. 🌍
+            </h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="donation-item">
+                    <img src="/img/donation-1.jpg" class="img-fluid w-100" alt="Image">
+                    <div class="donation-content d-flex flex-column">
+                        <h5 class="text-uppercase text-primary mb-4">Organique</h5>
+                        <a href="#" class="btn-hover-color display-6 text-white">Aidez-nous davantage</a>
+                        <h4 class="text-white mb-4">Semer le Vert</h4>
+                        <p class="text-white mb-4">
+                            Agir aujourd’hui pour planter les graines d’un avenir durable, solidaire et respectueux de la nature.
+                        </p>
+                        <div class="donation-btn d-flex align-items-center justify-content-start">
+                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#options-don">Agir !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="donation-item">
+                    <img src="/img/service-2.jpg" class="img-fluid w-100" alt="Image">
+                    <div class="donation-content d-flex flex-column">
+                        <h5 class="text-uppercase text-primary mb-4">Ecosysteme</h5>
+                        <a href="#" class="btn-hover-color display-6 text-white">Aidez-nous davantage</a>
+                        <h4 class="text-white mb-4">Proteger La Terre</h4>
+                        <p class="text-white mb-4">
+                           Préserver notre planète en agissant ensemble pour un environnement sain et durable.
+                        </p>
+                        <div class="donation-btn d-flex align-items-center justify-content-start">
+                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#options-don">Agir !</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="donation-item">
+                    <img src="/img/donation-3.jpg" class="img-fluid w-100" alt="Image">
+                    <div class="donation-content d-flex flex-column">
+                        <h5 class="text-uppercase text-primary mb-4">Recyclage</h5>
+                        <a href="#" class="btn-hover-color display-6 text-white">Aidez-nous davantage</a>
+                        <h4 class="text-white mb-4">Faire Respirer Haiti</h4>
+                        <p class="text-white mb-4">
+                            Redonner souffle à notre pays par des actions écologiques et communautaires durables.
+                        </p>
+                        <div class="donation-btn d-flex align-items-center justify-content-start">
+                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="#options-don">Agir !</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+
+<!--Methode de don-->
+<div class="container pb-5" id="options-don" style="text-align:center;">
+    <div class="don-box" style="background:linear-gradient(180deg,#f0f9f4,#dff3e8);padding:24px;border-radius:12px;max-width:520px;margin:0 auto;box-shadow:0 8px 24px rgba(6,30,15,0.1);text-align:left">
+        <h3 style="margin-top:0">{{ site.data.don.title }}</h3>
+        <p>{{ site.data.don.intro }}</p>
+        <ul style="padding-left:20px">
+          {% for option in site.data.don.options %}
+            <li style="margin-bottom:6px">{{ option }}</li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<!-- Donation End -->

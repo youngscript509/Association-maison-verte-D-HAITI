@@ -1,28 +1,59 @@
----
-layout: slides
-
----
 <!-- HERO START -->
 <section id="hero" class="relative w-full h-screen overflow-hidden">
-  <div class="hero-slider" style="background-image:url('https://maisonvertehaiti.org/assets/img/slide2.jpg')">
+  <div class="hero-slider" style="background-image:url('/img/hiron.jpg')">
     
 
     <!--Afficher les heroslides depuis la collection "slides" -->
-    {% for slide in site.slides %}
+    {% assign sorted_slides = site.slides | where: "active", true | sort: "order" %}
+    {% for slide in sorted_slides %}
     
     <div class="hero-slide" style="background-image:url('{{ slide.image }}')">
       <div class="hero-content">
         <h1>{{ slide.title }}</h1>
-        <p>{{ slide.description }}</p>
+        <h4 style="color:yellow;">{{ slide.description }}</h4>
       </div>
     </div>
    
     {% endfor %}
 
   <div class="hero-nav">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+    {% for slide in sorted_slides %}
+    <span class="dot{% if forloop.first %} active{% endif %}"></span>
+    {% endfor %}
   </div>
 </section>
 <!-- HERO END -->
+
+<script>
+  
+// =======================
+// HERO SLIDER ENHANCED
+// =======================
+let slideIndex = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.dot');
+let sliderPaused = false;
+
+function showSlide(i){
+  slides.forEach(s=>s.classList.remove('active'));
+  dots.forEach(d=>d.classList.remove('active'));
+  slides[i].classList.add('active');
+  dots[i].classList.add('active');
+}
+
+function autoSlide(){
+  if(!sliderPaused){ slideIndex = (slideIndex+1)%slides.length; showSlide(slideIndex);} }
+setInterval(autoSlide, 4800);
+
+dots.forEach((d,i)=> d.addEventListener('click',()=>{ sliderPaused=true; slideIndex=i; showSlide(i); setTimeout(()=>sliderPaused=false,6000);}));
+
+// Swipe mobile
+let startX=0;
+document.getElementById('hero').addEventListener('touchstart', e=> startX = e.touches[0].clientX);
+document.getElementById('hero').addEventListener('touchend', e=>{
+  let endX=e.changedTouches[0].clientX;
+  if(endX < startX - 50){ slideIndex=(slideIndex+1)%slides.length; showSlide(slideIndex);} 
+  if(endX > startX + 50){ slideIndex=(slideIndex-1+slides.length)%slides.length; showSlide(slideIndex); }
+});
+
+</script>

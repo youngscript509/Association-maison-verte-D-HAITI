@@ -1,0 +1,33 @@
+--- 
+layout: display 
+title: 🗞️ Dans la presse
+description:  Découvrez les differents articles concernant Maison verte. 
+---
+<!-- Events Start -->
+<div class="container-fluid event py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+            <h5 class="text-uppercase text-primary">🗞️ Maison Verte dans la presse</h5>
+            <h1 class="mb-0">
+               Découvrez les differents articles concernant Maison verte. 
+            </h1>
+        </div>
+        <div class="event-carousel owl-carousel">
+            {% assign active_posts = site.posts | where: "active", true %}
+            {% for post in active_posts %}
+            <div class="event-item">
+                <img src="{{ post.image }}" class="img-fluid w-100" alt="{{ post.title }}">
+                <div class="event-content p-4">
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="text-body"><i class="fas fa-calendar-alt me-2"></i>{{ post.date | date: "%d %b %Y" }}</span>
+                    </div>
+                    <h4 class="mb-4">{{ post.title | truncatewords: 12 }}</h4>
+                    <p class="mb-4">{{ post.excerpt | truncatewords: 25 }}</p>
+                    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="{{ post.link }}" target="_blank" rel="noopener">Lire plus sur {{ post.reference }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Events End -->

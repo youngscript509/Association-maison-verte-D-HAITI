@@ -1,0 +1,102 @@
+:root {
+  --green-dark: #1f3d2b;
+  --green-light: #e6f3ec;
+  --text-main: #2b2b2b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    display: none;
+}
+
+
+/* JOURNAL */
+.journal {
+  max-width: 900px;
+  margin: auto;
+  padding: 4rem 1rem;
+}
+
+.entry {
+  margin-bottom: 5rem;
+}
+
+.entry h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--green-dark);
+  font-size: 2rem;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+/* IMAGES */
+figure {
+  margin: 2rem 0;
+}
+
+.image-left {
+  float: left;
+  width: 45%;
+  margin-right: 2rem;
+}
+
+.image-right {
+  float: right;
+  width: 45%;
+  margin-left: 2rem;
+}
+
+.image-full img,
+.image-left img,
+.image-right img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #666;
+}
+
+/* BLOCKQUOTE */
+blockquote {
+  background: var(--green-light);
+  padding: 2rem;
+  border-left: 6px solid var(--green-dark);
+  margin: 3rem 0;
+  font-style: italic;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .image-left,
+  .image-right {
+    float: none;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}

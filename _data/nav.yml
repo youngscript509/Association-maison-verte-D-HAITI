@@ -1,0 +1,16 @@
+items:
+  - label: "🛖 Accueil"
+    url: "/"
+  - label: "Qui sommes-nous"
+    url: "/apropos/"
+  - label: "Actualités"
+    url: "/blog/"
+  - label: "Nos projets"
+    url: "/projects/"
+  - label: "Presse"
+    url: "/presses/"
+  - label: "Don"
+    url: "/don/"
+    cta: true
+  - label: "Contact"
+    url: "/#contact"
